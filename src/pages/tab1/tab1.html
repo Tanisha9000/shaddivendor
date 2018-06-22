@@ -1,0 +1,221 @@
+<ion-header>
+    <ion-navbar>
+        <ion-buttons start>
+            <button ion-button menuToggle>
+                <ion-icon name="menu"></ion-icon>
+            </button>
+        </ion-buttons>
+        <ion-title>Home</ion-title>
+
+        <ion-buttons end>
+            <button ion-button (click)="presentModal();">
+                    <ion-icon name="options"></ion-icon>
+            </button>
+        </ion-buttons>
+
+        <ion-buttons end>
+            <button ion-button (click)="reviewPage();">
+                    <ion-icon name="star-outline"></ion-icon>
+            </button>
+        </ion-buttons>
+
+    </ion-navbar>
+</ion-header>
+
+
+<ion-content>
+
+    <div class="seg">
+        <ion-segment [(ngModel)]="pets">
+            <ion-segment-button value="profile">
+                News Feed
+            </ion-segment-button>
+            <ion-segment-button value="manage">
+                Manage Connection
+            </ion-segment-button>
+            <ion-segment-button value="calender">
+                Calendar
+            </ion-segment-button>
+        </ion-segment>
+    </div>
+
+    <div [ngSwitch]="pets">
+
+        <ion-list *ngSwitchCase="'profile'" class="bg">
+            <div *ngFor ="let item of jobs">
+                <div *ngIf ="item.required_service.myBudget != undefined; else elseBlock">
+
+                    <ion-card *ngFor="let key of objectkey(item.required_service.myBudget)">
+                        <ion-item class="nme">
+                            <!--<h4>{{key | json}}</h4>-->
+                            <h4>Name :{{item.title}}</h4>
+                            <h4 *ngIf="(item.required_service.myBudget)[key] != undefined">{{key}}<span style="color:#e5053a;">{{(item.required_service.myBudget)[key]}}</span></h4>
+                            <h4>Time: 2 Days</h4>
+                            <h4>Special Needs :{{item.special_needs}}</h4>
+
+
+                            <ion-avatar item-end>
+                                <img src="assets/image/e.jpg">
+                            </ion-avatar>
+                        </ion-item>
+
+                        <ion-card-content>
+                            <p class="spec">Wait a minute. Wait a minute, Doc. Uhhh... Are you telling me that you built a time machine... out of a DeLorean?! Whoa. This is heavy.</p>
+                        </ion-card-content>
+                        <div class="actin">
+                            <button ion-button outline  small>
+                                Accept
+                            </button>
+
+                            <button ion-button outline  small>
+                                Bid
+                            </button>
+
+                            <button ion-button outline small>
+                                Recommend
+                            </button>
+
+                            <button ion-button outline small>
+                                Bid Together
+                            </button>
+                        
+                        </div>
+
+                    </ion-card>
+
+                </div>
+                <ng-template #elseBlock>
+
+                    <ion-card>
+                        <ion-item class="nme">
+                            <!--<h4>{{key | json}}</h4>-->
+                            <h4>Name :{{item.title}}</h4>                           
+                            <h4>Time: 2 Days</h4>
+                            <h4>Special Needs :{{item.special_needs}}</h4>
+
+
+                            <ion-avatar item-end>
+                                <img src="assets/image/e.jpg">
+                            </ion-avatar>
+                        </ion-item>
+
+                        <ion-card-content>
+                            <p class="spec">Wait a minute. Wait a minute, Doc. Uhhh... Are you telling me that you built a time machine... out of a DeLorean?! Whoa. This is heavy.</p>
+                        </ion-card-content>
+                        <div class="actin">
+                            <button ion-button outline  small>
+                                Accept
+                            </button>
+
+                            <button ion-button outline  small>
+                                Bid
+                            </button>
+
+                            <button ion-button outline small>
+                                Recommend
+                            </button>
+
+                            <button ion-button outline small>
+                                Bid Together
+                            </button>
+                        </div>
+
+                    </ion-card>
+                </ng-template>
+            </div>
+
+            <ion-card>
+                <div class="px"><img src="assets/image/1.jpg"/>
+                    <ion-fab top right>
+                        <button ion-fab mini class="fb" ><ion-icon name="share"></ion-icon></button>
+                        <ion-fab-list side="left">
+                            <button ion-fab><ion-icon name="logo-facebook"></ion-icon></button>
+                            <button ion-fab><ion-icon name="logo-twitter"></ion-icon></button>
+                            <button ion-fab><ion-icon name="logo-vimeo"></ion-icon></button>
+                            <button ion-fab><ion-icon name="logo-googleplus"></ion-icon></button>
+                        </ion-fab-list>
+                    </ion-fab>
+                    <div class="overlay"></div>
+                </div>
+                <ion-card-content class="real">
+                    <h3>Komal Weds Randhawa<span> (Rajasthan)</span></h3>
+                    <p>Wait a minute. Wait a minute, Doc. Uhhh... Are you telling me that you built a time machine... out of a DeLorean?! Whoa. This is heavy.</p>
+                    <a>Read More</a>
+                </ion-card-content>
+            </ion-card>
+        </ion-list><!--profile-->
+
+        <ion-list *ngSwitchCase="'manage'" class="bg_b invite">
+
+            <span class="snd">Send Invitation:</span>
+
+            <ion-grid>
+                <ion-row>
+                    <ion-col col-6>
+                        <button ion-button small class="inv">Invite via Email</button>
+                    </ion-col>
+                    <ion-col col-6>
+                        <button ion-button small class="inv">Invite via Contacts</button>
+                    </ion-col>
+                </ion-row>
+            </ion-grid>
+
+            <ion-item (click)="conectPage();">
+                Connection List
+                <ion-icon ios="ios-arrow-forward" md="ios-arrow-forward" item-end></ion-icon>
+            </ion-item>
+
+            <ion-item (click)="rankPage();">
+                Connection Ranking
+                <ion-icon ios="ios-arrow-forward" md="ios-arrow-forward" item-end></ion-icon>
+            </ion-item>
+
+            <ion-item (click)="rewardPage();">
+                Reward
+                <ion-icon ios="ios-arrow-forward" md="ios-arrow-forward" item-end></ion-icon>
+            </ion-item>
+
+        </ion-list><!--manage-->
+
+        <ion-list *ngSwitchCase="'calender'" class="bg_b">
+
+            <div class="calender">
+                <ion-label>
+                    {{ viewTitle }}
+                </ion-label>
+                <!--<img src="assets/image/cal.jpg" />-->
+                <!--                <template  #template let-view="view"  let-row="row" let-col="col" >
+                                    <div  *ngFor="let obj of view.dates[row*7+col].events"  >
+                                        <p [ngStyle]="{'color': obj.eventColor}">{{view.dates[row*7+col].label}}</p>
+                                    </div> 
+                                </template>-->
+                <calendar 
+                    [monthviewDisplayEventTemplate]="template" 
+                    [eventSource]="eventSource"
+                    [calendarMode]="calendar.mode"
+                    [currentDate]="calendar.currentDate"
+                    (onEventSelected)="onEventSelected($event)"
+                    (onTitleChanged)="onViewTitleChanged($event)"
+                    (onTimeSelected)="onTimeSelected($event)"
+                    step="30"
+                    class="calendar">
+                </calendar>
+            </div>
+
+            <ion-grid>
+                <div class="job">
+                    <ion-row>
+
+                        <ion-col col-4><p>Accepted Jobs<sup></sup></p></ion-col>
+                        <ion-col col-4><p>Shortlisted Jobs<sup style="background: green;"></sup></p></ion-col>
+                        <ion-col col-4><p>All Jobs<sup style="background: skyblue;"></sup></p></ion-col>
+
+                    </ion-row>
+                </div>
+            </ion-grid>
+
+        </ion-list><!--calender-->
+
+    </div>
+
+</ion-content>

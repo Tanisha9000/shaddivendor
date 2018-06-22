@@ -1,0 +1,122 @@
+page-budgettracker {
+
+    .tacker {
+        width: 100%;
+        float: left;
+        box-shadow: 0 0 15px 0 rgba(0, 0, 0, 0.2);
+        position: relative;
+        border-radius: 4px;
+        padding: 10px;
+    }
+    
+    .tacker ul {
+        padding:  0;
+        text-transform:  capitalize;
+        width:  100%;
+        float:  left;
+        list-style: none;
+    }
+    
+    .tacker ul li {
+        width:  100%;
+        float:  left;
+        margin-bottom:  8px;
+        font-size: 15px;
+    }
+    
+    .tacker ul li .left {
+        width:  auto;
+        float: left;
+        font-family: Lora-Bold;
+    }
+    
+    .tacker ul li .right {
+        width:  auto;
+        float:  right;
+        text-transform: uppercase;
+    } 
+    .tacker button {
+        width: auto;
+        float: none;
+        text-transform: capitalize;
+        color: #fff;
+background: #feb483; /* Old browsers */
+background: -moz-linear-gradient(left, #feb483 1%, #ff9980 42%, #fe8884 69%, #ff8b8c 100%); /* FF3.6-15 */
+background: -webkit-linear-gradient(left, #feb483 1%,#ff9980 42%,#fe8884 69%,#ff8b8c 100%); /* Chrome10-25,Safari5.1-6 */
+background: linear-gradient(to right, #feb483 1%,#ff9980 42%,#fe8884 69%,#ff8b8c 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#feb483', endColorstr='#ff8b8c',GradientType=1 ); /* IE6-9 */
+        border-radius: 4px;
+        height: 35px;
+        display: block;
+        padding: 0 20px;
+        margin: 0 auto;
+        span{
+            font-size: 15px;
+        }
+    }
+
+    .table_checklist .bbb{
+        width: 100%;
+        float: left;
+        margin: 0 0 25px 0;
+    }
+    .table_checklist select {
+        background: transparent;
+        width:45%;
+        font-size: 15px;
+        color: #000;
+        border: 1px solid #000;
+        border-radius: 4px;
+        height: 30px;
+        padding: 0 0px 0 5px;
+        font-family: 'Lora', serif;
+        float: left;
+        text-transform: capitalize;
+    }
+    .table_checklist #photo2 {
+        float: right;
+    }
+    .table_checklist{
+        width: 100%;
+        float: left;
+        -webkit-transition: all 0.5s ease;
+        transition: all 0.5s ease;
+        padding: 10px;
+        box-shadow: 0 0 15px 0 rgba(0, 0, 0, 0.2);
+        margin-top: 20px;
+        border-radius: 4px;
+        button{
+            width: auto;
+            float: right;
+            padding: 0 20px;
+            height: 30px;
+            border-radius: 4px;
+            background: transparent;
+            border: 1px solid #333;
+            color: #333;
+            .activated{
+            background: transparent;
+            border: 1px solid #333;
+            color: #333;
+            }
+        }
+
+    }
+    .table_checklist button.activated{
+        background: transparent;
+        border: 1px solid #333;
+        color: #333;
+        }
+        .graph{
+            width: 100%;
+            float: left;
+        }
+        .graph h4 {
+            width: 100%;
+            float: left;
+            margin: 5px 0 !important;
+            font-size: 14px;
+            text-align: center;
+        }
+
+}

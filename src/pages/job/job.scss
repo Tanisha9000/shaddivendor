@@ -1,0 +1,61 @@
+page-job {
+
+.cnt {
+    padding: 8px 8px;
+}
+
+.cnt .card-title {
+    font-size: 16px;
+    margin: 0;
+    padding: 0px 0 0;
+    font-family:Lora-Regular;
+    color: #e10a0a;
+}
+
+.cnt p {
+    font-size: 12px;
+    line-height: 16px;
+    color: #7b7676;
+    font-family: roboto;
+}
+
+.cnt span{font-family: Lora-Regular !important;}
+
+.stars {
+    padding: 0;
+    margin: 0;
+}
+
+.stars li {
+    display: inline-block;
+    color: #d0d0d0;
+}
+
+.stars li .active {
+    color: #fec12b;
+}
+
+.bg {
+    float: left;
+    width: 100%;
+}
+
+.price {
+    width: 100%;
+    float: left;
+    margin: 5px 0px;
+}
+
+.price dt {
+    float: left;
+    color: #222;
+    font-size: 1.4rem;
+}
+
+.price dd {
+    float: right;
+    color: #999;
+    font-size: 1.4rem;
+}
+
+}

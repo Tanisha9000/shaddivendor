@@ -1,0 +1,114 @@
+
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>filter</ion-title>
+     <ion-buttons end>
+       <button ion-button (click)="dismiss();">
+         <ion-icon name="close"></ion-icon>
+       </button>
+     </ion-buttons>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+
+<div class="selct">
+
+  <ion-label class="by">Sort By:</ion-label>
+      <ion-list class="vendor">
+        <ion-item>
+          <ion-select [(ngModel)]="view">
+            <ion-option value="fri" selected="true">Friends</ion-option>
+            <ion-option value="me">Only Me</ion-option>
+          </ion-select>
+        </ion-item>
+      </ion-list>
+
+</div>
+
+<ion-list radio-group class="post">
+  <ion-list-header>
+    Post:
+  </ion-list-header>
+
+  <ion-item>
+    <ion-label>Job Post</ion-label>
+    <ion-radio  value="job"></ion-radio>
+  </ion-item>
+
+  <ion-item>
+    <ion-label>Blog Post</ion-label>
+    <ion-radio value="blog"></ion-radio>
+  </ion-item>
+
+</ion-list>
+
+<ion-list radio-group class="post">
+  <ion-list-header>
+    Location:
+  </ion-list-header>
+
+  <ion-item>
+    <ion-label> <50Km </ion-label>
+    <ion-radio  value="go"></ion-radio>
+  </ion-item>
+
+  <ion-item>
+    <ion-label> <100Km </ion-label>
+    <ion-radio value="rust"></ion-radio>
+  </ion-item>
+
+  <ion-item>
+    <ion-label> <150Km </ion-label>
+    <ion-radio value="python"></ion-radio>
+  </ion-item>
+</ion-list>
+
+<ion-grid style="padding: 0px;">
+  <ion-row>
+
+    <ion-col col-12>
+      <ion-label class="by">Vendor Type:</ion-label>
+      <ion-list class="vendor">
+        <ion-item>
+          <ion-select [(ngModel)]="vendors">
+            <ion-option value="photo" selected="true">Photographer</ion-option>
+            <ion-option value="venu">Wedding Venue</ion-option>
+            <ion-option value="bri">Bridal Wear</ion-option>
+            <ion-option value="dec">Wedding Decorators</ion-option>
+            <ion-option value="mak">Make Up</ion-option>
+            <ion-option value="plan">Wedding Planners</ion-option>
+            <ion-option value="groom">Groom Wear</ion-option>
+            <ion-option value="card">Wedding Cards</ion-option>
+            <ion-option value="mehn">Mehndi Artist</ion-option>
+            <ion-option value="ent">Wedding Entertainment</ion-option>
+            <ion-option value="cak">Wedding Cake</ion-option>
+            <ion-option value="jew">Wedding Jewellery</ion-option>
+            <ion-option value="cat">Wedding Catering</ion-option>
+            <ion-option value="acc">Wedding Accessories</ion-option>
+            <ion-option value="cho">Sangeet Choreographers</ion-option>
+            <ion-option value="dj">DJ</ion-option>
+          </ion-select>
+        </ion-item>
+      </ion-list>
+    </ion-col><!--Vendor-->
+
+    <ion-col col-12>
+      <ion-label class="by">Sort By:</ion-label>
+      <ion-list class="vendor">
+        <ion-item>
+          <ion-select [(ngModel)]="sorting">
+            <ion-option value="rat" selected="true">Rating</ion-option>
+            <ion-option value="pop">Popularity</ion-option>
+          </ion-select>
+        </ion-item>
+      </ion-list>
+    </ion-col><!--sort-->
+
+  </ion-row>
+</ion-grid>
+
+</ion-content>

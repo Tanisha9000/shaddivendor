@@ -1,0 +1,111 @@
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>progress update</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+
+    <div class="tacker">
+      <h4>timeline progress</h4>
+        <ul>
+          <li><span class="left">Punjabi Wedding:</span><span class="right">12/5/2017</span></li>
+          <li><span class="left">Location:</span><span class="right">Chandigarh</span></li>
+        </ul>
+      </div>
+
+      <div class="tacker">
+          <h4>Item Checklist</h4>
+            <ul>
+              <li><span class="left">Wedding Cake:</span><span class="right green">Checked</span></li>
+              <li><span class="left">Wedding Bands:</span><span class="right red">Unchecked</span></li>
+              <li><span class="left">Caterer:</span><span class="right green">Checked</span></li>
+            </ul>
+
+            <button ion-button type="submit">to-do-list</button>
+        
+            <div class="progress">
+                <!-- <h2>item checklist</h2> -->
+            
+                <div class="first">
+                    <div class="yes_start"> <span>20%</span></div>
+                </div>
+            
+                <div class="second">
+                    <div class="in_progress"> <span>50%</span></div>
+                </div>
+            
+                <div class="third">
+                    <div class="procured"> <span>30%</span></div>
+                </div>
+            
+                <ul>
+                  <li><span></span>yet to start</li>
+                  <li><span></span>in progress</li>
+                  <li><span></span>completed</li>
+                </ul>
+            
+            
+              </div>
+          </div>
+
+          <div class="tacker">
+              <h4>Guest Summary</h4>            
+        
+                <div class="tble_scroll">
+                    <table class="table">
+                        <thead>
+                          <tr>
+                            <th scope="col">each event</th>
+                            <th>no of guest invited</th>
+                            <th>no of accepted</th>
+                            <th>declined</th>
+                            <th>tentative</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          <tr>
+                            <td>Mehandi</td>
+                            <td>1200</td>
+                            <td>1000</td>
+                            <td>258</td>
+                            <td>1000</td>
+                          </tr>
+                          <tr>
+                            <td>Photo &amp; Video</td>
+                            <td>1500</td>
+                            <td>800</td>
+                            <td>150</td>
+                            <td>240</td>
+                          </tr>
+                        </tbody>
+                      </table>
+                  </div>
+          </div>
+
+          <div class="tacker">
+              <h4>job post</h4>
+                <ul>
+                  <li><span class="left">No Of Job Post=</span><span class="right">25</span></li>
+                  <li><span class="left">No Of Vendors Locked=</span><span class="right">15</span></li>
+                  <li><span class="left">no of job Post With Negotiation=</span><span class="right">10</span></li>
+                </ul>
+                <div class="graph">
+                    <!--<h4>Graph Design Coming soon!!</h4>-->
+                    <ion-card>
+                        <ion-card-header>
+                          Pie Chart
+                        </ion-card-header>
+                        <ion-card-content>
+                          <canvas #pieCanvas></canvas>
+                        </ion-card-content>
+                      </ion-card>
+                  </div>
+              </div>
+    
+
+</ion-content>
+

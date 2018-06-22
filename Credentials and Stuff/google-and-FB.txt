@@ -1,0 +1,27 @@
+
+project - dost
+
+//////////////////////facebook hash key generate/////////////////////////
+C:\Program Files\Java\jdk1.8.0_40\bin>keytool -exportcert -alias androiddebugkey -keystore "C:\Users\Tanisha\.android\debug.keystore" | "C:\OpenSSL\bin\openssl" sha1 -binary | "C:\OpenSSL\bin\openssl" base64
+
+9tAQ7kEpBaxiJ8k+21JFVbl030Q=
+9tAQ7kEpBaxiJ8k+21JFVbl030Q=
+
+
+
+////////////////google plus login/////////////////////
+
+keytool -list -v -keystore "C:\Users\simerjit\.android\debug.keystore" -alias androiddebugkey -storepass android -keypass android
+
+Certificate fingerprints:
+         MD5:  1C:3D:C3:E2:CA:F6:B7:59:83:BC:C1:C7:24:92:C7:8E
+         SHA1: F6:D0:10:EE:41:29:05:AC:62:27:C9:3E:DB:52:45:55:B9:74:DF:44
+         SHA256: 04:4D:0A:95:72:2C:FF:12:5C:80:34:B7:0E:E8:D8:B8:DC:A6:21:F1:6D:
+E8:E6:92:2D:C0:A3:B0:8A:77:06:B1
+         Signature algorithm name: SHA1withRSA
+         Version: 1
+
+708708570864-s2586vg04bi9gt0eephcjh1l2lcu446g.apps.googleusercontent.com
+reverse client id : com.googleusercontent.apps.708708570864-s2586vg04bi9gt0eephcjh1l2lcu446g
+
+

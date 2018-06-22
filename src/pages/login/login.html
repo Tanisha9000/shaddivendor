@@ -1,0 +1,67 @@
+
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>Login</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+
+<div style="height:10vh;float:left;width:100%;"></div>
+
+<div class="logo">
+    <img src="assets/image/logo.png">
+   </div>
+
+   <div style="height:5vh;float:left;width:100%;"></div>
+
+   <div class="signin_field">
+   <form #heroForm="ngForm" novalidate>
+
+   <ion-list>
+      
+        <ion-item>
+          <ion-input type="number" placeholder="Phone number" [(ngModel)]="data.phone" name="phone" #phone='ngModel' required></ion-input>
+        </ion-item>
+         <div *ngIf="phone.errors && (phone.dirty || phone.touched)" class="alert alert-danger">
+                <div [hidden]="!phone.errors.required" class="alert alert-danger">
+                Phone number is required
+                </div>
+         </div>
+
+      
+        <ion-item>
+          <ion-input type="password" placeholder="Password" [(ngModel)]="data.pass" name="pass" #pass='ngModel' required></ion-input>
+        </ion-item>
+        <div *ngIf="pass.errors && (pass.dirty || pass.touched)" class="alert alert-danger">
+                <div [hidden]="!pass.errors.required" class="alert alert-danger">
+                Password field is required
+                </div>
+         </div>
+      </ion-list>
+
+      <button ion-button type='submit' [disabled]="!heroForm.valid" (tap)="login(heroForm)">sign in</button>
+      <button ion-button [hidden]="bit != true" (tap)="verifyphone()">Verify?</button>
+
+   </form>
+
+   <div style="height:2vh;float:left;width:100%;"></div>
+      <a class="forgot" [navPush]="forgotoptions">forgot password?</a>
+
+<div style="height:6vh;float:left;width:100%;"></div>
+
+      <ion-grid style="padding:0px;">
+          <ion-row>
+            <ion-col col-6 style="padding:0px;"><button ion-button class="white" (tap)="loginfacebook()">Login with Facebook</button></ion-col>
+              <ion-col col-6 style="padding:0px;"><button ion-button class="yellow" (tap)="logingoogle()">Login with Google</button></ion-col>
+          </ion-row>
+        </ion-grid>
+
+        <span class="signup_line">Don't have an account? <a (tap)="vsignup()">Sign Up</a></span>
+
+      </div>
+
+</ion-content>

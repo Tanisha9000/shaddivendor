@@ -1,0 +1,63 @@
+page-addtodo {
+.base .item .item-inner {
+    margin-left: 0px;
+}
+
+.area .label {
+    margin: 13px 0px -2px 0;
+    resize: vertical;
+}
+
+.txt_area {
+    border: 0;
+    width: 100%;
+    float: left;
+    padding-left: 8px;
+    font-size: 13px;
+    min-height: 100px;
+    resize: vertical;
+    height: 100%;
+}
+
+.base .item .input {
+    margin-left: 0px;
+    font-family: roboto;
+    font-size: 13px;
+}
+
+.base .item .text-input {
+    margin: 13px 8px;
+}
+
+.base {
+    width: 100%;
+    margin-bottom: 0;
+    font-family: roboto;
+}
+
+.base .item {
+    padding: 0px;
+}
+
+.list-ios .item-block .item-inner {
+    border-bottom: 0.55px solid #c8c7cc;
+}
+
+
+.publish {
+        width: auto;
+        display: block;
+        text-transform: capitalize;
+        color: #fff;
+background: #feb483; /* Old browsers */
+background: -moz-linear-gradient(left, #feb483 1%, #ff9980 42%, #fe8884 69%, #ff8b8c 100%); /* FF3.6-15 */
+background: -webkit-linear-gradient(left, #feb483 1%,#ff9980 42%,#fe8884 69%,#ff8b8c 100%); /* Chrome10-25,Safari5.1-6 */
+background: linear-gradient(to right, #feb483 1%,#ff9980 42%,#fe8884 69%,#ff8b8c 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#feb483', endColorstr='#ff8b8c',GradientType=1 ); /* IE6-9 */
+        border-radius: 4px;
+        height: 33px;
+        font-size: 17px;
+        margin: 10px auto 10px;
+    }
+
+}

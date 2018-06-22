@@ -1,0 +1,54 @@
+
+<ion-header hidden>
+    <ion-navbar>
+      <ion-title>Login</ion-title>
+    </ion-navbar> 
+</ion-header>
+ 
+<ion-content padding>
+    <div style="height:10vh;float:left;width:100%;"></div> 
+        <div class="logo">
+          <img src="assets/image/logo.png">
+        </div>
+
+<div style="height:5vh;float:left;width:100%;"></div>
+<div class="signin_field">
+    
+<form>
+    <ion-list>
+        <ion-item>
+            <ion-input type="text" placeholder="User Name"></ion-input>
+        </ion-item>
+
+        <ion-item>
+            <ion-input type="text" placeholder="Email"></ion-input>
+        </ion-item>
+
+        <ion-item>
+            <ion-input type="password" placeholder="Password"></ion-input>
+        </ion-item>
+
+        <ion-item>
+            <ion-input type="password" placeholder="Confirm Password"></ion-input>
+        </ion-item>
+
+        <ion-item>
+            <ion-input type="number" placeholder="Phone Number"></ion-input>
+        </ion-item>
+
+        <ion-item>
+            <ion-input type="text" placeholder="City"></ion-input>
+        </ion-item>
+
+    </ion-list>
+
+    <button ion-button (click)="menu()">sign up</button>
+
+</form>
+
+ <a (click)="login()" class="signup_line"> Already have an account? Sign In</a>
+ <a (click)="vsignup()" class="signup_line">Are you a vendor? Click here</a>
+</div>
+<div style="height:15vh;float:left;width:100%;"></div>
+
+</ion-content>

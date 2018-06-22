@@ -1,0 +1,114 @@
+<ion-header>
+  
+  <ion-navbar>
+    <ion-title>To Do List</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+
+  <div class="progress">
+    <!-- <h2>item checklist</h2> -->
+
+    <div class="first">
+        <div class="yes_start"> <span>20%</span></div>
+    </div>
+
+    <div class="second">
+        <div class="in_progress"> <span>50%</span></div>
+    </div>
+
+    <div class="third">
+        <div class="procured"> <span>30%</span></div>
+    </div>
+
+    <ul>
+      <li><span></span>yet to start</li>
+      <li><span></span>in progress</li>
+      <li><span></span>completed</li>
+    </ul>
+
+    <button ion-button type="submit">details</button>
+
+  </div>
+
+  <div class="table_checklist">
+      <div class="bbb">
+          <select name="txtCountry" id="photo1">
+            <option value="Filter 1">Filter 1</option>
+            <option value="1">All</option>
+            <option value="2">Event 1</option>
+            <option value="3">Event 2</option>
+            <option value="4">Event 3</option>
+            <option value="5">Common Item</option>
+          </select>
+          <select name="txtCountry" id="photo2">
+            <option value="Filter 2">Filter 2</option>
+            <option value="1">All</option>
+            <option value="2">Venue</option>
+            <option value="3">Food</option>
+            <option value="4">Photography</option>
+            <option value="5">Rituals</option>
+            <option value="6">Logistics</option>
+            <option value="7">Entertainment</option>
+            <option value="8">Make Up</option>
+            <option value="11">Mehandi</option>
+            <option value="12">Cake</option>
+            <option value="13">Decorator</option>
+            <option value="14">Renovation And Spring Cleaning</option>
+            <option value="15">Pre-Wedding Shopping</option>
+            <option value="16">Clothing</option>
+            <option value="17">Jewellery</option>
+            <option value="18">Gift</option>
+          </select>
+        </div>
+
+        <div class="tble_scroll">
+          <table class="table">
+            <thead>
+              <tr>
+                <th scope="col">level 1</th>
+                <th>level 2</th>
+                <th>task id</th>
+                <th>task</th>
+                <th>owner</th>
+                <th>original deadline</th>
+                <th>status</th>
+                <th>expected complication</th>
+                <th>reminder</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Mehandi</td>
+                <td>DJ</td>
+                <td>101</td>
+                <td>Music Band</td>
+                <td>John</td>
+                <td>12/10/2017</td>
+                <td>In Process</td>
+                <td>12/08/2017</td>
+                <td>Music Band</td>
+              </tr>
+              <tr>
+                <td>Photo &amp; Video</td>
+                <td>Photography</td>
+                <td>102</td>
+                <td>Cannon Camera</td>
+                <td>Stiven</td>
+                <td>12/20/2017</td>
+                <td>Completed</td>
+                <td>12/18/2017</td>
+                <td>Cannon Camera</td>
+              </tr>
+            </tbody>
+          </table>
+          </div>
+          <button ion-button type="submit">edit</button>
+  </div>
+
+  <div style="height:5vh;float:left;width:100%;"></div>
+
+</ion-content>

@@ -1,0 +1,85 @@
+page-menu {
+
+.back_img {
+    color: #fff;
+    background: #feb483;
+    background: -moz-linear-gradient(left, #feb483 1%, #ff9980 42%, #fe8884 69%, #ff8b8c 100%);
+    background: -webkit-linear-gradient(left, #feb483 1%,#ff9980 42%,#fe8884 69%,#ff8b8c 100%);
+    background: linear-gradient(to right, #feb483 1%,#ff9980 42%,#fe8884 69%,#ff8b8c 100%); 
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#feb483', endColorstr='#ff8b8c',GradientType=1 );
+}
+
+.card-background-page {
+
+  ion-card {
+    position: relative;
+    text-align: center;
+    margin: 0;
+    width: 100%;
+    border-radius: 0px;
+  }
+
+  .item ion-avatar img{border: 1px solid #fff;}
+
+  .card-md h2 {color: #fff;}
+
+  .card-title {
+    position: absolute;
+    bottom: 0%;
+    font-size: 2.0em;
+    width: 100%;
+    font-weight: bold;
+    color: #fff;
+    cursor: pointer;
+  }
+
+.item{background-color: transparent;
+color: #fff;}
+
+.list-ios > .item-block:first-child {border-top: 0px;}
+
+.list-ios > .item-block:last-child{border-bottom: 0px;}
+
+.list .item-block .item-inner {
+    border-bottom: 0px;
+    margin: 0;
+}
+
+.list .item-block .label {
+    font-size: 14px;
+    margin: 0px !important;
+}
+
+.list{
+    margin: 8px 0 16px;
+}
+
+.icon-md-primary, .icon-ios-primary {
+    color: #f78c8a;
+}
+
+.icon{
+    margin: 6px 4px 0 0 !important;
+    font-size: 20px !important;
+}
+
+.overlay {
+    height: 100%;
+    width: 100%;
+    background: rgba(0, 0, 0, 0.50);
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+    z-index: 0;
+}
+
+button.item-ios:not([detail-none]) .item-inner{background-image: none;}
+
+}
+
+
+
+}

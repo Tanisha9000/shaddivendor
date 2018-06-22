@@ -1,0 +1,35 @@
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>Edit</ion-title>
+    <ion-buttons end>
+       <button ion-button (click)="dismiss();">
+         <ion-icon name="close"></ion-icon>
+       </button>
+     </ion-buttons>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content>
+
+<form>
+  <ion-list class="base">
+    <ion-item-group>
+        
+      <ion-item class="area">
+        <textarea type="text" placeholder="Product Detail" class="txt_area"></textarea>
+      </ion-item>
+
+      <ion-item>
+        <ion-input type="text" placeholder="Effective Date"></ion-input>
+      </ion-item>
+    </ion-item-group>
+  </ion-list>
+
+  <button ion-button class="publish">Done</button>
+
+</form>
+
+</ion-content>

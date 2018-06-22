@@ -1,0 +1,43 @@
+page-verifyphone {
+.signin_field input {
+    margin: 13px 8px;
+    padding: 0;
+    position: relative;
+    width: calc(100% - 8px - 8px);
+    z-index: 999999;
+}
+.logo img{
+    width: 40%;
+    margin: 0 30%;
+}
+.submit_btn{
+    width: 50%;
+    display: block;
+    margin: 0 auto 0 !important;
+    float: none;
+}
+.list{
+    width:100%;
+    float: left;
+}
+.toolbar-ios ion-title {
+    padding: 0 50px 1px;
+}
+
+.code{
+    width: 50%;
+    display: block;
+    margin:0 auto;
+    float: none;
+}
+.list-ios > .item-block:first-child {
+    border-top:none;
+}
+
+}
+input {
+
+    position: relative;
+ 
+    z-index: 999999;
+}

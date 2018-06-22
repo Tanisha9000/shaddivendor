@@ -1,0 +1,44 @@
+
+<ion-header>
+
+    <ion-navbar>
+        <ion-title>Forgot Password</ion-title>
+    </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+
+    <div style="height:10vh;float:left;width:100%;"></div>
+
+    <div class="logo">
+        <img src="assets/image/logo.png">
+    </div>
+
+    <div style="height:5vh;float:left;width:100%;"></div>
+
+    <div class="signin_field">
+        <form #heroForm="ngForm" novalidate>
+
+            <ion-list>
+
+                <ion-item>
+                    <ion-input type="tel" placeholder="Enter Your Phone" [(ngModel)]="data.phone" name="phone" #phone='ngModel' required></ion-input>
+                </ion-item>
+                <div *ngIf="phone.errors && (phone.dirty || phone.touched)" class="alert alert-danger">
+                    <div [hidden]="!phone.errors.required" class="alert alert-danger">
+                        Phone is required
+                    </div>
+                </div>
+
+            </ion-list>
+
+            <button ion-button type='submit' [disabled]="!heroForm.valid" (tap)="onSubmit(heroForm)">Send</button>
+
+        </form>
+
+
+    </div>
+
+</ion-content>

@@ -1,0 +1,43 @@
+page-createevent {
+
+    .invite ion-label{
+        font-family: Lora-Regular;
+        font-size: 15px;
+        position: relative;
+        padding: 13px 8px 13px 10px;
+        margin: 0;
+        text-transform: capitalize;
+    }
+   
+   .invite .item .item-inner {
+       padding-right: 8px;
+       border-bottom: 0px !important;
+       padding-left: 8px;
+   }
+   
+   .invite .item {
+       padding-left: 0px;
+       padding-right: 0px;
+       border-bottom: 1px solid #aaa;
+   }
+   .invite ion-label img {
+    width: 26px;
+    position: absolute;
+    left: 10px;
+    top:  0;
+    z-index: 1;
+    bottom:  0;
+    margin: auto;
+}
+   .invite .item:hover {
+    color: #e5053a;
+}
+   .item:last-child {
+    border-bottom: none;
+}
+   
+   .list-ios.invite > .item-block:last-child, .list-ios.invite > .item-wrapper:last-child .item-block {
+       border-bottom: 0px;
+   }
+
+}

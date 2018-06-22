@@ -1,0 +1,220 @@
+page-jobpostsummary {
+
+    .tacker {
+        width: 100%;
+        float: left;
+        box-shadow: 0 0 15px 0 rgba(0, 0, 0, 0.2);
+        position: relative;
+        border-radius: 4px;
+        padding: 10px;
+        margin-bottom: 20px
+    }
+    .tacker h4 {
+        width: 100%;
+        float: left;
+        text-transform: capitalize;
+        color: #e5053a;
+        font-family: Lora-Regular;
+        margin: 12px 0;
+    }
+    
+    .tacker ul {
+        padding:  0;
+        text-transform:  capitalize;
+        width:  100%;
+        float:  left;
+        list-style: none;
+        margin: 0px;
+    }
+    
+    .tacker ul li {
+        width:  100%;
+        float:  left;
+        margin-bottom:  8px;
+        font-size: 15px;
+    }
+    
+    .tacker ul li .left {
+        width:  auto;
+        float: left;
+        font-family: Lora-Bold;
+    }
+    
+    .tacker ul li .right {
+        width:  auto;
+        float:  right;
+        text-transform: capitalize;
+    }
+
+    .tacker .button {
+        width: auto;
+        float: right;
+        text-transform: capitalize;
+        color: #333;
+border-color:#333;
+background: transparent;
+border: 1px solid;
+        border-radius: 4px;
+        height: 35px;
+        padding: 0 20px;
+        span{
+            font-size: 15px;
+        }
+    }
+
+    .tacker .styled {
+        background: #feb483;
+        background: -moz-linear-gradient(left, #feb483 1%, #ff9980 42%, #fe8884 69%, #ff8b8c 100%);
+        background: -webkit-linear-gradient(left, #feb483 1%, #ff9980 42%, #fe8884 69%, #ff8b8c 100%);
+        background: linear-gradient(to right, #feb483 1%, #ff9980 42%, #fe8884 69%, #ff8b8c 100%);
+        filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#feb483', endColorstr='#ff8b8c', GradientType=1 );
+        color: #fff !important;
+    }
+
+    .graph{
+        width: 100%;
+        float: left;
+    }
+    .graph h4 {
+        width: 100%;
+        float: left;
+        margin: 5px 0 !important;
+        font-size: 14px;
+        text-align: center;
+    }
+
+    .table_checklist {
+        width: 100%;
+        float: left;
+        -webkit-transition: all 0.5s ease;
+        transition: all 0.5s ease;
+        padding: 10px;
+        box-shadow: 0 0 15px 0 rgba(0, 0, 0, 0.2);
+        border-radius: 4px;
+        }
+
+        .bid_box_bg {
+            width: 88%;
+            float: none;
+            background: #fff;
+            overflow: hidden;
+            -webkit-box-shadow: 0 0 15px 0 rgba(0, 0, 0, 0.2);
+            box-shadow: 0 0 15px 0 rgba(0, 0, 0, 0.2);
+            border-radius: 4px;
+            padding: 10px 0 0 0;
+            margin: 10px auto;
+        }
+        .bid_box {
+            width: 100%;
+            float: left;
+            text-align: center;
+            padding: 0 10px 10px 10px;
+        }
+        .bid_box span:first-child {
+            background: linear-gradient(330deg, #feb483 1%, #ff9980 42%, #fe8884 69%, #ff8b8c 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            font-size:20px;
+        }
+        .planner .planner_box .bid_box span {
+            width: 100%;
+            float: left;
+            text-transform: capitalize;
+            font-size: 15px;
+            font-family: Lora-Bold;
+        }
+        .bid_box span:nth-child(2) {
+            font-size: 15px;
+            margin-top: 5px;
+            font-weight: normal;
+            color: #000 !important;
+        }
+        .bid_box span {
+            width: 100%;
+            float: left;
+            text-transform: capitalize;
+        }
+        .bid_box span ul {
+            margin: 0 auto;
+            padding: 0 !important;
+            list-style: none;
+            float: none !important;
+            width:43%;
+        }
+        .bid_box span ul li {
+            width: auto;
+            float: left;
+            margin: 0 2px;
+        }
+        .bid_box_button {
+            width: 100%;
+            float: left;
+        }
+        .bid_box_button > button {
+            width: 50%;
+            float: left;
+            font-size: 14px !important;
+            border: none;
+            border-radius: 0;
+            line-height: 30px;
+            height: 30px;
+            margin: 0px;
+        }
+        .bid_box_button > button:first-child {
+            background: #feb483;
+            background: -moz-linear-gradient(left, #feb483 1%, #ff9980 42%, #fe8884 69%, #ff8b8c 100%);
+            background: -webkit-linear-gradient(left, #feb483 1%, #ff9980 42%, #fe8884 69%, #ff8b8c 100%);
+            background: linear-gradient(to right, #feb483 1%, #ff9980 42%, #fe8884 69%, #ff8b8c 100%);
+            filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#feb483', endColorstr='#ff8b8c', GradientType=1 );
+            color: #fff !important;
+        }
+        .bid_box_button > button:last-child {
+            background: #333;
+            color: #fff !important;
+        }
+        .swiper-container{
+            height: 100%;
+        }
+        ion-slides {
+            height: 67%;
+            float: left;
+        }
+        .swiper-pagination-fraction, .swiper-pagination-custom, .swiper-container-horizontal > .swiper-pagination-bullets {
+            bottom:0px;
+        }
+        .swiper-pagination-bullet-active {
+            background: #e5053a;
+            opacity: 1;
+        }
+        .bidtsection{
+            width: 100%;
+            float: left;
+            margin-top: 25px;
+            h4{
+                margin: 20px 0 5px 0;
+                width: 100%;
+                font-size: 18px;
+                float: left;
+                font-family: Lora-Bold;
+                border-bottom: 1px dashed #e5053a;
+                color: #e5053a;
+            }
+        }
+        .verified button{
+            width:100% !important;
+        }
+        .bidsection {
+            width: 100%;
+            float: left;
+            -webkit-transition: all 0.5s ease;
+            transition: all 0.5s ease;
+            padding: 10px;
+            box-shadow: 0 0 15px 0 rgba(0, 0, 0, 0.2);
+            margin-top: 20px;
+            border-radius: 4px;
+        }
+        .tble_scroll{
+            margin-top: 10px;
+        }
+
+}

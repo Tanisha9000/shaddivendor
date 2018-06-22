@@ -1,0 +1,375 @@
+<!--
+  Generated template for the CommonitemPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+      <ion-title>common item</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+<ion-content>
+  <ion-list>
+      <div class="seg">
+          <ion-scroll scrollX="true" style="width:100vw;height:58px">
+              <ion-segment [(ngModel)]="pet">
+                  <ion-segment-button value="renovation">
+                      renovation and spring cleaning
+                  </ion-segment-button>
+                  <ion-segment-button value="wedding">
+                      pre-wedding shopping
+                  </ion-segment-button>
+                  <ion-segment-button value="clothing">
+                      clothing
+                  </ion-segment-button>
+                  <ion-segment-button value="jewellery">
+                      jewellery
+                  </ion-segment-button>
+                  <ion-segment-button value="gift">
+                      gift
+                  </ion-segment-button>
+                  <ion-segment-button value="card">
+                      card
+                  </ion-segment-button>
+              </ion-segment>
+          </ion-scroll>
+      </div>
+
+      <div [ngSwitch]="pet" padding>
+          <ion-list *ngSwitchCase="'renovation'">
+              <div class="add_custom_field">
+                  <div class="double">
+                      <h4>Data Range</h4>
+                      <button class="add_custom" ion-button>single day</button>  
+                      <button class="add_custom" ion-button>Multiple Days</button>
+                      <ion-col col-12>
+                          <ion-item>
+                              <ion-input type="date" placeholder="Select"></ion-input>
+                          </ion-item>
+                      </ion-col>
+                  </div>
+                  <ion-col col-12>
+                      <ion-item>
+                          <ion-input type="text" placeholder="Enter Location"></ion-input>
+                      </ion-item>
+                  </ion-col>
+
+                  <ion-col col-12>
+                      <ion-item>
+                          <ion-input type="text" placeholder="Enter Address"></ion-input>
+                      </ion-item>
+                  </ion-col>
+
+                  <ion-col col-12>
+                      <ion-item class="check_multipal item item-block item-md item-input">
+                          <ion-label>venue type</ion-label>
+                          <ion-select [(ngModel)]="venue" multiple="true">
+                              <ion-option>apartment</ion-option>
+                              <ion-option>landed property</ion-option>
+                              <ion-option>villa</ion-option>
+                              <ion-option>farmhouse</ion-option>
+                          </ion-select>
+                      </ion-item>
+                  </ion-col>
+
+                  <ion-col col-12>
+                      <ion-item class="check_multipal item item-block item-md item-input">
+                          <ion-label>budget</ion-label>
+                          <ion-select [(ngModel)]="budget" multiple="true">
+                              <ion-option>package</ion-option>
+                              <ion-option>price per day</ion-option>
+                          </ion-select>
+                      </ion-item>
+                  </ion-col>
+              </div>
+          </ion-list>
+          
+          <ion-list *ngSwitchCase="'wedding'" class="box">
+              <div class="main" *ngFor="let data of wedding; let i=index" [ngClass]="{active: isGroupShown(i)}">
+                   <ion-item padding (click)="toggleGroup(i)">
+                        <ion-icon color="primary" item-right [name]="isGroupShown(i) ? 'ios-remove-circle-outline' : 'ios-add-circle-outline'"></ion-icon>
+                      {{i}}. {{data.title}}
+                  </ion-item>
+                  <div *ngIf="isGroupShown(i)"> 
+                      <div class="tble_scroll">
+                          <table class="table">
+                              <thead>
+                                  <tr>
+                                      <!--<th scope="col" style="width:100px;">type</th>-->
+                                      <th>item</th>
+                                      <th>quantity</th>
+                                      <th>budget</th>
+                                  </tr>
+                              </thead>
+                              <tbody>
+                                  <tr *ngFor="let d of objectkey(data.items);">
+                                      <!--<td>1. furniture</td>-->
+                                      <td><input type="checkbox" id="bedroom" name="bedroom" value="bedroom">
+                                          <label for="bedroom"><p>{{data.items[d].name}}</p></label>
+                                      </td>
+                                      <td><input type="number" value="" placeholder="Quantity"></td>
+                                      <td><input type="text" value="" placeholder="Budget"></td>
+                                  </tr>                                   
+                              </tbody>
+                          </table>
+                          <button class="next" ion-button>save</button>
+                      </div>
+                  </div>
+              </div>
+          </ion-list>
+
+          <ion-list *ngSwitchCase="'clothing'" class="box">
+              <div class="main" *ngFor="let data of clothing; let i=index" [ngClass]="{active: isGroupShown(i)}">
+                   <ion-item (click)="toggleGroup(i)">
+                      <ion-icon color="primary" item-right [name]="isGroupShown(i) ? 'ios-remove-circle-outline' : 'ios-add-circle-outline'"></ion-icon>
+                      {{i}}. {{data.title}}
+                  </ion-item>
+                  <div *ngIf="isGroupShown(i)"> 
+                      <div class="tble_scroll">
+                          <table class="table">
+                              <thead>
+                                  <tr>
+                                      <th scope="col" style="width:200px;">type</th>
+                                      <!--th>item</th-->
+                                      <th>quantity</th>
+                                      <th>budget</th>
+                                      <th>comments</th>
+                                      <th>Scheduled to</th>
+                                  </tr>                          
+                              </thead>
+                              <tbody>
+                                  <!-- ngRepeat: (i,item) in categories.items -->
+                                  <tr *ngFor="let d of objectkey(data.items);">
+                                      <td><input type="checkbox" id="Bridal WearSaree" name="Bridal WearSaree" value="Bridal WearSaree">
+                                          <label for="Bridal WearSaree"><p class="ng-binding">{{data.items[d].name}}</p>
+                                          </label>
+                                      </td>
+                                      <td><input type="number" min="1" placeholder="Quantity"></td>
+                                      <td><input type="number" min="1" value="" placeholder="Budget"></td>
+                                      <td><input type="text" value="" placeholder="Comments"></td>
+                                      <td><input type="date" placeholder="Date"></td>
+                                  </tr><!-- end ngRepeat: (i,item) in categories.items -->                                    
+                                  <tr>
+                                      <td>
+                                          <input type="checkbox" id="othercloths_hk0">
+                                          <label for="othercloths_hk0">
+                                              <p>other</p>
+                                          </label>
+                                      </td>
+                                      <td></td><td></td><td></td><td></td>
+                                  </tr>
+                              </tbody>
+                          </table>
+                          <button class="next" ion-button>save</button>
+                      </div>
+                  </div>                    
+              </div>
+              <div class="clothing">
+                      <button ion-button="" class="styled disable-hover button  button-default" (click)="postajob()">post a job</button>
+                      <h5>or</h5>
+                      <button ion-button="" class="styled disable-hover button  button-default">browse</button>
+                  </div>
+          </ion-list>
+
+          <ion-list *ngSwitchCase="'jewellery'" class="box">
+              <div class="main" *ngFor="let data of jewellery; let i=index" [ngClass]="{active: isGroupShown(i)}">
+                   <ion-item (click)="toggleGroup(i)">
+                      <ion-icon color="primary" item-right [name]="isGroupShown(i) ? 'ios-remove-circle-outline' : 'ios-add-circle-outline'"></ion-icon>
+                      {{i}}. {{data.title}}
+                  </ion-item>
+                  <div *ngIf="isGroupShown(i)"> 
+                      <div class="tble_scroll">
+                          <table class="table">
+                              <thead>
+                                  <tr>
+                                      <th scope="col" style="width:200px;">type</th>
+                                      <!--th>item</th-->
+                                      <th>quantity</th>
+                                      <th>budget</th>
+                                      <th>comments</th>
+                                      <th>Scheduled to</th>
+                                  </tr>                          
+                              </thead>
+                              <tbody>
+                                  <!-- ngRepeat: (i,item) in categories.items -->
+                                  <tr *ngFor="let d of objectkey(data.items);">
+                                      <td>
+                                          <input type="checkbox" id="Bridal WearSaree" name="Bridal WearSaree" value="Bridal WearSaree">
+                                          <label for="Bridal WearSaree"><p class="ng-binding">{{data.items[d].name}}</p>
+                                          </label>
+                                      </td>
+                                      <td><input type="number" min="1" placeholder="Quantity"></td>
+                                      <td><input type="number" min="1" value="" placeholder="Budget"></td>
+                                      <td><input type="text" value="" placeholder="Comments"></td>
+                                      <td><input type="date" placeholder="Date"></td>
+                                  </tr><!-- end ngRepeat: (i,item) in categories.items -->
+                                  <tr>
+                                      <td>
+                                          <input type="checkbox" id="othercloths_hk0">
+                                          <label for="othercloths_hk0">
+                                              <p>other</p>
+                                          </label>
+                                      </td>
+                                      <td></td><td></td><td></td><td></td>
+                                  </tr>
+                              </tbody>
+                          </table>
+                          <button class="next" ion-button>save</button>
+                      </div>
+                  </div>
+              </div>
+                  <div class="clothing">
+                      <button ion-button="" class="styled disable-hover button  button-default" (click)="postajob()">post a job</button>
+                      <h5>or</h5>
+                      <button ion-button="" class="styled disable-hover button  button-default">browse</button>
+                  </div>                
+          </ion-list> 
+
+          <ion-list *ngSwitchCase="'gift'" class="base inpt">
+              <div class="table_checklist">
+                  <div class="tble_scroll">
+                      <table class="table">
+                          <tbody><tr>
+                                  <th>groups</th>
+                              </tr>
+                              <tr>
+                                  <td contenteditable="false">family</td>
+                              </tr>
+                              <tr>
+                                  <td contenteditable="false">Friends</td>
+                              </tr>
+                              <tr>
+                                  <td contenteditable="false">Acquaintances</td>
+                              </tr>
+                              <tr>
+                                  <td contenteditable="false">Others</td>
+                              </tr>
+                          </tbody></table>
+                  </div>
+                  <button ion-button type="submit">save</button>
+              </div>
+              <div class="on">
+                  <ion-grid style="padding: 0px;">
+                      <ion-row class="amount">
+                          <ion-col col-12>
+                              <ion-item>
+                                  <ion-input type="number" placeholder="No Of Pax"></ion-input>
+                              </ion-item>
+                          </ion-col>
+                          <ion-col col-12>
+                              <ion-item>
+                                  <ion-input type="number" placeholder="No Of Gifts"></ion-input>
+                              </ion-item>
+                          </ion-col>
+                          <ion-col col-12>
+                              <ion-item>
+                                  <ion-input type="number" placeholder="Cost Per Person"></ion-input>
+                              </ion-item>
+                          </ion-col>
+                          <ion-col col-12>
+                              <ion-item>
+                                  <ion-input type="text" placeholder="Gift Detail"></ion-input>
+                              </ion-item>
+                          </ion-col>
+                          <ion-col col-12>
+                              <ion-item class="check_multipal item item-block item-md item-input">
+                                  <ion-label>Packing Need</ion-label>
+                                  <ion-select [(ngModel)]="need">
+                                      <ion-option>Yes</ion-option>
+                                      <ion-option>No</ion-option>
+                                  </ion-select>
+                              </ion-item>
+                          </ion-col>
+                      </ion-row>
+                  </ion-grid>
+              </div><!--on_end-->
+          </ion-list>
+          <ion-list *ngSwitchCase="'card'" class="basr inpt">
+              <div style="height:3vh;float:left;width:100%;"></div>
+              <ion-item-group>
+                  <div class="on">
+                      <ion-grid style="padding: 0px;">
+                          <ion-row class="amount">
+                              <ion-col col-12>
+                                  <ion-item>
+                                      <ion-input type="text" placeholder="Set Requirement"></ion-input>
+                                  </ion-item>
+                              </ion-col>
+                              <ion-col col-12>
+                                  <ion-item>
+                                      <ion-input type="number" placeholder="Set Budget"></ion-input>
+                                  </ion-item>
+                              </ion-col>
+                              <ion-col col-12>
+                                  <ion-item>
+                                      <ion-input type="text" placeholder="Post Job"></ion-input>
+                                  </ion-item>
+                              </ion-col>
+                              <ion-col col-12>
+                                  <ion-item>
+                                      <ion-input type="text" placeholder="Finalize Vendor"></ion-input>
+                                  </ion-item>
+                              </ion-col>
+                          </ion-row>
+                      </ion-grid>
+                  </div><!--on_end-->
+              </ion-item-group>
+              <div class="table_checklist">
+                  <div class="tble_scroll">
+                      <table class="table">
+                          <thead>
+                              <tr>
+                                  <th>group</th>
+                                  <th>cost</th>
+                                  <th>pax</th>
+                                  <th>specification</th>
+                              </tr>
+                          </thead>
+                          <tbody>
+                              <tr>
+                                  <td>Friend</td>
+                                  <td>1Lac</td>
+                                  <td>5</td>
+                                  <td>lorem ipsum is simply dummy text.</td>
+                              </tr>
+                              <tr>
+                                  <td>family</td>
+                                  <td>1.5Lac</td>
+                                  <td>7</td>
+                                  <td>lorem ipsum is simply dummy text.</td>
+                              </tr>
+                              <tr>
+                                  <td>relative</td>
+                                  <td>2Lac</td>
+                                  <td>2</td>
+                                  <td>lorem ipsum is simply dummy text.</td>
+                              </tr>
+                          </tbody>
+                      </table>
+                  </div>
+
+                  <ion-grid style="padding: 0px;">
+                      <ion-row class="amount">
+                          <ion-col col-12>
+                              <ion-item>
+                                  <ion-input type="number" placeholder="Total Card"></ion-input>
+                              </ion-item>
+                          </ion-col>
+
+                          <ion-col col-12>
+                              <ion-item>
+                                  <ion-input type="number" placeholder="Total $"></ion-input>
+                              </ion-item>
+                          </ion-col>
+                      </ion-row>
+                  </ion-grid>
+              </div>
+              <div style="height:4vh;width:100%;float:left;"></div>
+          </ion-list>
+      </div>
+  </ion-list>
+</ion-content>

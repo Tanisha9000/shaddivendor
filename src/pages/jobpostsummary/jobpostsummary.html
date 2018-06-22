@@ -1,0 +1,361 @@
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>job post summary</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+    <div class="tacker">
+          <ul>
+            <li><span class="left">No Of Job Post=</span><span class="right">25</span></li>
+            <li><span class="left">No Of Vendors Locked=</span><span class="right">15</span></li>
+            <li><span class="left">no of job Post With Negotiation=</span><span class="right">10</span></li>
+          </ul>
+          <div class="graph">
+              <!--<h4>Graph Design Coming soon!!</h4>-->
+              <ion-card>
+                <ion-card-header>
+                  Pie Chart
+                </ion-card-header>
+                <ion-card-content>
+                  <canvas #pieCanvas></canvas>
+                </ion-card-content>
+              </ion-card>
+            </div>
+
+          <button ion-button type="submit">edit</button>
+          <button class="styled" ion-button type="submit">detail</button>
+        </div>
+
+        <div class="table_checklist">
+                 
+            <div class="tble_scroll">
+                <table class="table">
+                  <thead>
+                    <tr>
+                      <th scope="col">job ID</th>
+                      <th>posted since</th>
+                      <th>no of bid</th>
+                      <th>no of Shortlist</th>
+                      <th>no of verified</th>
+                      <th>negotiation</th>
+                      <th>finalize</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td>100</td>
+                      <td>DJ</td>
+                      <td>15</td>
+                      <td>10</td>
+                      <td>5</td>
+                      <td>1</td>
+                      <td>yes</td>
+                    </tr>
+                    <tr>
+                      <td>141</td>
+                      <td>Photography</td>
+                      <td>19</td>
+                      <td>15</td>
+                      <td>10</td>
+                      <td>5</td>
+                      <td>No</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+        </div>
+
+        <div class="bidtsection">
+          <h4>Bid Section</h4>
+        <ion-slides pager>
+            
+              <ion-slide>
+                  <ion-grid style="padding:0px;">
+                      <ion-row>
+                        <ion-col col-12>
+                            <div class="bid_box_bg">
+                                <div class="bid_box"> <span>Wedding Venue</span> <span>2 Lac</span> <span>
+                                  <ul>
+                                    <li><ion-icon ios="ios-star" md="md-star"></ion-icon></li>
+                                    <li><ion-icon ios="ios-star" md="md-star"></ion-icon></li>
+                                    <li><ion-icon ios="ios-star" md="md-star"></ion-icon></li>
+                                    <li><ion-icon ios="ios-star" md="md-star"></ion-icon></li>
+                                    <li><ion-icon ios="ios-star-half" md="md-star-half"></ion-icon></li>
+                                  </ul>
+                                  </span> </div>
+                                <div class="bid_box_button"> <button ion-button type="submit">reject</button> <button ion-button type="submit">shortlist</button> </div>
+                              </div>
+                        </ion-col>
+
+                        <ion-col col-12>
+                            <div class="bid_box_bg">
+                                <div class="bid_box"> <span>Wedding Venue</span> <span>2 Lac</span> <span>
+                                    <ul>
+                                      <li><ion-icon ios="ios-star" md="md-star"></ion-icon></li>
+                                      <li><ion-icon ios="ios-star" md="md-star"></ion-icon></li>
+                                      <li><ion-icon ios="ios-star" md="md-star"></ion-icon></li>
+                                      <li><ion-icon ios="ios-star" md="md-star"></ion-icon></li>
+                                      <li><ion-icon ios="ios-star-half" md="md-star-half"></ion-icon></li>
+                                    </ul>
+                                  </span> </div>
+                                  <div class="bid_box_button"> <button ion-button type="submit">reject</button> <button ion-button type="submit">shortlist</button> </div>
+                              </div>
+                        </ion-col>
+                      </ion-row>
+                    </ion-grid>
+              </ion-slide>
+            
+              <ion-slide>
+                  <ion-grid style="padding:0px;">
+                      <ion-row>
+                        <ion-col col-12>
+                            <div class="bid_box_bg">
+                                <div class="bid_box"> <span>Wedding Venue</span> <span>2 Lac</span> <span>
+                                  <ul>
+                                    <li><ion-icon ios="ios-star" md="md-star"></ion-icon></li>
+                                    <li><ion-icon ios="ios-star" md="md-star"></ion-icon></li>
+                                    <li><ion-icon ios="ios-star" md="md-star"></ion-icon></li>
+                                    <li><ion-icon ios="ios-star" md="md-star"></ion-icon></li>
+                                    <li><ion-icon ios="ios-star-half" md="md-star-half"></ion-icon></li>
+                                  </ul>
+                                  </span> </div>
+                                  <div class="bid_box_button"> <button ion-button type="submit">reject</button> <button ion-button type="submit">shortlist</button> </div>
+                              </div>
+                        </ion-col>
+
+                        <ion-col col-12>
+                            <div class="bid_box_bg">
+                                <div class="bid_box"> <span>Wedding Venue</span> <span>2 Lac</span> <span>
+                                    <ul>
+                                      <li><ion-icon ios="ios-star" md="md-star"></ion-icon></li>
+                                      <li><ion-icon ios="ios-star" md="md-star"></ion-icon></li>
+                                      <li><ion-icon ios="ios-star" md="md-star"></ion-icon></li>
+                                      <li><ion-icon ios="ios-star" md="md-star"></ion-icon></li>
+                                      <li><ion-icon ios="ios-star-half" md="md-star-half"></ion-icon></li>
+                                    </ul>
+                                  </span> </div>
+                                  <div class="bid_box_button"> <button ion-button type="submit">reject</button> <button ion-button type="submit">shortlist</button> </div>
+                              </div>
+                        </ion-col>
+                      </ion-row>
+                    </ion-grid>
+              </ion-slide>
+            
+              <ion-slide>
+                  <ion-grid style="padding:0px;">
+                      <ion-row>
+                        <ion-col col-12>
+                            <div class="bid_box_bg">
+                                <div class="bid_box"> <span>Wedding Venue</span> <span>2 Lac</span> <span>
+                                  <ul>
+                                    <li><ion-icon ios="ios-star" md="md-star"></ion-icon></li>
+                                    <li><ion-icon ios="ios-star" md="md-star"></ion-icon></li>
+                                    <li><ion-icon ios="ios-star" md="md-star"></ion-icon></li>
+                                    <li><ion-icon ios="ios-star" md="md-star"></ion-icon></li>
+                                    <li><ion-icon ios="ios-star-half" md="md-star-half"></ion-icon></li>
+                                  </ul>
+                                  </span> </div>
+                                  <div class="bid_box_button"> <button ion-button type="submit">reject</button> <button ion-button type="submit">shortlist</button> </div>
+                              </div>
+                        </ion-col>
+
+                        <ion-col col-12>
+                            <div class="bid_box_bg">
+                                <div class="bid_box"> <span>Wedding Venue</span> <span>2 Lac</span> <span>
+                                    <ul>
+                                      <li><ion-icon ios="ios-star" md="md-star"></ion-icon></li>
+                                      <li><ion-icon ios="ios-star" md="md-star"></ion-icon></li>
+                                      <li><ion-icon ios="ios-star" md="md-star"></ion-icon></li>
+                                      <li><ion-icon ios="ios-star" md="md-star"></ion-icon></li>
+                                      <li><ion-icon ios="ios-star-half" md="md-star-half"></ion-icon></li>
+                                    </ul>
+                                  </span> </div>
+                                  <div class="bid_box_button"> <button ion-button type="submit">reject</button> <button ion-button type="submit">shortlist</button> </div>
+                              </div>
+                        </ion-col>
+                      </ion-row>
+                    </ion-grid>
+              </ion-slide>
+            
+            </ion-slides>
+          </div>
+
+
+          <div class="bidtsection">
+              <h4>Shortlist Section</h4>
+
+                      <ion-grid style="padding:0px;">
+                          <ion-row>
+                            <ion-col col-12>
+                                <div class="bid_box_bg">
+                                    <div class="bid_box"> <span>Wedding Venue</span> <span>2 Lac</span> <span>
+                                      <ul>
+                                        <li><ion-icon ios="ios-star" md="md-star"></ion-icon></li>
+                                        <li><ion-icon ios="ios-star" md="md-star"></ion-icon></li>
+                                        <li><ion-icon ios="ios-star" md="md-star"></ion-icon></li>
+                                        <li><ion-icon ios="ios-star" md="md-star"></ion-icon></li>
+                                        <li><ion-icon ios="ios-star-half" md="md-star-half"></ion-icon></li>
+                                      </ul>
+                                      </span> </div>
+                                    <div class="bid_box_button"> <button ion-button type="submit">reject</button> <button ion-button type="submit">verify</button> </div>
+                                  </div>
+                            </ion-col>
+    
+                            <ion-col col-12>
+                                <div class="bid_box_bg">
+                                    <div class="bid_box"> <span>Wedding Venue</span> <span>2 Lac</span> <span>
+                                        <ul>
+                                          <li><ion-icon ios="ios-star" md="md-star"></ion-icon></li>
+                                          <li><ion-icon ios="ios-star" md="md-star"></ion-icon></li>
+                                          <li><ion-icon ios="ios-star" md="md-star"></ion-icon></li>
+                                          <li><ion-icon ios="ios-star" md="md-star"></ion-icon></li>
+                                          <li><ion-icon ios="ios-star-half" md="md-star-half"></ion-icon></li>
+                                        </ul>
+                                      </span> </div>
+                                      <div class="bid_box_button"> <button ion-button type="submit">reject</button> <button ion-button type="submit">verify</button> </div>
+                                  </div>
+                            </ion-col>
+                          </ion-row>
+                        </ion-grid>
+
+                      <ion-grid style="padding:0px;">
+                          <ion-row>
+                            <ion-col col-12>
+                                <div class="bid_box_bg">
+                                    <div class="bid_box"> <span>Wedding Venue</span> <span>2 Lac</span> <span>
+                                      <ul>
+                                        <li><ion-icon ios="ios-star" md="md-star"></ion-icon></li>
+                                        <li><ion-icon ios="ios-star" md="md-star"></ion-icon></li>
+                                        <li><ion-icon ios="ios-star" md="md-star"></ion-icon></li>
+                                        <li><ion-icon ios="ios-star" md="md-star"></ion-icon></li>
+                                        <li><ion-icon ios="ios-star-half" md="md-star-half"></ion-icon></li>
+                                      </ul>
+                                      </span> </div>
+                                      <div class="bid_box_button"> <button ion-button type="submit">reject</button> <button ion-button type="submit">verify</button> </div>
+                                  </div>
+                            </ion-col>
+    
+                            <ion-col col-12>
+                                <div class="bid_box_bg">
+                                    <div class="bid_box"> <span>Wedding Venue</span> <span>2 Lac</span> <span>
+                                        <ul>
+                                          <li><ion-icon ios="ios-star" md="md-star"></ion-icon></li>
+                                          <li><ion-icon ios="ios-star" md="md-star"></ion-icon></li>
+                                          <li><ion-icon ios="ios-star" md="md-star"></ion-icon></li>
+                                          <li><ion-icon ios="ios-star" md="md-star"></ion-icon></li>
+                                          <li><ion-icon ios="ios-star-half" md="md-star-half"></ion-icon></li>
+                                        </ul>
+                                      </span> </div>
+                                      <div class="bid_box_button"> <button ion-button type="submit">reject</button> <button ion-button type="submit">verify</button> </div>
+                                  </div>
+                            </ion-col>
+                          </ion-row>
+                        </ion-grid>
+
+              </div>
+
+
+              <div class="bidtsection verified">
+                  <h4>Verified Section</h4>
+    
+                          <ion-grid style="padding:0px;">
+                              <ion-row>
+                                <ion-col col-12>
+                                    <div class="bid_box_bg">
+                                        <div class="bid_box"> <span>Wedding Venue</span> <span>2 Lac</span> <span>
+                                          <ul>
+                                            <li><ion-icon ios="ios-star" md="md-star"></ion-icon></li>
+                                            <li><ion-icon ios="ios-star" md="md-star"></ion-icon></li>
+                                            <li><ion-icon ios="ios-star" md="md-star"></ion-icon></li>
+                                            <li><ion-icon ios="ios-star" md="md-star"></ion-icon></li>
+                                            <li><ion-icon ios="ios-star-half" md="md-star-half"></ion-icon></li>
+                                          </ul>
+                                          </span> </div>
+                                        <div class="bid_box_button"><button ion-button type="submit">verified</button> </div>
+                                      </div>
+                                </ion-col>
+        
+                                <ion-col col-12>
+                                    <div class="bid_box_bg">
+                                        <div class="bid_box"> <span>Wedding Venue</span> <span>2 Lac</span> <span>
+                                            <ul>
+                                              <li><ion-icon ios="ios-star" md="md-star"></ion-icon></li>
+                                              <li><ion-icon ios="ios-star" md="md-star"></ion-icon></li>
+                                              <li><ion-icon ios="ios-star" md="md-star"></ion-icon></li>
+                                              <li><ion-icon ios="ios-star" md="md-star"></ion-icon></li>
+                                              <li><ion-icon ios="ios-star-half" md="md-star-half"></ion-icon></li>
+                                            </ul>
+                                          </span> </div>
+                                          <div class="bid_box_button"><button ion-button type="submit">verified</button> </div>
+                                      </div>
+                                </ion-col>
+                              </ion-row>
+                            </ion-grid>
+    
+                          <ion-grid style="padding:0px;">
+                              <ion-row>
+                                <ion-col col-12>
+                                    <div class="bid_box_bg">
+                                        <div class="bid_box"> <span>Wedding Venue</span> <span>2 Lac</span> <span>
+                                          <ul>
+                                            <li><ion-icon ios="ios-star" md="md-star"></ion-icon></li>
+                                            <li><ion-icon ios="ios-star" md="md-star"></ion-icon></li>
+                                            <li><ion-icon ios="ios-star" md="md-star"></ion-icon></li>
+                                            <li><ion-icon ios="ios-star" md="md-star"></ion-icon></li>
+                                            <li><ion-icon ios="ios-star-half" md="md-star-half"></ion-icon></li>
+                                          </ul>
+                                          </span> </div>
+                                          <div class="bid_box_button"><button ion-button type="submit">verified</button> </div>
+                                      </div>
+                                </ion-col>
+        
+                              </ion-row>
+                            </ion-grid>
+                            
+                  </div>
+
+                  <div class="bidtsection">
+                      <h4>Negotiation</h4>                     
+                
+                      <div class="tble_scroll">
+                        <table class="table">
+                          <thead>
+                            <tr>
+                              <th scope="col">vendor</th>
+                              <th>initial bid</th>
+                              <th>comment</th>
+                              <th>discount</th>
+                              <th>rating</th>
+                              <th>final</th>
+                            </tr>
+                          </thead>
+                          <tbody>
+                            <tr>
+                              <td>Mehandi Artist</td>
+                              <td>1,500</td>
+                              <td>lorem ipsum is simply dimmy text.</td>
+                              <td>5%</td>
+                              <td>4</td>
+                              <td>Yes</td>
+                            </tr>
+                            <tr>
+                              <td>wedding catering</td>
+                              <td>1,000</td>
+                              <td>lorem ipsum is simply dimmy text.</td>
+                              <td>21%</td>
+                              <td>4.5</td>
+                              <td>No</td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+
+                  </div>
+
+                  <div style="height:5vh;float:left;width:100%;"></div>
+
+</ion-content>

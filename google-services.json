@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "708708570864",
+    "project_id": "firebase-shaddivendor"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:708708570864:android:5aa3fec59c0f4f12",
+        "android_client_info": {
+          "package_name": "com.dost32123.a"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "708708570864-to1ppop39jsti1mp6l3np1gqsivcq0co.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.dost32123.a",
+            "certificate_hash": "f6d010ee412905ac6227c93edb524555b974df44"
+          }
+        },
+        {
+          "client_id": "708708570864-s2586vg04bi9gt0eephcjh1l2lcu446g.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyChA9HaF-pe9s9pYZUab6fPMyTMTqqj3BQ"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 1
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

@@ -1,0 +1,88 @@
+page-forgot {
+
+    .logo {
+        width:100%;
+        margin: auto;
+    }
+    .logo img{
+        width:110px;
+        margin: auto;
+        display: block;
+    }
+
+    .signin_field {
+        width: 100%;
+        float: left;
+    }
+    .signin_field form {
+        width: 100%;
+        float: left;
+    }
+    .signin_field .list {
+        margin-bottom: 15px;
+        float: left;
+        width: 100%;
+    }
+    .signin_field .list .item {
+        padding: 0;
+        margin-bottom: 10px;
+        width: 100%;
+        float: left;
+        background: transparent;
+        border: none;
+    }
+    .signin_field .list .item .item-inner {
+        padding: 0;
+        border-bottom: 1px solid #ccc;
+    }
+    .signin_field .list .item .item-inner input {
+        padding: 10px !important;
+            padding-left: 10px;
+        margin: 0;
+        width: 100%;
+        float: left;
+        color: #000;
+        padding-left: 0 !important;
+         font-family: roboto;
+    }
+    .signin_field .button {
+        width: 100%;
+        float: left;
+        text-transform: uppercase;
+        color: #fff;
+background: #feb483; /* Old browsers */
+background: -moz-linear-gradient(left, #feb483 1%, #ff9980 42%, #fe8884 69%, #ff8b8c 100%); /* FF3.6-15 */
+background: -webkit-linear-gradient(left, #feb483 1%,#ff9980 42%,#fe8884 69%,#ff8b8c 100%); /* Chrome10-25,Safari5.1-6 */
+background: linear-gradient(to right, #feb483 1%,#ff9980 42%,#fe8884 69%,#ff8b8c 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#feb483', endColorstr='#ff8b8c',GradientType=1 ); /* IE6-9 */
+        border-radius: 4px;
+        height: 44px;
+        font-size: 17px;
+    }
+
+    .signin_field .input {
+    font-size: 13px;
+}
+
+
+ /****Input****/
+
+    ::-webkit-input-placeholder { /* Chrome/Opera/Safari */
+        color: #000;
+        opacity: 1 !important;
+      }
+      ::-moz-placeholder { /* Firefox 19+ */
+        color: #000;
+        opacity: 1 !important;
+      }
+      :-ms-input-placeholder { /* IE 10+ */
+        color: #000;
+        opacity: 1 !important;
+      }
+      :-moz-placeholder { /* Firefox 18- */
+        color: #000;
+        opacity: 1 !important;
+      }
+
+      /****Input****/
+}

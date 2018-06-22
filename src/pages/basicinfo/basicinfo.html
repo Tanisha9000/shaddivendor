@@ -1,0 +1,216 @@
+<ion-header>
+
+  <ion-navbar>
+      <ion-title>basic info</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+
+  <div style="height:3vh;float:left;width:100%;"></div>
+
+  <form #heroForm="ngForm"  novalidate>
+
+      <ion-list class="base inpt">
+          <ion-item-group>
+              <div class="on ">
+                 
+                <ion-grid>
+                  <ion-row class="amount">
+
+                          <ion-col col-12>
+                              <ion-item>
+                              <ion-input type="text" name="wedding_title" placeholder="Project Name"></ion-input>
+                            </ion-item>
+                            </ion-col>
+            
+                  </ion-row>
+                </ion-grid>
+            
+                  </div><!--on_end-->
+
+              <div class="on">
+
+                  <ion-label class="label ad" style="margin: 0px;">bride details:
+                      <ion-item class="upld">
+                          <input type="file" id="file-input">
+                          <div for="file" class="fle">
+                              <ion-icon name="image" class="image_upld"><span>upload</span></ion-icon>
+                          </div>
+                      </ion-item>
+                  </ion-label>
+
+                  <ion-grid>
+                      <ion-row class="amount">
+                          <ion-col col-12>
+                              <ion-item>
+                                  <ion-input type="text" name="bride_name" placeholder="Name"></ion-input>
+                              </ion-item>
+                          </ion-col>
+
+<!--                            <ion-col col-12>
+                              <ion-item>
+                                  <ion-input type="tel" placeholder="Contact Number"></ion-input>
+                              </ion-item>
+                          </ion-col>-->
+
+                          <ion-col col-12>
+                              <ion-item>
+                                  <ion-input type="text" name="bride_age" placeholder="Age"></ion-input>
+                              </ion-item>
+                          </ion-col>
+
+                          <ion-col col-12>
+                              <ion-item>
+                                  <ion-input type="text" name="bride_city" placeholder="City"></ion-input>
+                              </ion-item>
+                          </ion-col>
+
+                          <ion-col col-12>
+                              <ion-item>
+                                  <ion-input type="text" name="bride_location" placeholder="Location"></ion-input>
+                              </ion-item>
+                          </ion-col>
+
+                      </ion-row>
+                  </ion-grid>
+
+              </div><!--on_end-->
+
+
+              <div class="on">
+
+                  <ion-label class="label ad" style="margin: 0px;">groom details:
+                      <ion-item class="upld">
+                          <input type="file" (change)="fileUpload($event)" id="file-input">
+                          <div for="file" class="fle">
+                              <ion-icon name="image" class="image_upld"><span>upload</span></ion-icon>
+                          </div>
+                      </ion-item>
+                  </ion-label>
+
+                  <ion-grid>
+                      <ion-row class="amount">
+                          <ion-col col-12>
+                              <ion-item>
+                                  <ion-input type="text" name="groom_name" placeholder="Name"></ion-input>
+                              </ion-item>
+                          </ion-col>
+
+<!--                            <ion-col col-12>
+                              <ion-item>
+                                  <ion-input type="tel" placeholder="Contact Number"></ion-input>
+                              </ion-item>
+                          </ion-col>-->
+
+                          <ion-col col-12>
+                              <ion-item>
+                                  <ion-input type="text" name="groom_age" placeholder="Age"></ion-input>
+                              </ion-item>
+                          </ion-col>
+
+                          <ion-col col-12>
+                              <ion-item>
+                                  <ion-input type="text" name="groom_city" placeholder="City"></ion-input>
+                              </ion-item>
+                          </ion-col>
+
+                          <ion-col col-12>
+                              <ion-item>
+                                  <ion-input type="text" name="groom_location" placeholder="Location"></ion-input>
+                              </ion-item>
+                          </ion-col>
+
+                      </ion-row>
+                  </ion-grid>
+
+              </div><!--on_end-->
+
+
+              <div class="on">
+
+                  <ion-label class="label ad" style="margin: 0px;">Client details:
+                      <ion-item class="upld">
+                          <input type="file" (change)="fileUpload($event)" id="file-input">
+                          <div for="file" class="fle">
+                              <ion-icon name="image" class="image_upld"><span>upload</span></ion-icon>
+
+                          </div>
+                      </ion-item>
+                  </ion-label>
+
+                  <ion-grid>
+                      <ion-row class="amount">
+                          <ion-col col-12>
+                              <ion-item>
+                                  <ion-input type="text" name="client_name" placeholder="Name"></ion-input>
+                              </ion-item>
+                          </ion-col>
+
+<!--                            <ion-col col-12>
+                              <ion-item>
+                                  <ion-input type="tel" placeholder="Contact Number"></ion-input>
+                              </ion-item>
+                          </ion-col>
+
+                          <ion-col col-12>
+                              <ion-item>
+                                  <ion-input type="text" placeholder="Age"></ion-input>
+                              </ion-item>
+                          </ion-col>-->
+
+                          <ion-col col-12>
+                              <ion-item>
+                                  <ion-input type="text" name="client_city" placeholder="City"></ion-input>
+                              </ion-item>
+                          </ion-col>
+
+                          <ion-col col-12>
+                              <ion-item>
+                                  <ion-input type="text" name="client_relation" placeholder="Relation With Bride / Groom"></ion-input>
+                              </ion-item>
+                          </ion-col>
+
+                      </ion-row>
+                  </ion-grid>
+
+              </div><!--on_end-->
+              <div class="on last">
+                 
+                <ion-grid>
+                  <ion-row class="amount">
+
+                          <ion-col col-12>
+                              <ion-item>
+                              <ion-input type="text" name="wedding_date" placeholder="Wedding Date"></ion-input>
+                            </ion-item>
+                            </ion-col>
+  
+                              <ion-col col-12>
+                                  <ion-item>
+                                  <ion-input type="tel" name="wedding_budget" placeholder="Total Budget"></ion-input>
+                                </ion-item>
+                                </ion-col>
+            
+                  </ion-row>
+                </ion-grid>
+            
+                  </div><!--on_end-->
+
+          </ion-item-group>
+      </ion-list>
+
+      <div style="height:4vh;float:left;width:100%;"></div>
+
+
+      <button ion-button class="publish" (click)="onSubmit(heroForm)">Submit</button>
+
+      <button ion-button class="black" type="button" (click)="createnewPage()">Wedding Flow</button>
+  </form>
+  
+
+  <div style="height:10vh;float:left;width:100%;"></div>
+
+</ion-content>

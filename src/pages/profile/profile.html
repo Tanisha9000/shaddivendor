@@ -1,0 +1,219 @@
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>profile</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+<ion-content>
+  <ion-refresher (ionRefresh)="doRefresh($event)">
+    <ion-refresher-content
+      pullingIcon="arrow-dropdown"
+      pullingText="Pull to refresh"
+      refreshingSpinner="circles"
+      refreshingText="Refreshing...">
+    </ion-refresher-content>
+  </ion-refresher>
+  <form>
+      <!--<ion-label>{{respmessage}}</ion-label>-->  
+      <ion-item class="upload_pic">
+    <!--<input>-->
+    <!--<div for="file" class="fle">-->
+       <!--<ion-icon name="image" class="image_upld"></ion-icon>-->
+       <!--<span class="upload_text">Upload</span>-->
+       <div class="profile_img">
+      <img [src]= "profilepic">
+       </div>
+    <!--</div>-->
+
+    </ion-item>
+   <div class="signin_field">
+        <div class="date">
+          <h4>Vendor Type</h4>
+          <h4>{{vendor_type}}</h4>
+        </div>
+
+        <div class="date">
+          <h4>Company Name</h4>
+          <h4>{{company_name}}</h4>
+        </div>
+
+         <div class="date">
+          <h4>Email</h4>
+          <h4>{{email}}</h4>
+        </div>
+
+        <div class="date">
+          <h4>Phone Number</h4>
+          <h4>{{phone}}</h4>
+        </div>
+</div>
+
+
+<!--process start-->
+  
+
+  <ion-list class="base">
+    <ion-item-group>
+        <ion-item-divider color="light">Basic Info</ion-item-divider>
+      <div class="date" [hidden]='establishment_year == "undefined" '>
+          <h4>Establishment Year</h4>
+          <h4>{{establishment_year}}</h4>
+        </div>
+        <div class="date" [hidden]='starthrs == "undefined"'>
+          <h4>Working Hours</h4>
+          <h4>{{starthrs}}-{{endhrs}}</h4>
+        </div>
+
+        <div class="date" [hidden]='facebook_username == "undefined" '>
+          <h4>Facebook</h4>
+          <h4>{{facebook_username}}</h4>
+        </div>
+
+        <div class="date" [hidden]='twitter_username == "undefined" '>
+          <h4>Twitter</h4>
+          <h4>{{twitter_username}}</h4>
+        </div>
+
+        <div class="date" [hidden]='instagram_username == "undefined" '>
+          <h4>Instagram</h4>
+          <h4>{{instagram_username}}</h4>
+        </div>
+
+        <div class="date" [hidden]='awards == "undefined" '>
+          <h4>Award & Recognition</h4>
+          <h4>{{awards}}</h4>
+        </div>
+
+    </ion-item-group>
+  </ion-list>
+
+<ion-list class="base inpt">
+    <ion-item-group>
+        <ion-item-divider color="light">Service & Cost Details</ion-item-divider>
+     <h3>{{vendor_type}}</h3>
+
+     <!--<div style="width:100%;float:left;height:1vh;"></div>-->
+      
+     <h6>Minimum Price</h6>
+         <h6 class="four">{{price}}</h6>
+     
+     <!--<span class="per">Price Per Hour</span>-->
+     <div> 
+         <div class="date" *ngFor="let item of services">
+          <h4>{{item.name}}</h4>
+          <h4>{{item.pricing}}</h4>
+        </div>
+        
+        <div class="date" *ngFor="let item of additionalservices">
+          <h4>{{item.name}}</h4>
+          <h4>{{item.pricing}}</h4>
+        </div>
+     </div>
+<div style="width:100%;float:left;height:1vh;"></div>
+
+    <div class="on">
+
+        <ion-item-divider color="light" *ngIf="(addons.length != 0) || (additionaladdons.length !=0)">Addon:</ion-item-divider>
+
+    <ul class="addn">
+      <li>
+        <div class="date" *ngFor="let aon of addons">
+          <h4>{{aon.title}}</h4>
+          <h4>{{aon.price}}</h4>
+        </div>
+      </li>
+      <li>
+        <div class="date" *ngFor="let addon of additionaladdons">
+          <h4>{{addon.title}}</h4>
+          <h4>{{addon.price}}</h4>
+        </div>
+      </li>
+    </ul>
+
+
+<ion-item-divider color="light" *ngIf="discount.length !=0">Discount:</ion-item-divider>
+   <div class="show_data date" *ngFor="let dis of discount">
+          <ion-label>{{dis.title}}</ion-label>
+          <ion-label>{{dis.price}}</ion-label>
+          <ion-label [hidden]='dis.day == "" '>{{dis.day}}</ion-label>
+    </div>
+
+      </div><!--on_end-->
+
+    </ion-item-group>
+  </ion-list>
+
+<ion-list class="base inpt">
+    <ion-item-group>
+        <!--<div >-->
+        <ion-item-divider color="light" *ngIf="(highs.length ==0) || (additonalhighs.length == 0)">Highlights</ion-item-divider>
+        <!--</div>-->
+    <div class="on">
+
+    <ul class="addn">
+      <li>
+        <div class="date" *ngFor="let hi of highs">
+          <h4>{{hi.title}}</h4>
+          <h4>{{hi.price}}</h4>
+        </div>
+      </li>
+      <li>
+        <div class="date" *ngFor="let addhi of additonalhighs">
+          <h4>{{addhi.title}}</h4>
+          <h4>{{addhi.price}}</h4>
+        </div>
+      </li>
+      
+
+    </ul>
+
+
+<div style="padding: 0;" class="gridupload" [hidden]="img.length==0">  
+<ion-label class="label ad">Gallery:</ion-label> 
+   
+      <ion-item class="upld" *ngFor="let im of img">
+
+            <!--<span class="close_icon" (click)="crossimage(w,im)"></span>-->
+           <img [src]="im.image">
+        
+      </ion-item>
+ 
+</div>
+
+<!--<button ion-button block outline color="blue" class="pay">Link With Paytm</button>-->
+
+</div><!--on_end-->
+
+</ion-item-group>
+</ion-list>
+
+
+<ion-list class="base">
+    <ion-item-group>
+        <ion-item-divider color="light">Location</ion-item-divider>
+        
+        <ion-toolbar>
+            <ion-searchbar [(ngModel)]="autocomplete.query" name="query" #query='ngModel'></ion-searchbar>
+        </ion-toolbar>
+      
+       <div class="map" #map id="map"></div>
+                
+    </ion-item-group>
+</ion-list>
+
+  <ion-list class="base" *ngIf='(detail != "undefined") && (edate != "undefined") && (disamt != "undefined") '>
+    <ion-item-group class="last">
+        <ion-item-divider color="light">Deals</ion-item-divider>
+        <h6 [hidden]='detail == undefined || detail == "undefined" '>{{detail}}</h6>
+
+        <h6 [hidden]='edate == undefined || edate == "undefined" '>{{edate}}</h6>
+
+        <h6 [hidden]='disamt == undefined || disamt == "undefined" '>{{disamt}}</h6>
+    </ion-item-group>
+  </ion-list>
+  
+</form>
+
+</ion-content>

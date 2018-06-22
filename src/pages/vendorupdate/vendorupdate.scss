@@ -1,0 +1,192 @@
+page-vendorupdate {
+
+    .table_checklist,.bidtsection {
+        width: 100%;
+        float: left;
+        -webkit-transition: all 0.5s ease;
+        transition: all 0.5s ease;
+        padding: 10px;
+        -webkit-box-shadow: 0 0 15px 0 rgba(0, 0, 0, 0.2);
+        box-shadow: 0 0 15px 0 rgba(0, 0, 0, 0.2);
+        margin-bottom: 15px;
+        border-radius: 4px;
+    }
+    .table_checklist1 {
+        padding:0px;
+        -webkit-box-shadow:none;
+        box-shadow:none;
+        margin-bottom: 15px;
+        border-radius: 4px;
+    }
+    .text-danger {
+        color: #a94442 !important;
+    }
+    .text-success {
+        color: #0ca93c;
+    }
+    .table_checklist .bbb {
+        width: 100%;
+        float: left;
+        margin: 0 0 25px 0;
+    }
+    .table_checklist select {
+        background: transparent;
+        width: 45%;
+        font-size: 15px;
+        color: #000;
+        border: 1px solid #000;
+        border-radius: 4px;
+        height: 30px;
+        padding: 0 0px 0 5px;
+        font-family: 'Lora', serif;
+        float: left;
+        text-transform: capitalize;
+    }
+    .table_checklist button {
+        width: auto;
+        float: right;
+        padding: 0 20px;
+        height: 30px;
+        border-radius: 4px;
+        background: transparent;
+        border: 1px solid #333;
+        color: #333;
+        margin-bottom: 10px;
+    }
+    .table_checklist #photo2 {
+        float: right;
+    }
+
+    .tacker {
+        width: 100%;
+        float: left;
+        box-shadow: 0 0 15px 0 rgba(0, 0, 0, 0.2);
+        position: relative;
+        border-radius: 4px;
+        padding:20px 10px;
+        margin-bottom: 20px
+    }
+    .tacker h4 {
+        width: 100%;
+        float: left;
+        text-transform: capitalize;
+        color: #e5053a;
+        font-family: Lora-Regular;
+        margin:0;
+        text-align: center;
+    }
+    .graph{
+        width: 100%;
+        float: left;
+    }
+    .graph h4 {
+        width: 100%;
+        float: left;
+        margin:10px 0 0 0 !important;
+        font-size: 14px;
+        text-align: center;
+    }
+    .gap{
+        width: 100%;
+        float: left;
+        margin-bottom: 5px !important;
+    }
+    .bidtsection h4 {
+        margin: 5px 0 5px 0 !important;
+        width: 100%;
+        font-size: 18px;
+        float: left;
+        font-family: Lora-Regular;
+        border-bottom: 1px dashed #e5053a;
+        color: #e5053a;
+    }
+     /**Input**/
+    
+     ::-webkit-input-placeholder { /* Chrome/Opera/Safari */
+        color: #555555;
+        opacity: 1 !important;
+      }
+      ::-moz-placeholder { /* Firefox 19+ */
+        color: #555555;
+        opacity: 1 !important;
+      }
+      :-ms-input-placeholder { /* IE 10+ */
+        color: #555555;
+        opacity: 1 !important;
+      }
+      :-moz-placeholder { /* Firefox 18- */
+        color: #555555;
+        opacity: 1 !important;
+      }
+
+      /**Input**/
+
+      .base .item .item-inner{margin-left: 0px;}
+      
+      .base .item .input,.base .item textarea{margin-left: 0px;
+               font-family: roboto;
+               font-size: 13px;
+      }
+      
+      .item-divider{
+          color: #000;
+          background-color: #f4f4f4 !important;
+          margin: 0 !important;
+      }
+      .base .item .item-inner {
+          padding-right: 0px;
+      }
+
+      .base .item{
+        padding: 0px !important;
+        float: none !important;
+        text-transform: capitalize;
+        }
+        
+        .base .item .text-input{margin: 13px 0px;}
+        
+        .base .item textarea{
+            width: 100%;
+            float: left;
+            padding: 0;
+            border: none;
+            resize: vertical;
+        }
+        
+        .gender .item {
+            width: 26%;
+            float: left !important;
+            background: transparent;
+        }
+
+    .item-ios:last-child .item-inner{border-bottom: 0.55px solid #c8c7cc;}
+    
+    .base .item .icon{
+            margin: 0;
+            padding-left: 8px;
+        }
+    
+    
+    .base .item-divider .label {
+            font-family: Lora-Regular;
+            font-size: 14px;
+            padding-left: 8px;
+            text-transform: capitalize;
+        }
+        .publish {
+            width:auto;
+            float: none;
+            text-transform: capitalize;
+            color: #fff;
+    background: #feb483; /* Old browsers */
+    background: -moz-linear-gradient(left, #feb483 1%, #ff9980 42%, #fe8884 69%, #ff8b8c 100%); /* FF3.6-15 */
+    background: -webkit-linear-gradient(left, #feb483 1%,#ff9980 42%,#fe8884 69%,#ff8b8c 100%); /* Chrome10-25,Safari5.1-6 */
+    background: linear-gradient(to right, #feb483 1%,#ff9980 42%,#fe8884 69%,#ff8b8c 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#feb483', endColorstr='#ff8b8c',GradientType=1 ); /* IE6-9 */
+            border-radius: 4px;
+            height: 35px;
+            margin:0 auto;
+            display: block;
+        }
+
+}

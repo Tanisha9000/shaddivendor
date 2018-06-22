@@ -1,0 +1,44 @@
+
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>Details</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+  <div class="amount">
+    <form #heroForm="ngForm" novalidate> 
+   <ion-item>
+        <ion-input type="number" placeholder="Enter phone number" [(ngModel)]="data.phone" name="phone" #phone='ngModel'></ion-input>
+  </ion-item>
+         <div *ngIf="phone.errors && (phone.dirty || phone.touched)" class="alert alert-danger">
+        <div [hidden]="!phone.errors.required" class="alert alert-danger">
+        Phone number is required
+        </div>
+        </div>
+  <ion-item>
+        <ion-select [(ngModel)]="data.category" name='category' #category='ngModel' placeholder="Vendor Type" required >
+        <!--remove  [ngModelOptions]="{standalone: true}"> if you don't need it in the form -->
+          <ion-option *ngFor="let type of vendortype" value="{{type.title}}-{{type._id}}">{{type.title}}</ion-option>
+       </ion-select>
+</ion-item>
+        <div *ngIf="category.errors && (category.dirty || category.touched)" class="alert alert-danger">
+        <div [hidden]="!category.errors.required" class="alert alert-danger">
+        Select the vendor type
+        </div>
+        </div>
+ <ion-item>
+        <ion-input type="text" placeholder="Enter company name" [(ngModel)]="data.cname" name="cname" #cname='ngModel'></ion-input>
+  </ion-item> 
+<div *ngIf="cname.errors && (cname.dirty || cname.touched)" class="alert alert-danger">
+        <div [hidden]="!cname.errors.required" class="alert alert-danger">
+        Company Name is required
+        </div>
+</div>
+  <button class="publish" ion-button type='submit' [disabled]="!heroForm.valid" (tap)="onSubmit(heroForm);">Submit</button>  
+</form>
+</div>
+</ion-content>

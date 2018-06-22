@@ -1,0 +1,223 @@
+page-tab2{
+// .edt {
+//     position: absolute;
+//     right: 8px;
+//     top: 14px;
+// }
+
+// .edt .button {
+//     height: 16px;
+//     margin: 0;
+//     padding: 0 8px 0px 0;
+// }
+
+
+
+
+.wide-as-needed {
+    white-space: nowrap;
+}
+.scroll { 
+    min-width: 100%;
+}
+
+ion-segment {
+    display: block;
+    white-space: nowrap;
+    font-size: 0;
+    overflow-x:scroll;
+
+    &::-webkit-scrollbar {
+        width: 0;
+        height: 0;
+        display: none;
+    }
+
+    ion-segment-button.segment-button {
+        display: inline-block;
+        min-width: 108px;
+        width: auto;
+    }
+}
+
+.seg{
+    background: #fff;
+    float: left;
+    width: 100%;
+}
+
+.seg .segment .segment-button{
+    border: 0px;
+    border-bottom: 3px solid #ccc;
+    color: #8e9595;
+    font-size: 10px;
+    height: 4.2rem;
+    line-height: 4rem;
+    text-transform: capitalize;
+    font-family: Lora;
+    padding: 0 3px;
+}
+
+.seg .segment .segment-button.segment-activated {
+    border-color: #e5053a !important;
+    opacity: 1;
+    background: transparent;
+    color: #e5053a !important;
+
+}
+
+.seg .segment .segment-button:hover:not(.segment-activated) {
+    background-color: rgba(229, 5, 58, 0.1);
+
+}
+
+.invite ion-label{
+    font-family: Lora-Regular;
+    font-size: 15px;
+    position: relative;
+    padding: 13px 8px 13px 50px;
+    margin: 0;
+    text-transform: capitalize;
+}
+
+.invite .item .item-inner {
+    padding-right: 8px;
+    border-bottom: 0px !important;
+    padding-left: 8px;
+}
+
+.invite .item {
+    padding-left: 0px;
+    padding-right: 0px;
+    border-bottom: 1px solid #aaa;
+}
+.invite ion-label img {
+    width: 26px;
+    position: absolute;
+    left: 10px;
+    top:  0;
+    z-index: 1;
+    bottom:  0;
+    margin: auto;
+}
+.invite .item:hover {
+    color: #e5053a;
+}
+.item:last-child {
+    border-bottom: none;
+}
+
+.list-ios.invite > .item-block:last-child, .list-ios.invite > .item-wrapper:last-child .item-block {
+    border-bottom: 0px;
+}
+.tacker {
+    width: 100%;
+    float: left;
+    box-shadow: 0 0 15px 0 rgba(0, 0, 0, 0.2);
+    position: relative;
+    border-radius: 4px;
+    padding: 10px;
+    margin-bottom: 20px
+}
+.tacker h4 {
+    width: 100%;
+    float: left;
+    text-transform: capitalize;
+    color: #e5053a;
+    font-family: Lora-Regular;
+    margin: 12px 0;
+}
+.checked {
+    color: #389611 !important;
+}
+.unchecked {
+    color: #bd1515 !important;
+}
+table{
+    width: 100%;
+    float: left;
+}
+.calendar_img,.calendar_img img {
+    width: 100%;
+    float: left;
+}
+.main {
+    width:  100%;
+    float: left;
+}
+
+.pick {
+    width: 80px;
+    height: 80px;
+    position:  relative;
+    margin: 20px auto;
+    overflow:  hidden;
+    border-radius: 50%;
+    border: 2px solid #e5053a;
+}
+
+.pick img {
+    position:  absolute;
+    width:  100%;
+    height:  100%;
+    left:  0;
+    right:  0;
+    bottom:  0;
+    top: 0;
+    margin: auto;
+}
+
+.main h4 {
+    width:  100%;
+    float:  left;
+    padding:  0 16px;
+    margin:  0;
+    text-align:  center;
+    text-transform: capitalize;
+    font-weight: normal;
+    background: linear-gradient(330deg, #feb483 1%, #ff9980 42%, #fe8884 69%, #ff8b8c 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-family:  Lora-Regular;
+}
+
+.main h2 {
+    width:  100%;
+    float:  left;
+    padding:  0 16px;
+    text-align:  center;
+    text-transform:  uppercase;
+    font-size: 18px;
+    color: #e5053a;
+}
+
+.main .list .item  .item-inner .label img {
+    margin-right: 5px;
+    margin: 0px 5px -2px 0px;
+}
+
+.main .list .item .item-inner .label {
+    text-transform:  capitalize;
+    font-size: 14px;
+    margin-right: 0;
+}
+.main .list .item .item-inner{
+    padding-right: 15px;
+    background-image: none;
+}
+.main .list .item .item-inner .label span {
+    font-size: 14px;
+    float:  right;
+    line-height: 22px;
+    text-transform: capitalize;
+    font-family: Lora-Bold;
+}
+.main .list .item .item-inner .label .red{
+    color: #da1919;
+}
+.main .list .item .item-inner .label .complete {
+    color: #14a93c;
+}
+
+
+}

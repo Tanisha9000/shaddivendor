@@ -1,0 +1,50 @@
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>connection ranking</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content>
+
+ <span class="snd">Select Distance:</span>
+
+  <ion-item class="range">
+    <ion-range min="1" max="20" [(ngModel)]="saturation" color="danger" pin="true">
+      <ion-label range-left>1km</ion-label>
+      <ion-label range-right>20km</ion-label>
+    </ion-range>
+  </ion-item>
+
+<ion-list class="follow">
+  <ion-item>
+    <ion-avatar item-start>
+      <img src="assets/image/1.jpg">
+    </ion-avatar>
+    <h2>Followers:2k</h2>
+    <h3>Friend</h3>
+    <span>Vendor</span>
+  </ion-item>
+
+   <ion-item>
+    <ion-avatar item-start>
+      <img src="assets/image/1.jpg">
+    </ion-avatar>
+    <h2>Followers:2k</h2>
+    <span>Client</span>
+  </ion-item>
+
+  <ion-item>
+    <ion-avatar item-start>
+      <img src="assets/image/1.jpg">
+    </ion-avatar>
+    <h2>Followers:2k</h2>
+    <h3>Friend</h3>
+    <span>Vendor</span>
+  </ion-item>
+
+</ion-list>
+
+</ion-content>

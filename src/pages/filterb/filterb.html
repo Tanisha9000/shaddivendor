@@ -1,0 +1,103 @@
+
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>filter</ion-title>
+     <ion-buttons end>
+       <button ion-button (click)="dismiss();">
+         <ion-icon name="close"></ion-icon>
+       </button>
+     </ion-buttons>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+
+
+
+<ion-list radio-group class="post">
+  <ion-list-header>
+    Price/Day:
+  </ion-list-header>
+
+  <ion-item>
+    <ion-label> < 60k </ion-label>
+    <ion-radio  value="job"></ion-radio>
+  </ion-item>
+
+  <ion-item>
+    <ion-label> < 60k - 1Lac </ion-label>
+    <ion-radio value="blog"></ion-radio>
+  </ion-item>
+
+  <ion-item>
+    <ion-label> < 1Lac - 1.5Lacs </ion-label>
+    <ion-radio value="blo"></ion-radio>
+  </ion-item>
+
+  <ion-item>
+    <ion-label> > 1.5Lacs </ion-label>
+    <ion-radio value="blg"></ion-radio>
+  </ion-item>
+
+</ion-list>
+
+<ion-list radio-group class="post">
+  <ion-list-header>
+    Core Speciality:
+  </ion-list-header>
+
+  <ion-item>
+    <ion-label> Candid Specialist</ion-label>
+    <ion-radio  value="go"></ion-radio>
+  </ion-item>
+
+  <ion-item>
+    <ion-label> Traditional And Candid Specialist </ion-label>
+    <ion-radio value="rust"></ion-radio>
+  </ion-item>
+
+
+</ion-list>
+
+<ion-list radio-group class="post">
+  <ion-list-header>
+    Average Rating:
+  </ion-list-header>
+
+  <ion-item>
+    <ion-label> All Ratings </ion-label>
+    <ion-radio  value="go"></ion-radio>
+  </ion-item>
+
+  <ion-item>
+    <ion-label> Rated 3.0+ </ion-label>
+    <ion-radio value="rust"></ion-radio>
+  </ion-item>
+
+  <ion-item>
+    <ion-label> Rated 4.0+ </ion-label>
+    <ion-radio value="python"></ion-radio>
+  </ion-item>
+  
+  <ion-item>
+    <ion-label> Rated 5.0 </ion-label>
+    <ion-radio value="pythn"></ion-radio>
+  </ion-item>
+  
+</ion-list>
+
+<div class="actin">
+      <button ion-button outline  small>
+          Apply
+      </button>
+          
+      <button ion-button outline  small>
+          Reset
+      </button>
+ </div>
+
+
+</ion-content>

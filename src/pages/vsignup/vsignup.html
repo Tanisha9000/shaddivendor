@@ -1,0 +1,103 @@
+
+<ion-header>
+    <ion-navbar>
+        <ion-title>Sign Up</ion-title>
+    </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+    <div style="height:10vh;float:left;width:100%;"></div>
+    <div class="logo">
+        <img src="assets/image/logo.png">
+    </div>
+
+    <div style="height:5vh;float:left;width:100%;"></div>
+
+    <div class="signin_field">
+        <form #heroForm="ngForm" novalidate>
+        <ion-list>
+
+            <ion-item>
+                <ion-select [(ngModel)]="data.category" name='category' #category='ngModel' placeholder="Vendor Type" required >
+                <!--remove  [ngModelOptions]="{standalone: true}"> if you don't need it in the form -->
+                  <ion-option *ngFor="let type of vendortype" value="{{type.title}}-{{type._id}}">{{type.title}}</ion-option>
+               </ion-select>
+            </ion-item>
+
+            <ion-item>
+                <ion-input type="text" placeholder="Company Name" [(ngModel)]="data.company" name="company" #company='ngModel' required></ion-input>
+            </ion-item>
+            <div *ngIf="company.errors && (company.dirty || company.touched)" class="alert alert-danger">
+                <div [hidden]="!company.errors.required" class="alert alert-danger">
+                Company Name is required
+                </div>
+            </div>
+
+<!--            <ion-item>
+                <ion-input type="email" placeholder="Email" [(ngModel)]="data.email" name="email" #email='ngModel' pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$" required></ion-input>
+            </ion-item>
+            <div *ngIf="email.errors && (email.dirty || email.touched)" class="alert alert-danger">
+                <div [hidden]="!email.errors.required" class="alert alert-danger">
+                Email is required
+                </div>
+                <div [hidden]="!email.errors.pattern" class="alert alert-danger">
+                Enter a valid Email Address
+                </div>
+            </div>  -->
+
+            <ion-item>
+                <ion-input type="password" placeholder="Password" [(ngModel)]="data.password" name="password" #password='ngModel' required></ion-input>
+            </ion-item>
+            <div *ngIf="password.errors && (password.dirty || password.touched)" class="alert alert-danger">
+                <div [hidden]="!password.errors.required" class="alert alert-danger">
+                Password is required
+                </div>
+            </div> 
+
+            <ion-item>
+                <ion-input type="password" placeholder="Confirm Password" [(ngModel)]="data.cpassword" name="cpassword" #cpassword='ngModel' (input)="onInput($event)" required></ion-input>
+            </ion-item>
+            <div *ngIf="cpassword.errors && (cpassword.dirty || cpassword.touched)" class="alert alert-danger">
+                <div [hidden]="!cpassword.errors.required" class="alert alert-danger">
+                Confirm Password is required
+                </div>
+           </div> 
+            <div *ngIf="m == 0">Passwords do not match</div>
+            <div *ngIf="m == 1">Passwords matched</div>
+
+            <ion-item>
+                <ion-input type="tel" [maxlength]="10" placeholder="Phone Number(Only Indian Number)" [(ngModel)]="data.phone" name="phone" #phone='ngModel' required></ion-input>
+            </ion-item>
+            <div *ngIf="phone.errors && (phone.dirty || phone.touched)" class="alert alert-danger">
+                <div [hidden]="!phone.errors.required" class="alert alert-danger">
+                Phone Number is required
+                </div>
+                <div [hidden]="!phone.errors.maxlength" class="alert alert-danger">
+                 Enter a valid Phone Number
+                </div>
+            </div> 
+
+            <ion-item>
+                <ion-select [(ngModel)]="data.nameb" name="nameb" #nameb='ngModel' placeholder="How did you find about us?" required>
+                <!--<ion-option value="fr" selected="true" >How did you find about us?</ion-option>-->
+                <ion-option value="nes">Friends</ion-option>
+                <ion-option value="n64">Friends of Friends</ion-option>
+                <ion-option value="ps">Social Media</ion-option>
+                </ion-select>
+            </ion-item>
+              <div *ngIf="nameb.errors && (nameb.dirty || nameb.touched)" class="alert alert-danger">
+                <div [hidden]="!nameb.errors.required" class="alert alert-danger">
+                This field is required
+                </div>
+            </div> 
+
+        </ion-list>
+
+        <button ion-button type='submit' [disabled]="!heroForm.valid" (tap)="onSubmit(heroForm);">sign up</button>
+
+        </form>
+
+     <span class="signup_line">Already have an account? <a (tap)="login();">Sign In</a></span>
+    </div>
+    <div style="height:15vh;float:left;width:100%;"></div>
+</ion-content>

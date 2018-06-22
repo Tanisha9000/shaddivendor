@@ -1,0 +1,33 @@
+page-timeline {
+
+    .table_checklist {
+        width: 100%;
+        float: left;
+        -webkit-transition: all 0.5s ease;
+        transition: all 0.5s ease;
+        padding: 10px;
+        box-shadow: 0 0 15px 0 rgba(0, 0, 0, 0.2);
+        border-radius: 4px;
+        button{
+            width: auto;
+            float: right;
+            padding: 0 20px;
+            height: 30px;
+            background: transparent;
+            border: 1px solid #333;
+            color: #333;
+            .activated{
+                background: transparent;
+                border: 1px solid #333;
+                color: #333;
+            }
+        }
+
+    }
+    .table_checklist button.activated{
+        background: transparent;
+        border: 1px solid #333;
+        color: #333;
+    }
+
+}

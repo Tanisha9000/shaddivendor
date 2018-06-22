@@ -1,0 +1,119 @@
+<!--
+  Generated template for the CreatenewPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+      <ion-title>create new Event</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+  <form>
+      <ion-list class="base inpt">
+          <ion-item-group>
+              <div class="on">
+
+                  <ion-grid style="padding: 0px;">
+                      <ion-row class="amount">
+
+                          <ion-col col-12>
+                              <ion-item>
+                                  <ion-input type="text" placeholder="Name"></ion-input>
+                              </ion-item>
+                          </ion-col>
+
+                          <ion-col col-12>
+                              <ion-item>
+                                  <ion-input type="text" placeholder="Venue"></ion-input>
+                              </ion-item>
+                          </ion-col>
+
+                          <ion-col col-12>
+                              <ion-item class="upld item item-block item-md item-input">
+                                  <input type="file" (change)="fileUpload($event)" id="file-input">
+                                  <div for="file" class="fle">
+                                      <ion-icon name="image" class="image_upld"><span>upload</span></ion-icon>
+                                  </div>
+                              </ion-item>
+                          </ion-col>
+
+
+                          <ion-col col-12>
+                              <ion-item class="check_multipal item item-block item-md item-input">
+                                  <ion-label>Services</ion-label>
+                                  <ion-select multiple="true">
+                                      <ion-option>Food</ion-option>
+                                      <ion-option>Venue</ion-option>
+                                      <ion-option>Makeup</ion-option>
+                                      <ion-option>Cake</ion-option>
+                                      <ion-option>Logistics</ion-option>
+                                  </ion-select>
+                              </ion-item>
+                          </ion-col>
+
+                          <ion-col col-12>
+                              <ion-item class="textarea_text item item-block item-md ">
+                                  <textarea colspan="5" placeholder="Description"></textarea>
+                              </ion-item>
+                          </ion-col>
+
+                          <ion-col col-12>
+                              <ion-item class="check_multipal item item-block item-md item-input">
+                                  <ion-label>Date</ion-label>
+                                  <ion-select>
+                                      <ion-option value="single">Single day</ion-option>
+                                      <ion-option value="multiple">Multiple days</ion-option>
+                                  </ion-select>
+                              </ion-item>
+
+                              <ion-item class="check_multipal item item-block item-md item-input">
+                                  <ion-label>Single day</ion-label>
+                                  <ion-input type="date"></ion-input>
+                              </ion-item>
+
+                              <ion-item class="check_multipal item item-block item-md item-input">
+                                  <ion-label>Multiple days</ion-label>
+                                  <ion-input type="date"></ion-input>
+                              </ion-item>
+                          </ion-col>
+
+                          <a class="activate_custom" ion-button (click)="activate()">activate custom fields</a>
+
+
+
+                          <div class="add_custom_field">
+                              <a class="add_custom" ion-button (click)="addNewInputField()">add</a>
+                              <ion-col col-12>
+                                       <ion-item>
+                                      <ion-input type="text" placeholder="Field Title"></ion-input>
+                                  </ion-item>
+
+                                  <ion-item>
+                                      <ion-input type="tel" placeholder="Field Value"></ion-input>
+                                  </ion-item>
+                                  <span float-right ion-button icon-left clear (click)="removeInputField(i)">
+                                        <ion-icon name="close"></ion-icon>
+                                      Remove
+                                  </span>
+                              </ion-col>
+                          </div>
+
+
+                      </ion-row>
+                  </ion-grid>
+
+
+                  <button class="publish" ion-button>submit</button>
+
+              </div><!--on_end-->
+
+          </ion-item-group>
+      </ion-list>
+  </form>
+</ion-content>

@@ -1,0 +1,62 @@
+page-jobdetail {
+
+
+.cnt {
+    padding: 8px 8px;
+}
+
+.cnt .card-title {
+    font-size: 16px;
+    margin: 0;
+    padding: 0px 0 0;
+    font-family:Lora-Regular;
+}
+
+.cnt p {
+    font-size: 12px;
+    line-height: 16px;
+    color: #7b7676;
+    font-family: roboto;
+}
+
+.cnt h4{font-family: Lora-Regular !important;}
+
+
+.date {
+  width: 100%;
+  float: left;
+}
+.date h4:nth-child(1) {
+  float: left;
+  width: auto;
+  font-size: 12px;
+}
+.date h4:nth-child(2) {
+  float: right;
+  width: auto;
+  font-size: 12px;
+}
+
+
+.part {
+  float: left;
+  width: 100%;
+  padding: 0 0 0px 16px;
+  margin: 0px 0 4px 0;
+}
+.part li span:nth-child(1) {
+  float: left;
+  width: 60%;
+}
+.part li span:nth-child(2) {
+  float: right;
+  width: 40%;
+  text-align: right;
+  color: #e5053a;
+}
+.part li {
+  color: #adaaa9;
+}
+
+}
+

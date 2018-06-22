@@ -1,0 +1,196 @@
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>vendor up date</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+
+    <div class="table_checklist table_checklist1">
+        <div class="bbb">
+            <select name="txtCountry" id="photo1">
+              <option>Filter 1</option>
+              <option value="1">All</option>
+              <option value="2">Event 1</option>
+              <option value="3">Event 2</option>
+              <option value="4">Event 3</option>
+              <option value="5">Common Item</option>
+            </select>
+            <select name="txtCountry" id="photo2">
+              <option>Filter 2</option>
+              <option value="1">All</option>
+              <option value="2">Venue</option>
+              <option value="3">Food</option>
+              <option value="4">Photography</option>
+              <option value="5">Rituals</option>
+              <option value="6">Logistics</option>
+              <option value="7">Entertainment</option>
+              <option value="8">Make Up</option>
+              <option value="9">Mehandi</option>
+              <option value="12">Cake</option>
+              <option value="13">Decorator</option>
+              <option value="14">Renovation And Spring Cleaning</option>
+              <option value="15">Pre-Wedding Shopping</option>
+              <option value="16">Clothing</option>
+              <option value="17">Jewellery</option>
+              <option value="18">Gift</option>
+            </select>
+          </div>
+
+          <div class="select_detail_btn">
+              <button class="btn btn-info more_btn">Details</button>
+            </div>
+                  
+                 </div>
+
+    <div class="tacker">
+        <h4>No Of Vendor Finalized</h4>
+         
+        </div>
+  
+        <div class="tacker">
+            <h4>No Of Advance Paid</h4>
+             
+            </div>
+  
+            <div class="tacker">
+                <h4>Timeline Deployed To Vendor</h4>            
+          
+            </div>
+  
+            <div class="tacker">
+                <h4 class="gap">On Track</h4>
+                <h4>Off Track</h4>
+                  <div class="graph">
+                      <!--<h4>Graph Design Coming soon!!</h4>-->\
+                      <ion-card>
+                        <ion-card-header>
+                          Pie Chart
+                        </ion-card-header>
+                        <ion-card-content>
+                          <canvas #pieCanvas></canvas>
+                        </ion-card-content>
+                      </ion-card>
+                    </div>
+                </div>
+
+                <div class="table_checklist">
+                    <div class="bbb">
+                        <select name="txtCountry" id="photo1">
+                          <option>Filter 1</option>
+                          <option value="1">All</option>
+                          <option value="2">Event 1</option>
+                          <option value="3">Event 2</option>
+                          <option value="4">Event 3</option>
+                          <option value="5">Common Item</option>
+                        </select>
+                        <select name="txtCountry" id="photo2">
+                          <option>Filter 2</option>
+                          <option value="1">All</option>
+                          <option value="2">Venue</option>
+                          <option value="3">Food</option>
+                          <option value="4">Photography</option>
+                          <option value="5">Rituals</option>
+                          <option value="6">Logistics</option>
+                          <option value="7">Entertainment</option>
+                          <option value="8">Make Up</option>
+                          <option value="11">Mehandi</option>
+                          <option value="12">Cake</option>
+                          <option value="13">Decorator</option>
+                          <option value="14">Renovation And Spring Cleaning</option>
+                          <option value="15">Pre-Wedding Shopping</option>
+                          <option value="16">Clothing</option>
+                          <option value="17">Jewellery</option>
+                          <option value="18">Gift</option>
+                        </select>
+                        <!-- <div class="select_detail_btn">
+                          <button class="btn btn-info more_btn">Select Detail</button>
+                        </div> -->
+                      </div>
+                      <div class="tble_scroll">
+                          <table class="table">
+                            <thead>
+                              <tr>
+                                <th scope="col">Vendor</th>
+                                <th>Advance Paid</th>
+                                <th class="abc" contenteditable="false">Timeline Deployed</th>
+                                <th>Status</th>
+                                <th>Target Completion Date</th>
+                                <th>Next Payment Date &amp; Amount</th>
+                                <th>Rate</th>
+                                <th>Invoice</th>
+                              </tr>
+                            </thead>
+                            <tbody>
+                              <tr>
+                                <td>Wedding Venue</td>
+                                <td class="abc" contenteditable="false"><a class="text-success" href="#">Yes</a></td>
+                                <td class="abc" contenteditable="false"><a href="#" class="text-danger">No</a></td>
+                                <td class="text-danger">Delayed</td>
+                                <td>12/10/2017</td>
+                                <td>20/10/2017
+                                  <hr>
+                                  $240</td>
+                                <td>4</td>
+                                <td>$450</td>
+                              </tr>
+                              <tr>
+                                <td>Photographer</td>
+                                <td class="abc" contenteditable="false"><a href="#" class="text-danger">No</a></td>
+                                <td class="abc" contenteditable="false"><a href="#" class="text-success">Yes</a></td>
+                                <td class="text-success">Complete</td>
+                                <td>12/20/2017</td>
+                                <td>20/10/2017
+                                  <hr>
+                                  $140</td>
+                                <td>5</td>
+                                <td>$450</td>
+                              </tr>
+                              <tr>
+                                <td>Make Up</td>
+                                <td class="abc" contenteditable="false"><a href="#" class="text-success">Yes</a></td>
+                                <td class="abc" contenteditable="false"><a href="#" class="text-danger">No</a></td>
+                                <td class="text-warning">On track</td>
+                                <td>12/20/2017</td>
+                                <td>20/10/2017
+                                  <hr>
+                                  $350</td>
+                                <td>2</td>
+                                <td>$450</td>
+                              </tr>
+                            </tbody>
+                          </table>
+                        </div>
+                                   <button ion-button type="submit">Edit</button>                    
+                                   <!-- <button id="budget1" class="btn btn-info styled float_right">confirm</button> -->
+                              
+                             </div>
+
+                             <div class="bidtsection">
+                                <h4>Shortlist Section</h4>
+
+              <form>
+                  
+                  <ion-list class="base">
+                      
+                        <ion-item>
+                          <ion-input type="text" placeholder="Location"></ion-input>
+                        </ion-item>
+                      
+                        <ion-item>
+                          <ion-input type="number" placeholder="Budget"></ion-input>
+                        </ion-item>
+
+                        <ion-item>
+                            <ion-input type="text" placeholder="Add Ons"></ion-input>
+                          </ion-item>
+                      
+                      </ion-list>
+                      <button ion-button type="submit" class="publish">Submit</button>
+                    </form>
+                                </div>
+
+</ion-content>

@@ -1,0 +1,129 @@
+page-login {
+    .logo {
+        width:100%;
+        margin: auto;
+    }
+    .logo img{
+        width:110px;
+        margin: auto;
+        display: block;
+    }
+   
+    .signin_field {
+        width: 100%;
+        float: left;
+    }
+    .signin_field form {
+        width: 100%;
+        float: left;
+    }
+    .signin_field .list {
+        margin-bottom: 15px;
+        float: left;
+        width: 100%;
+    }
+    .signin_field .list .item {
+        padding: 0;
+        margin-bottom: 10px;
+        width: 100%;
+        float: left;
+        background: transparent;
+        border: none;
+    }
+    .signin_field .list .item .item-inner {
+        padding: 0;
+        border-bottom: 1px solid #7a7a7a;
+    }
+    .signin_field .list .item .item-inner input {
+        padding: 10px !important;
+            padding-left: 10px;
+        margin: 0;
+        width: 100%;
+        float: left;
+        padding-left: 0 !important;
+         font-family: roboto;
+    }
+    .signin_field .button {
+        width: 100%;
+        float: left;
+        text-transform: uppercase;
+        color: #fff;
+background: #feb483;
+background: -moz-linear-gradient(left, #feb483 1%, #ff9980 42%, #fe8884 69%, #ff8b8c 100%);
+background: -webkit-linear-gradient(left, #feb483 1%,#ff9980 42%,#fe8884 69%,#ff8b8c 100%);
+background: linear-gradient(to right, #feb483 1%,#ff9980 42%,#fe8884 69%,#ff8b8c 100%);
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#feb483', endColorstr='#ff8b8c',GradientType=1 );
+        border-radius: 4px;
+        height: 44px;
+        font-size: 17px;
+    }
+    .forgot {
+        float: none;
+        width: 65%;
+        display: block;
+        color: #000;
+        text-transform: capitalize;
+        font-size: 15px;
+        margin: 0 auto;
+        font-family: roboto;
+        text-align: center;
+    }
+
+
+.signin_field .input {
+    font-size: 13px;
+}
+
+    /****Input****/
+
+    ::-webkit-input-placeholder { /* Chrome/Opera/Safari */
+        color: #000;
+        opacity: 1 !important;
+      }
+      ::-moz-placeholder { /* Firefox 19+ */
+        color: #000;
+        opacity: 1 !important;
+      }
+      :-ms-input-placeholder { /* IE 10+ */
+        color: #000;
+        opacity: 1 !important;
+      }
+      :-moz-placeholder { /* Firefox 18- */
+        color: #000;
+        opacity: 1 !important;
+      }
+
+      /****Input****/
+
+      .white span, .yellow span {
+        font-size: 12px !important;
+        text-transform: capitalize;
+    }
+    .white{
+        width: 96% !important;
+        background: #3b589e !important;
+    }
+    .yellow{
+        width: 96% !important;
+        float: right;
+        background: #db3236 !important;
+    }
+    .signup_line a {
+        color: #db3236;
+        text-decoration: underline;
+    }
+    .signup_line {
+        width: 100%;
+        float: left;
+        text-align: center;
+        margin: 20px 0;
+        font-size: 15px;
+        color: #000;
+        font-family: "Roboto";
+    }
+
+
+
+
+
+}

@@ -1,0 +1,91 @@
+page-guestsummary {
+
+    .table_checklist .bbb{
+        width: 100%;
+        float: left;
+        margin: 0 0 25px 0;
+    }
+    .table_checklist select {
+        background: transparent;
+        width:45%;
+        font-size: 15px;
+        color: #000;
+        border: 1px solid #000;
+        border-radius: 4px;
+        height: 30px;
+        padding: 0 0px 0 5px;
+        font-family: 'Lora', serif;
+        float: left;
+        text-transform: capitalize;
+    }
+    .table_checklist #photo2 {
+        float: right;
+    }
+    .table_checklist:first-child{
+        margin-top: 0px;
+    }
+    .table_checklist {
+        button.styled{
+            background: #feb483;
+            background: -moz-linear-gradient(left, #feb483 1%, #ff9980 42%, #fe8884 69%, #ff8b8c 100%);
+            background: -webkit-linear-gradient(left, #feb483 1%, #ff9980 42%, #fe8884 69%, #ff8b8c 100%);
+            background: linear-gradient(to right, #feb483 1%, #ff9980 42%, #fe8884 69%, #ff8b8c 100%);
+            filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#feb483', endColorstr='#ff8b8c', GradientType=1 );
+            color: #fff !important;
+            border: none;
+            .activated{
+                background: #feb483 !important;
+                background: -moz-linear-gradient(left, #feb483 1%, #ff9980 42%, #fe8884 69%, #ff8b8c 100%) !important;
+                background: -webkit-linear-gradient(left, #feb483 1%, #ff9980 42%, #fe8884 69%, #ff8b8c 100%) !important;
+                background: linear-gradient( to right, #feb483 1%, #ff9980 42%, #fe8884 69%, #ff8b8c 100%) !important;
+                filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#feb483', endColorstr='#ff8b8c', GradientType=1 ) !important;
+                color: #fff !important;
+                border: none !important;
+            }
+        }
+    }
+    .table_checklist {
+        width: 100%;
+        float: left;
+        -webkit-transition: all 0.5s ease;
+        transition: all 0.5s ease;
+        padding: 10px;
+        margin-top: 15px;
+        box-shadow: 0 0 15px 0 rgba(0, 0, 0, 0.2);
+        border-radius: 4px;
+        button{
+            width: auto;
+            float: right;
+            padding: 0 20px;
+            height: 30px;
+            border-radius: 4px;
+            background: transparent;
+            border: 1px solid #333;
+            color: #333;
+            .activated{
+            background: transparent;
+            border: 1px solid #333;
+            color: #333;
+            border-radius: 4px;
+            }
+        }
+
+    }
+    .table_checklist button.activated{
+        background: transparent;
+        border: 1px solid #333;
+        color: #333;
+        }
+        .graph{
+            width:100%;
+            float: left;
+            h4{
+                width: 100%;
+                float: left;
+                margin: 10px 0;
+                text-align: center;
+                font-size: 15px;
+            }
+        }
+
+}

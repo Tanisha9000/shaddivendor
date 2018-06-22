@@ -1,0 +1,405 @@
+
+<ion-header>
+
+  <ion-navbar hideBackButton="true">
+    <ion-title>process</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content>
+  <ion-refresher (ionRefresh)="doRefresh($event)">
+    <ion-refresher-content
+      pullingIcon="arrow-dropdown"
+      pullingText="Pull to refresh"
+      refreshingSpinner="circles"
+      refreshingText="Refreshing...">
+    </ion-refresher-content>
+  </ion-refresher>
+  <form #heroForm="ngForm" novalidate>
+      <!--<ion-label>{{respmessage}}</ion-label>-->    
+  <ion-item class="upload_pic">
+    <!--<input>-->
+    <!--<div for="file" class="fle">-->
+       <!--<ion-icon name="image" class="image_upld"></ion-icon>-->
+       <!--<span class="upload_text">Upload</span>-->
+       <div class="profile_img">
+          
+      <img [src]= "vendorimage">
+       </div>
+    <!--</div>-->
+    <button ion-button clear color="primary" block class="prf_btn" (tap)="presentActionSheet(4)">Change Profile Photo</button>
+  </ion-item>
+  <ion-list class="base">
+    <ion-item-group>
+        <ion-item-divider color="light">Basic Info</ion-item-divider>
+      <ion-item>
+        <ion-input type="text" placeholder="Enter company name(Required Field)" [(ngModel)]="extra.cname" name="cname" #cname='ngModel' required></ion-input>
+      </ion-item>  
+          <div *ngIf="cname.errors && (cname.dirty || cname.touched)" class="alert alert-danger">
+                <div [hidden]="!cname.errors.required" class="alert alert-danger">
+                This field is required
+                </div>
+          </div> 
+      <ion-item>
+        <ion-input type="text" placeholder="Establishment Year" [(ngModel)]="extra.year" name="year"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-input type="text" placeholder="About us(Required Field)" [(ngModel)]="extra.aboutus" name="aboutus" #aboutus='ngModel' required></ion-input>
+      </ion-item>
+         <div *ngIf="aboutus.errors && (aboutus.dirty || aboutus.touched)" class="alert alert-danger">
+                <div [hidden]="!aboutus.errors.required" class="alert alert-danger">
+                This field is required
+                </div>
+         </div>
+      <ion-item>
+        <ion-datetime displayFormat="HH:mm A" placeholder="Starting Hours" [(ngModel)]="extra.starthour" name="starthour"></ion-datetime>
+        </ion-item>
+      <ion-item>
+        <ion-datetime displayFormat="HH:mm A" placeholder="Ending Hours" [(ngModel)]="extra.endhour" name="endhour"></ion-datetime>
+      </ion-item>
+      <ion-item>
+        <ion-input type="text" placeholder="Primary Email(Required Field)" [(ngModel)]="extra.mail" name="mail" #mail='ngModel' pattern="[A-Za-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$" required></ion-input>
+      </ion-item>
+      <div *ngIf="mail.errors && (mail.dirty || mail.touched)" class="alert alert-danger">
+                <div [hidden]="!mail.errors.required" class="alert alert-danger">
+                This field is required
+                </div>
+                <div [hidden]="!mail.errors.pattern" class="alert alert-danger">
+                Enter a valid Email Address
+                </div>
+      </div>
+      <ion-item>
+        <ion-input type="text" placeholder="Awards & Recognition" [(ngModel)]="extra.award" name="award"></ion-input>
+      </ion-item>
+    
+       <ion-item>
+         <ion-icon name="logo-facebook" item-start></ion-icon>
+        <ion-input type="text" placeholder="https://www.facebook.com/abc.com" pattern="https?://.+" [(ngModel)]="extra.facebuk" name="facebuk" #facebuk='ngModel' ></ion-input>
+      </ion-item>
+     <div *ngIf="facebuk.errors && (facebuk.dirty || facebuk.touched)" class="alert alert-danger">
+        <div [hidden]="!facebuk.errors.pattern">
+          Must be a valid URL!
+        </div>
+      </div>  
+
+       <ion-item>
+         <ion-icon name="logo-twitter" item-start></ion-icon>
+        <ion-input type="text" placeholder="https://www.twitter.com/abc.com" pattern="https?://.+" [(ngModel)]="extra.twiter" name="twiter" #twiter='ngModel'></ion-input>
+      </ion-item>
+       <div *ngIf="twiter.errors && (twiter.dirty || twiter.touched)" class="alert alert-danger">
+        <div [hidden]="!twiter.errors.pattern">
+          Must be a valid URL!
+        </div>
+      </div> 
+
+      <ion-item>
+        <ion-icon name="logo-instagram" item-start></ion-icon>
+        <ion-input type="text" placeholder="https://www.instagram.com/abc.com" pattern="https?://.+" [(ngModel)]="extra.insta" name="insta" #insta='ngModel'></ion-input>
+      </ion-item>
+      <div *ngIf="insta.errors && (insta.dirty || insta.touched)" class="alert alert-danger">
+        <div [hidden]="!insta.errors.pattern">
+          Must be a valid URL!
+        </div>
+      </div> 
+
+    </ion-item-group>
+  </ion-list>
+
+<ion-list class="base">
+  <ion-item-group>
+    <ion-item-divider color="light">Invite Friends <span class="disc">(more connected you are higher chance of getting customer)</span></ion-item-divider>
+    <ion-grid>
+<!--      <ion-row class="invite">
+        <ion-col col-4 text-center><a class="link" (click)="fbsss()"><img src="assets/image/linka.png"></a></ion-col>
+        <ion-col col-4 text-center><a class="link" (click)="emails()"><img src="assets/image/linkb.png"></a></ion-col>
+        <ion-col col-4 text-center><a class="link" (click)="emails()"><img src="assets/image/linkc.png"></a></ion-col>
+        <ion-col col-4><ion-icon name="logo-whatsapp" style="color:#34af23;" (click)="whatsappShare()"></ion-icon></ion-col>
+      </ion-row>-->
+        
+        <ion-row class="invite">
+        <ion-col col-2><ion-icon (click)="fbsss()" style="color:#3a5ba0;" ios="logo-facebook" md="logo-facebook"></ion-icon></ion-col>
+        <ion-col col-2><ion-icon (click)="emails()" style="color:#3498db;" ios="ios-mail" md="md-mail"></ion-icon></ion-col>
+        <ion-col col-2><ion-icon (click)="emails()" style="color:#e65a4d;" ios="logo-googleplus" md="logo-googleplus"></ion-icon></ion-col>
+        <ion-col col-2><ion-icon name="logo-whatsapp" style="color:#34af23;" (click)="whatsappShare()"></ion-icon></ion-col>
+      </ion-row>
+        
+        
+    </ion-grid>
+  </ion-item-group>
+</ion-list>
+
+<ion-list class="base inpt">
+    <ion-item-group>
+        <ion-item-divider color="light">Service & Cost Details</ion-item-divider>
+     <h3>{{title}}</h3>
+
+<!--     <div style="width:100%;float:left;height:5vh;"></div>-->
+
+ <ion-item>
+            <ion-label class="price">Minimum Price</ion-label>
+             <ion-input type="text" placeholder="*Enter minimum price" text-right [(ngModel)]="extra.price" name="price" required></ion-input>
+    </ion-item>
+   
+   
+     <!--<span class="per">Price Per Hour</span>-->
+    <ion-item *ngFor="let item of service; let j =index">
+            <ion-label>{{item.name}}</ion-label>
+             <ion-input type="hidden" [(ngModel)]="service[j].name" name="name" style="display:none;">{{item.name}}</ion-input>
+            <ion-input type="number" placeholder="Enter price" text-right [(ngModel)]="service[j].pri" name="pri">{{item.pricing}}</ion-input>
+    </ion-item>
+     <div *ngIf = "service1.length > 0">
+         <ion-item *ngFor="let item1 of service1">
+            <ion-label>{{item1.name}}</ion-label>
+            <ion-label class="text-right">{{item1.pricing}}</ion-label>
+         </ion-item>
+    </div>
+     
+     <button class="styled width_70" ion-button color="dark" outline small class="add" (tap)="addservice();">Add More</button>
+     <div *ngIf= "bit == 1">
+    <ion-grid style="padding: 0px;">
+      <ion-row class="amount">
+        <ion-col>
+            <ion-item>
+              <ion-input type="text" placeholder="Enter Title" [(ngModel)]="dat.name" name="name" ></ion-input>
+            </ion-item>
+          </ion-col>
+          <ion-col>
+           <ion-item>
+            <ion-input type="number" placeholder="Enter Amount" [(ngModel)]="dat.amount" name="amount" ></ion-input>
+          </ion-item>
+          </ion-col>
+      </ion-row>
+    </ion-grid>
+     <button class="styled width_70" ion-button color="blue" (tap)="addmore();">Add</button>
+     </div>
+    
+    
+    <div class="on">
+   
+        <ion-item-divider color="light">Add-ons:</ion-item-divider>
+  
+     <div *ngFor="let add of addonvalues;let i = index">
+      <ion-item>
+            <ion-label>{{add.title}}</ion-label>
+            <ion-checkbox color="dark" [(ngModel)]="addonvalues[i].check" name="check{{i}}" (ionChange)="displayamt(addonvalues[i].price,addonvalues[i].check,i)"></ion-checkbox>
+       </ion-item>
+         <div [hidden]="addonvalues[i].check != true">
+                <ion-input class="pad_left_8" type="number" placeholder="Enter Amount" [(ngModel)]="addonvalues[i].price" name="addonvalues{{i}}"></ion-input>
+         </div>
+   </div>
+    
+    <div *ngIf = "moreaddons.length > 0">
+        <div *ngFor="let it of moreaddons;let p = index">
+         <ion-item>
+            <ion-label>{{it.title}}</ion-label>
+            <ion-checkbox color="dark" [(ngModel)]="moreaddons[p].check1" name="check1{{p}}"></ion-checkbox>
+         </ion-item>
+        <div [hidden]="moreaddons[p].check1 != true">
+                <ion-input class="pad_left_8" type="number" placeholder="Enter Amount" [(ngModel)]="moreaddons[p].price" name="moreaddons{{p}}">{{it.price}}</ion-input>
+         </div>
+        </div>   
+    </div>
+ 
+   <ion-item *ngIf= "x == 1" >
+    <ion-label>More</ion-label>
+    <ion-checkbox color="dark" [(ngModel)]="chk1.check2" name="check2"></ion-checkbox>
+   </ion-item>
+ 
+<div [hidden]= "chk1.check2 != true">
+    <ion-grid style="padding: 0px;">
+      <ion-row class="amount">
+        <ion-col>
+            <ion-item>
+              <ion-input type="text" placeholder="Enter Title" [(ngModel)]="data.title" name="title" ></ion-input>
+            </ion-item>
+          </ion-col>
+          <ion-col>
+           <ion-item>
+            <ion-input type="number" placeholder="Enter Amount" [(ngModel)]="data.amount" name="amount" ></ion-input>
+          </ion-item>
+          </ion-col>
+      </ion-row>
+    </ion-grid>
+    <button class="styled width_70" ion-button color="blue" (tap)="add();">Add</button>
+</div>
+        
+<div *ngIf="subvendor.length > 0">   
+<ion-label class="label ad" style="margin: 0px;">Sub-vendors:</ion-label>   
+ <ion-item *ngFor="let display of subvendor; let q = index">
+    <ion-label>{{display.title}}</ion-label>
+    <ion-checkbox color="dark" [(ngModel)]="subvendor[q].checkkk" name="chk{{q}}"></ion-checkbox>
+  </ion-item>
+</div>   
+   
+
+<ion-label class="label ad" style="margin: 15px 0 0;">Discount:</ion-label>
+<ion-item class="dis">
+    <ion-select [(ngModel)]="disc.dis" name="disc" placeholder="Select discount">
+      <ion-option value="nes">2 Day</ion-option>
+      <ion-option value="mv" selected="true">More</ion-option>
+    </ion-select>
+</ion-item>
+
+ <ion-grid style="padding: 0px;">
+      <ion-row class="amount">
+        <ion-col>
+            <ion-item>
+              <ion-input type="text" placeholder="Enter Title" [(ngModel)]="disc.titlee" name="titlee"></ion-input>
+            </ion-item>
+          </ion-col>
+          <ion-col>
+           <ion-item>
+            <ion-input type="number" placeholder="Enter Amount" [(ngModel)]="disc.amountt" name="amountt"></ion-input>
+          </ion-item>
+          </ion-col>
+      </ion-row>
+ </ion-grid>
+    <div>
+    <ion-item [hidden]="disc.dis != 'mv' ">
+        <ion-input type="text" placeholder="Enter days" [(ngModel)]="disc.dayy" name="dayy"></ion-input>
+    </ion-item>
+    </div>
+    <button class="styled width_70" ion-button color="blue" (tap)="adddisc();" style="height: 35px;margin-left: 8px;">Add</button>
+
+   
+</div><!--on_end-->
+
+ <div *ngFor ="let dd of discount" class="show_data">
+    <ion-label>{{dd.title}}</ion-label>
+    <ion-label>{{dd.price}}</ion-label>
+    <ion-label [hidden]='dd.day == "" '>{{dd.day}}</ion-label>
+    </div>
+
+    </ion-item-group>
+  </ion-list>
+
+  
+<ion-list class="base inpt">
+    <ion-item-group>
+        
+
+     <div style="width:100%;float:left;height:2vh;"></div>
+
+    <div class="on">
+    
+     <ion-item-divider color="light">Highlights</ion-item-divider>
+     <!--<ion-label class="label ad" style="margin: 20px 0 0;">Add:</ion-label>-->
+    <div *ngFor="let item of highlight; let k = index">
+      <ion-item>
+        <ion-label>{{item.title}}</ion-label>
+        <ion-checkbox color="dark" [(ngModel)]="highlight[k].chec" name="chec{{k}}" (ionChange)="displayamt1(highlight[k].chec,k,highlight[k].price)"></ion-checkbox>
+       </ion-item>
+         <div [hidden]= "highlight[k].chec != true">
+            <ion-input class="pad_left_8" type="text" placeholder="Enter Amount" [(ngModel)]="highlight[k].price" name="highlight{{k}}"></ion-input>
+        </div>
+    </div>
+    
+    <div *ngFor="let itemt of highlight1; let t = index">
+      <ion-item>
+        <ion-label>{{itemt.title}}</ion-label>
+        <ion-checkbox color="dark" [(ngModel)]="highlight1[t].checkk" name="checkk{{t}}"></ion-checkbox>
+       </ion-item>
+         <div [hidden]= "highlight1[t].checkk != true">
+            <ion-input class="pad_left_8" type="number" placeholder="Enter Amount" [(ngModel)]="highlight1[t].price" name="highlight1{{t}}"></ion-input>
+        </div>
+    </div>
+
+      <ion-item *ngIf= "y == 1">
+        <ion-label>More</ion-label>
+        <ion-checkbox color="dark" [(ngModel)]="chk1.check3" name="check3"></ion-checkbox>
+      </ion-item>
+   
+<ion-grid style="padding: 0px;">
+    <div [hidden]= "chk1.check3 != true">
+      <ion-row class="amount">
+        <ion-col>
+            <ion-item>
+              <ion-input type="text" placeholder="Enter Title" [(ngModel)]="data1.title1" name="title1"></ion-input>
+            </ion-item>
+          </ion-col>
+          <ion-col>
+           <ion-item>
+            <ion-input type="number" placeholder="Enter Amount" [(ngModel)]="data1.amtt" name="amtt"></ion-input>
+          </ion-item>
+          </ion-col>
+      </ion-row>
+        <button class="styled width_70" ion-button color="blue" (tap)="addhigh();">Add</button>
+    </div>
+</ion-grid>
+      
+<div style="padding: 0;" class="gridupload">  
+<ion-label class="label ad">Gallery:</ion-label> 
+    <div [hidden]="img.length==0">
+      <ion-item class="upld" *ngFor="let im of img; let w = index">
+<!--            -->
+      
+            <span class="close_icon" (click)="crossimage(w,im)"></span>
+           <img [src]="im.image">
+           <!--"im.image"-->
+        
+      </ion-item>
+    </div>
+    
+    <ion-item class="upld" [hidden]= "img.length == 5">
+        <!--<input type="file" id="file-input">-->
+      <button ion-button clear color="primary" class="change" uplad ion-button block (tap)="presentActionSheet(5)">
+        <ion-icon ios="ios-add" md="md-add"></ion-icon>
+      </button>
+    </ion-item>
+  
+</div>
+
+<button ion-button block outline color="blue" class="pay">Link With Paytm</button>
+
+</div><!--on_end-->
+
+</ion-item-group>
+</ion-list>
+
+
+<ion-list class="base">
+    <ion-item-group>
+        <ion-item-divider color="light">Location</ion-item-divider>
+        
+        <ion-toolbar>
+            <ion-searchbar [(ngModel)]="autocomplete.query" name="query" #query='ngModel' placeholder="Location(Required Field)" (ionInput)="updateSearch()" required></ion-searchbar>
+        </ion-toolbar>
+        <ion-list style="margin: 0px;">
+                    <ion-item *ngFor="let place of autocompleteItems" (click)="selectPlace(place)">
+                    {{ place.description }}
+                    </ion-item>
+        </ion-list>
+        <div *ngIf="query.errors && (query.dirty || query.touched)" class="alert alert-danger">
+                <div [hidden]="!query.errors.required" class="alert alert-danger">
+                This field is required
+                </div>
+       </div>
+       <div class="map" #map id="map"></div>
+                
+    </ion-item-group>
+</ion-list>
+
+
+  <ion-list class="base">
+    <ion-item-group>
+        <ion-item-divider color="light">Deals</ion-item-divider>
+      <ion-item class="area">
+        <textarea type="text" placeholder="Product Detail" class="txt_area" [(ngModel)]="extra.pdetail" name="pdetail"></textarea>
+      </ion-item>
+
+      <ion-item>
+        <ion-input type="text" placeholder="Effective Date" [(ngModel)]="data1.edate" name="edate"></ion-input>
+      </ion-item>
+
+       <ion-item>
+        <ion-input type="text" placeholder="Discount Amount" [(ngModel)]="extra.damount" name="damount"></ion-input>
+      </ion-item>
+    </ion-item-group>
+  </ion-list>
+
+  <button ion-button class="publish" type='submit' [disabled]="!heroForm.valid" (tap)="publish(heroForm);">Publish</button>
+
+</form>
+</ion-content>

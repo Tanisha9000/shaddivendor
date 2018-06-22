@@ -1,0 +1,192 @@
+
+<ion-header>
+  
+    <ion-navbar>
+      <ion-buttons start>
+        <button ion-button menuToggle>
+          <ion-icon name="menu"></ion-icon>
+        </button>
+      </ion-buttons>
+      <ion-title>Job Manager</ion-title>
+      <ion-buttons end>
+          <button ion-button (click)="postedit();">
+            <ion-icon name="add"></ion-icon>
+          </button>
+        </ion-buttons>
+    </ion-navbar>
+  
+  </ion-header>
+  
+  
+  <ion-content>
+      
+    <ion-scroll zooming="true" direction="x" style="width: 100%; height: 60px" class="wide-as-needed">
+    <div class="seg">
+    <ion-segment [(ngModel)]="pet">
+       <ion-segment-button value="current">
+        current
+      </ion-segment-button>
+      <ion-segment-button value="completed">
+        Completed
+      </ion-segment-button>
+      <ion-segment-button value="shortlisted">
+        Shortlisted
+      </ion-segment-button>
+  
+      <ion-segment-button value="all">
+        All Jobs
+      </ion-segment-button>
+     
+    </ion-segment>
+  </div>
+   </ion-scroll>
+  <ion-refresher (ionRefresh)="doRefresh($event)">
+    <ion-refresher-content pullingIcon="arrow-dropdown"
+      pullingText="Pull to refresh">
+        </ion-refresher-content>
+  </ion-refresher>
+  <div [ngSwitch]="pet">
+  
+    <ion-list *ngSwitchCase="'current'" class="bg">
+       <ion-card>
+        <div *ngFor="let th of show; let i = index" [attr.data-index]="i" class="date">
+        <ion-card-content class="cnt all">
+          <ion-card-title>
+           {{th.special_needs}}
+          </ion-card-title>
+          <span class="status">Current</span>
+          <h3>{{th.title}}({{th.location}})</h3>
+          <div class="date">
+            <!--<h4>Start Date: <span>26 oct,2014</span></h4>-->
+            <h4>End Date: <span>{{th.time}}</span></h4>
+          </div>
+          <h4>Cost: <span style="color:#e5053a;">{{th.cost}}</span></h4>
+            <p>{{th.description}}
+             </p>
+          <a (click)="readmore(th._id)" float-right style="color:#e5053a;cursor: pointer;">Read More</a>
+        </ion-card-content>
+        </div>
+      </ion-card>
+  
+    </ion-list><!--current-->
+  
+  
+    <ion-list *ngSwitchCase="'completed'" class="bg date">
+      <ion-card>
+        <ion-card-content class="cnt">
+         <ion-card-title>
+           #Id
+            </ion-card-title>
+          <h3>Title(Location)</h3>
+  
+            <ul class="stars">
+              <li><ion-icon name="star" class="active"></ion-icon></li>
+              <li><ion-icon name="star"></ion-icon></li>
+              <li><ion-icon name="star"></ion-icon></li>
+              <li><ion-icon name="star"></ion-icon></li>
+              <li><ion-icon name="star"></ion-icon></li>
+            </ul>
+  
+  
+          <h4>Cost: <span style="color:#e5053a;">1,00,000</span></h4>
+          <p>
+            The most popular industrial group ever, and largely
+            responsible for bringing the music to a mass audience.
+          </p>
+          <a (click)="jobdetailPage();" float-right style="color:#e5053a;cursor: pointer;">Read More</a>
+        </ion-card-content>
+      </ion-card>
+    </ion-list><!--Completed-->
+  
+    <ion-list *ngSwitchCase="'shortlisted'" class="bg">
+      
+       <ion-card>
+        <ion-card-content class="cnt date">
+          <ion-card-title>
+           #Id
+            </ion-card-title>
+          <h3>Title(Location)</h3>
+          <h4>Cost: <span style="color:#e5053a;">1,00,000</span></h4>
+          <h4>Date: <span>24 oct,2014</span></h4>
+          <p>
+            The most popular industrial group ever, and largely
+            responsible for bringing the music to a mass audience.
+          </p>
+          <a (click)="jobdetailPage();" float-right style="color:#e5053a;cursor: pointer;">Read More</a>
+        </ion-card-content>
+      </ion-card>
+  
+    </ion-list><!--Shortlisted-->
+  
+    <!--all-->
+    <ion-list *ngSwitchCase="'all'" class="bg date">
+    <ion-card>
+         <div *ngFor="let th of show; let i = index" [attr.data-index]="i">
+        <ion-card-content class="cnt all">
+          <ion-card-title>
+           {{th.special_needs}}
+          </ion-card-title>
+          <span class="status">Current</span>
+          <h3>{{th.title}}({{th.location}})</h3>
+          <div class="date">
+            <!--<h4>Start Date: <span>26 oct,2014</span></h4>-->
+            <h4>End Date: <span>{{th.time}}</span></h4>
+          </div>
+          <h4>Cost: <span style="color:#e5053a;">{{th.cost}}</span></h4>
+<!--          <p>
+            The most popular industrial group ever, and largely
+            responsible for bringing the music to a mass audience.
+          </p>-->
+            <p>{{th.description}}
+             </p>
+          <a (click)="readmore(th._id)" float-right style="color:#e5053a;cursor: pointer;">Read More</a>
+        </ion-card-content>
+        </div>
+    </ion-card>
+<!--  
+      <ion-card>
+        <ion-card-content class="cnt all">
+         <ion-card-title>
+           #Id
+            </ion-card-title>
+          <span class="status">Completed</span>
+          <h3>Title(Location)</h3>
+            <ul class="stars">
+              <li><ion-icon name="star" class="active"></ion-icon></li>
+              <li><ion-icon name="star"></ion-icon></li>
+              <li><ion-icon name="star"></ion-icon></li>
+              <li><ion-icon name="star"></ion-icon></li>
+              <li><ion-icon name="star"></ion-icon></li>
+            </ul>
+          <h4>Cost: <span style="color:#e5053a;">1,00,000</span></h4>
+          <p>
+            The most popular industrial group ever, and largely
+            responsible for bringing the music to a mass audience.
+          </p>
+          <a (click)="jobdetailPage();" float-right style="color:#e5053a;cursor: pointer;">Read More</a>
+        </ion-card-content>
+      </ion-card>-->
+<!--  
+    <ion-card>
+        <ion-card-content class="cnt all">
+          <ion-card-title>
+           #Id
+            </ion-card-title>
+          <span class="status">In Progress</span>
+          <h3>Title(Location)</h3>
+          <h4>Cost: <span style="color:#e5053a;">1,00,000</span></h4>
+          <h4>Date: <span>24 oct,2014</span></h4>
+          <p>
+            The most popular industrial group ever, and largely
+            responsible for bringing the music to a mass audience.
+          </p>
+          <a (click)="jobdetailPage();" float-right style="color:#e5053a;cursor: pointer;">Read More</a>
+        </ion-card-content>
+      </ion-card>-->
+  
+    </ion-list><!--all_end-->
+  
+  
+  </div>
+       </ion-content>
+  

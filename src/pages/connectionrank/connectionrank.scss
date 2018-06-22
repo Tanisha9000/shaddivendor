@@ -1,0 +1,54 @@
+page-connectionrank {
+
+.snd {
+    float: left;
+    width: 100%;
+    padding: 12px 12px 0;
+    color: #868686;
+}
+
+.range.range-has-pin {
+    padding-top: 20px;
+}
+
+.range{padding-left: 0px;padding-right: 0;}
+
+.range .item-inner {
+    padding-left: 8px;
+}
+
+.follow .item{align-items: start;padding-left: 8px;padding-right: 8px;}
+
+.follow .item .item-inner {
+    padding-right: 0px;
+  }
+
+.follow {
+  position: relative;
+}
+.follow .label h3 {
+  position: absolute;
+  right: 8px;
+  top: 5px;
+  margin: 0;
+  color: #e10a0a;
+  font-family: Roboto;
+}
+.follow .label {
+  margin: 6px 0 0 0;
+}
+.follow .label h2 {
+  font-family: Lora-Regular;
+  font-size: 14px;
+  margin: 0;
+}
+.follow .label span {
+  font-size: 14px;
+  color: #696969;
+}
+
+.follow.list-ios > .item-block:first-child {border-top: 0px;}
+
+.follow.list-ios > .item-block:last-child{border-bottom: 0px;}
+
+}

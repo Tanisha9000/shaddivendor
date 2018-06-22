@@ -1,0 +1,39 @@
+page-conectlist {
+
+
+.follow .item{align-items: start;padding-left: 8px;padding-right: 8px;}
+
+.follow .item .item-inner {
+    padding-right: 0px;
+  }
+
+.follow {
+  position: relative;
+  margin: 8px 0px;
+}
+.follow .label h3 {
+  position: absolute;
+  right: 8px;
+  top: 5px;
+  margin: 0;
+  color: #e10a0a;
+  font-family: Roboto;
+}
+.follow .label {
+  margin: 6px 0 0 0;
+}
+.follow .label h2 {
+  font-family: Lora-Regular;
+  font-size: 14px;
+  margin: 0;
+}
+.follow .label span {
+  font-size: 14px;
+  color: #696969;
+}
+
+.follow.list-ios > .item-block:first-child {border-top: 0px;}
+
+.follow.list-ios > .item-block:last-child{border-bottom: 0px;}
+
+}

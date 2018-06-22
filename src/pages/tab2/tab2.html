@@ -1,0 +1,84 @@
+<!-- <ion-header>
+  <ion-navbar>
+     <ion-buttons start>
+       <button ion-button menuToggle>
+         <ion-icon name="menu"></ion-icon>
+       </button>
+     </ion-buttons>
+         <ion-title>To Do List</ion-title>
+      <ion-buttons end>
+       <button ion-button (click)="addtodoPage();">
+         <ion-icon ios="md-add" md="md-add"></ion-icon>
+       </button>
+     </ion-buttons>
+   </ion-navbar>
+</ion-header>
+
+     
+<ion-content>
+ 
+  <ion-card>
+  <ion-card-header style="position: relative;font-family:Lora-Regular;">
+    September 2017
+
+    <span class="edt">
+      <button ion-button clear (click)="presentModal();">
+         <ion-icon name="create" color="secondary" ></ion-icon>
+       </button>
+      <button ion-button clear>
+      <ion-icon name="trash" color="danger"></ion-icon>
+      </button>
+    </span>
+
+  </ion-card-header>
+  <ion-card-content style="font-family:roboto;">
+    The British use the term "header", but the American term "head-shot" the English simply refuse to adopt.
+  </ion-card-content>
+</ion-card>
+
+</ion-content> -->
+
+<ion-header>
+  
+  <ion-navbar>
+    <ion-buttons start>
+      <button ion-button menuToggle>
+        <ion-icon name="menu"></ion-icon>
+      </button>
+    </ion-buttons>
+    <ion-title>List of project 1</ion-title>
+    <!-- <ion-buttons end>
+        <button ion-button (click)="postedit();">
+          <ion-icon name="add"></ion-icon>
+        </button>
+      </ion-buttons> -->
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content>
+
+  <div class="main">
+    <div class="pick">
+      <img src="assets/image/p1.jpg">
+    </div>
+    <h4>clicky</h4>
+    <h2>list of project</h2>
+
+    <ion-list>
+        <button ion-item (click)="itemSelected(item)">
+            <img src="assets/image/project.png"> create new project
+        </button>  
+
+        <button ion-item (click)="plannerplatform()">
+            <img src="assets/image/project.png"> create new project<span class="red">Draft(20%)</span>
+        </button> 
+
+        <button ion-item (click)="itemSelected(item)">
+            <img src="assets/image/project.png"> create new project<span class="complete">completed</span>
+        </button>   
+      </ion-list>
+  </div>
+    
+     </ion-content>

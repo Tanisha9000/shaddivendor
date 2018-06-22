@@ -1,0 +1,339 @@
+<ion-header>
+
+  <ion-navbar>
+      <ion-title>guest</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content>
+
+
+  <div class="seg">
+      <ion-segment [(ngModel)]="pet">
+          <ion-segment-button value="Family">
+              Family
+          </ion-segment-button>
+          <ion-segment-button value="Friends">
+              Friends
+          </ion-segment-button>
+          <ion-segment-button value="Acquaitainces">
+              Acquaitainces
+          </ion-segment-button>
+          <ion-segment-button value="Others">
+              Others
+          </ion-segment-button>
+      </ion-segment>
+  </div>
+
+  <div [ngSwitch]="pet">
+
+      <ion-list *ngSwitchCase="'Family'">
+          <div style="height:3vh;float:left;width:100%;"></div>
+           <div class="on fst">
+
+                          <ion-grid style="padding: 0px 16px;">
+                              <ion-row class="amount">
+
+                                  <ion-col col-12>
+                                      <ion-item class="select01">
+                                          <ion-label>Choose One Side</ion-label>
+                                          <ion-select [(ngModel)]="side" (ionChange)="onSelectChange($event)">
+                                              <ion-option value="groom">Groom's Side</ion-option>
+                                              <ion-option value="bride">Bride's Side</ion-option>
+                                          </ion-select>
+                                      </ion-item>
+                                  </ion-col>
+
+                              </ion-row>
+                          </ion-grid>
+
+                      </div><!--on_end-->
+          <form [formGroup]="Family" (ngSubmit)="onSubmit(Family.value)">
+              <ion-list class="base inpt">
+                  <ion-item-group>
+                     
+                      <div class="on" formArrayName="field1">
+
+                          <ion-label class="label ad" style="margin: 0px;">Family Section:
+                          </ion-label>
+
+                          <ion-grid style="padding: 0px 16px;">
+                              <ion-row class="amount" [formGroupName]="i" *ngFor="let tech of Family.controls.field1.controls; let i = index">
+                                       <ion-col col-12>
+                                      <ion-item>
+                                          <ion-input type="text" formControlName="name" placeholder="Name"></ion-input>
+                                      </ion-item>
+                                  </ion-col>
+
+                                  <ion-col col-12>
+                                      <ion-item>
+                                          <ion-input type="text" formControlName="email" placeholder="Email"></ion-input>
+                                      </ion-item>
+                                  </ion-col>
+
+                                  <ion-col col-12>
+                                      <ion-item>
+                                          <ion-input type="tel" formControlName="phone" placeholder="Phone"></ion-input>
+                                      </ion-item>
+                                  </ion-col>
+                                  <span float-right ion-button icon-left clear *ngIf="Family.controls.field1.length > 1" (click)="removeInputField(i)">
+                                        <ion-icon name="close"></ion-icon>
+                                      Remove
+                                  </span>
+
+                              </ion-row>
+
+                              <ion-label class="label ad" style="margin: 0px;font-family: lora-regular;">Add Another guest:
+                                  <ion-item class="upld">
+                                      <div class="fle" (click)="addNewInputField()">
+                                          <ion-icon name="add-circle" class="image_upld"><span>Add</span></ion-icon>
+                                      </div>
+                                  </ion-item>
+                              </ion-label>
+                          </ion-grid>
+
+                          <div style="height:4vh;float:left;width:100%;"></div>
+
+                          <button class="publish button button-md button-default button-default-md" ion-button=""><span class="button-inner">Submit</span><div class="button-effect"></div></button>
+
+                      </div><!--on_end-->
+
+                  </ion-item-group>
+              </ion-list>
+          </form>
+      </ion-list>
+      <!--Family-->
+
+      <ion-list *ngSwitchCase="'Friends'">
+          <div style="height:3vh;float:left;width:100%;"></div>
+          <div class="on fst">
+
+                          <ion-grid style="padding: 0px 16px;">
+                              <ion-row class="amount">
+
+                                  <ion-col col-12>
+                                      <ion-item class="select01">
+                                          <ion-label>Choose One Side</ion-label>
+                                          <ion-select [(ngModel)]="side" (ionChange)="onSelectChange($event)">
+                                              <ion-option value="groom">Groom's Side</ion-option>
+                                              <ion-option value="bride">Bride's Side</ion-option>
+                                          </ion-select>
+                                      </ion-item>
+                                  </ion-col>
+
+                              </ion-row>
+                          </ion-grid>
+
+                      </div><!--on_end-->
+          <form [formGroup]="Friends" (ngSubmit)="onSubmit(Friends.value)">
+              <ion-list class="base inpt">
+                  <ion-item-group>
+                      <div class="on" formArrayName="field2">
+
+                          <ion-label class="label ad" style="margin: 0px;">Friends Section:
+                          </ion-label>
+
+                          <ion-grid style="padding: 0px 16px;">
+                              <ion-row class="amount" [formGroupName]="i" *ngFor="let tech of Friends.controls.field2.controls; let i = index">
+                                       <ion-col col-12>
+                                      <ion-item>
+                                          <ion-input type="text" formControlName="name" placeholder="Name"></ion-input>
+                                      </ion-item>
+                                  </ion-col>
+
+                                  <ion-col col-12>
+                                      <ion-item>
+                                          <ion-input type="text" formControlName="email" placeholder="Email"></ion-input>
+                                      </ion-item>
+                                  </ion-col>
+
+                                  <ion-col col-12>
+                                      <ion-item>
+                                          <ion-input type="tel" formControlName="phone" placeholder="Phone"></ion-input>
+                                      </ion-item>
+                                  </ion-col>
+                                  <span float-right ion-button icon-left clear *ngIf="Friends.controls.field2.length > 1" (click)="removeInputField(i)">
+                                        <ion-icon name="close"></ion-icon>
+                                      Remove
+                                  </span>
+
+                              </ion-row>
+
+                              <ion-label class="label ad" style="margin: 0px;font-family: lora-regular;">Add Another guest:
+                                  <ion-item class="upld">
+                                      <div class="fle" (click)="addNewInputField()">
+                                          <ion-icon name="add-circle" class="image_upld"><span>Add</span></ion-icon>
+                                      </div>
+                                  </ion-item>
+                              </ion-label>
+                          </ion-grid>
+
+                          <div style="height:4vh;float:left;width:100%;"></div>
+
+                          <button class="publish button button-md button-default button-default-md" ion-button=""><span class="button-inner">Submit</span><div class="button-effect"></div></button>
+
+                      </div>
+
+                  </ion-item-group>
+              </ion-list>
+          </form>
+      </ion-list>
+      <!--Friends-->
+
+      <ion-list *ngSwitchCase="'Acquaitainces'">
+          <div style="height:3vh;float:left;width:100%;"></div>
+          <div class="on fst">
+
+                          <ion-grid style="padding: 0px 16px;">
+                              <ion-row class="amount">
+
+                                  <ion-col col-12>
+                                      <ion-item class="select01">
+                                          <ion-label>Choose One Side</ion-label>
+                                          <ion-select [(ngModel)]="side" (ionChange)="onSelectChange($event)">
+                                              <ion-option value="groom">Groom's Side</ion-option>
+                                              <ion-option value="bride">Bride's Side</ion-option>
+                                          </ion-select>
+                                      </ion-item>
+                                  </ion-col>
+
+                              </ion-row>
+                          </ion-grid>
+
+                      </div><!--on_end-->
+          <form [formGroup]="Acquaitainces" (ngSubmit)="onSubmit(Acquaitainces.value)">
+              <ion-list class="base inpt">
+                  <ion-item-group>
+                      <div class="on" formArrayName="field3">
+
+                          <ion-label class="label ad" style="margin: 0px;">Acquaitainces Section:
+                          </ion-label>
+
+                          <ion-grid style="padding: 0px 16px;">
+                              <ion-row class="amount" [formGroupName]="i" *ngFor="let tech of Acquaitainces.controls.field3.controls; let i = index">
+                                       <ion-col col-12>
+                                      <ion-item>
+                                          <ion-input type="text" formControlName="name" placeholder="Name"></ion-input>
+                                      </ion-item>
+                                  </ion-col>
+
+                                  <ion-col col-12>
+                                      <ion-item>
+                                          <ion-input type="text" formControlName="email" placeholder="Email"></ion-input>
+                                      </ion-item>
+                                  </ion-col>
+
+                                  <ion-col col-12>
+                                      <ion-item>
+                                          <ion-input type="tel" formControlName="phone" placeholder="Phone"></ion-input>
+                                      </ion-item>
+                                  </ion-col>
+                                  <span float-right ion-button icon-left clear *ngIf="Acquaitainces.controls.field3.length > 1" (click)="removeInputField(i)">
+                                        <ion-icon name="close"></ion-icon>
+                                      Remove
+                                  </span>
+
+                              </ion-row>
+
+                              <ion-label class="label ad" style="margin: 0px;font-family: lora-regular;">Add Another guest:
+                                  <ion-item class="upld">
+                                      <div class="fle" (click)="addNewInputField()">
+                                          <ion-icon name="add-circle" class="image_upld"><span>Add</span></ion-icon>
+                                      </div>
+                                  </ion-item>
+                              </ion-label>
+                          </ion-grid>
+
+                          <div style="height:4vh;float:left;width:100%;"></div>
+
+                          <button class="publish button button-md button-default button-default-md" ion-button=""><span class="button-inner">Submit</span><div class="button-effect"></div></button>
+
+                      </div>
+
+                  </ion-item-group>
+              </ion-list>
+          </form>
+      </ion-list>
+      <!--Acquaitainces-->
+
+      <ion-list *ngSwitchCase="'Others'">
+          <div style="height:3vh;float:left;width:100%;"></div>
+          <div class="on fst">
+
+                          <ion-grid style="padding: 0px 16px;">
+                              <ion-row class="amount">
+
+                                  <ion-col col-12>
+                                      <ion-item class="select01">
+                                          <ion-label>Choose One Side</ion-label>
+                                          <ion-select [(ngModel)]="side" (ionChange)="onSelectChange($event)">
+                                              <ion-option value="groom">Groom's Side</ion-option>
+                                              <ion-option value="bride">Bride's Side</ion-option>
+                                          </ion-select>
+                                      </ion-item>
+                                  </ion-col>
+
+                              </ion-row>
+                          </ion-grid>
+
+                      </div><!--on_end-->
+          <form [formGroup]="Others" (ngSubmit)="onSubmit(Others.value)">
+              <ion-list class="base inpt">
+                  <ion-item-group>
+                      <div class="on" formArrayName="field4">
+
+                          <ion-label class="label ad" style="margin: 0px;">Others Section:
+                          </ion-label>
+
+                          <ion-grid style="padding: 0px 16px;">
+                              <ion-row class="amount" [formGroupName]="i" *ngFor="let tech of Others.controls.field4.controls; let i = index">
+                                       <ion-col col-12>
+                                      <ion-item>
+                                          <ion-input type="text" formControlName="name" placeholder="Name"></ion-input>
+                                      </ion-item>
+                                  </ion-col>
+
+                                  <ion-col col-12>
+                                      <ion-item>
+                                          <ion-input type="text" formControlName="email" placeholder="Email"></ion-input>
+                                      </ion-item>
+                                  </ion-col>
+
+                                  <ion-col col-12>
+                                      <ion-item>
+                                          <ion-input type="tel" formControlName="phone" placeholder="Phone"></ion-input>
+                                      </ion-item>
+                                  </ion-col>
+                                  <span float-right ion-button icon-left clear *ngIf="Others.controls.field4.length > 1" (click)="removeInputField(i)">
+                                        <ion-icon name="close"></ion-icon>
+                                      Remove
+                                  </span>
+
+                              </ion-row>
+
+                              <ion-label class="label ad" style="margin: 0px;font-family: lora-regular;">Add Another guest:
+                                  <ion-item class="upld">
+                                      <div class="fle" (click)="addNewInputField()">
+                                          <ion-icon name="add-circle" class="image_upld"><span>Add</span></ion-icon>
+                                      </div>
+                                  </ion-item>
+                              </ion-label>
+                          </ion-grid>
+
+                          <div style="height:4vh;float:left;width:100%;"></div>
+
+                          <button class="publish button button-md button-default button-default-md" ion-button=""><span class="button-inner">Submit</span><div class="button-effect"></div></button>
+
+                      </div>
+
+                  </ion-item-group>
+              </ion-list>
+          </form>
+      </ion-list>
+      <!--Others-->
+
+  </div>
+
+</ion-content>

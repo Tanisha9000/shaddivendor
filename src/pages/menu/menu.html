@@ -1,0 +1,40 @@
+<ion-menu [content]="content">
+
+  <ion-header hidden>
+    
+      <ion-navbar>
+        <ion-title>Menu</ion-title>
+      </ion-navbar>
+    
+    </ion-header>
+    
+    <ion-content class="card-background-page back_img">
+
+  <ion-card>
+    <img src="assets/image/p2.jpg"/>
+    <div class="overlay"></div>
+    <div class="card-title">
+      <ion-list>
+        <ion-item (click)="profilePage();">
+          <ion-avatar item-start>
+            <img [src]="vendorimage">
+          </ion-avatar>
+          <h2>{{name}}</h2>
+        </ion-item>
+      </ion-list>
+    </div>
+
+  </ion-card>
+
+      <ion-list>
+<button ion-item menuClose *ngFor="let p of pages" (click)="openPage(p)">
+  <ion-icon item-start [name]="p.icon" [color]="isActive(p)"></ion-icon>
+  {{p.title}}
+</button>
+      </ion-list>
+    
+    </ion-content>
+
+</ion-menu>
+<ion-nav [root]="rootPage" #content swipeBackEnabled="false"></ion-nav>
+

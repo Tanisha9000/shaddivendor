@@ -1,0 +1,136 @@
+<ion-header>
+  
+  <ion-navbar>
+    <ion-buttons start>
+      <button ion-button menuToggle>
+        <ion-icon name="menu"></ion-icon>
+      </button>
+    </ion-buttons>
+    <ion-title>Planner</ion-title>
+    <!-- <ion-buttons end>
+        <button ion-button (click)="postedit();">
+          <ion-icon name="add"></ion-icon>
+        </button>
+      </ion-buttons> -->
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content>
+    
+  <ion-scroll zooming="true" direction="x" style="width: 100%; height: 60px" class="wide-as-needed">
+  <div class="seg">
+  <ion-segment [(ngModel)]="pet">
+     <ion-segment-button value="current">
+      Topsheet
+    </ion-segment-button>
+    <ion-segment-button value="planner">
+      Planner
+    </ion-segment-button>
+    <ion-segment-button value="input">
+      Input
+    </ion-segment-button>
+   
+  </ion-segment>
+</div>
+ </ion-scroll>
+<ion-refresher (ionRefresh)="doRefresh($event)">
+  <ion-refresher-content pullingIcon="arrow-dropdown"
+    pullingText="Pull to refresh">
+      </ion-refresher-content>
+</ion-refresher>
+<div [ngSwitch]="pet">
+
+  <ion-list *ngSwitchCase="'current'" class="bg">
+     <ion-card>
+      <div *ngFor="let th of show; let i = index" [attr.data-index]="i" class="date">
+      <ion-card-content class="cnt all">
+        <ion-card-title>
+         {{th.special_needs}}
+        </ion-card-title>
+        <span class="status">Current</span>
+        <h3>{{th.title}}({{th.location}})</h3>
+        <div class="date">
+          <h4>End Date: <span>{{th.time}}</span></h4>
+        </div>
+        <h4>Cost: <span style="color:#e5053a;">{{th.cost}}</span></h4>
+          <p>{{th.description}}
+           </p>
+        <a (click)="readmore(th._id)" float-right style="color:#e5053a;cursor: pointer;">Read More</a>
+      </ion-card-content>
+      </div>
+    </ion-card>
+
+  </ion-list><!--current-->
+
+
+  <ion-list *ngSwitchCase="'planner'" class="bg invite date">
+      
+    <ion-item (click)="progressPage();">
+      <img src="assets/image/progress.png"> Progress Update 
+      <ion-icon ios="ios-arrow-forward" md="ios-arrow-forward" item-end></ion-icon>
+  </ion-item>
+  <ion-item (click)="itemChecklistPage();">
+    <img src="assets/image/checklist.png">item checklist
+      <ion-icon ios="ios-arrow-forward" md="ios-arrow-forward" item-end></ion-icon>
+  </ion-item>
+  <ion-item (click)="timelinePage();">
+    <img src="assets/image/event.png">timeline by event
+      <ion-icon ios="ios-arrow-forward" md="ios-arrow-forward" item-end></ion-icon>
+  </ion-item>
+  <ion-item (click)="todolistPage();">
+    <img src="assets/image/list.png">to do list
+      <ion-icon ios="ios-arrow-forward" md="ios-arrow-forward" item-end></ion-icon>
+  </ion-item>
+  <ion-item (click)="budgettrackerPage();">
+    <img src="assets/image/budget.png"> budget tracker
+    <ion-icon ios="ios-arrow-forward" md="ios-arrow-forward" item-end></ion-icon>
+</ion-item>
+  <ion-item (click)="guestPage();">
+    <img src="assets/image/guest.png"> guest summary
+    <ion-icon ios="ios-arrow-forward" md="ios-arrow-forward" item-end></ion-icon>
+ </ion-item>
+  <ion-item (click)="teamPage();">
+    <img src="assets/image/team.png"> team performance
+    <ion-icon ios="ios-arrow-forward" md="ios-arrow-forward" item-end></ion-icon>
+  </ion-item>
+  <ion-item (click)="jobpostsummaryPage();">
+    <img src="assets/image/job.png">job post summary
+    <ion-icon ios="ios-arrow-forward" md="ios-arrow-forward" item-end></ion-icon>
+  </ion-item>
+  <ion-item (click)="vendorupdatePage();">
+    <img src="assets/image/vendor.png"> vendor up date
+    <ion-icon ios="ios-arrow-forward" md="ios-arrow-forward" item-end></ion-icon>
+  </ion-item>
+  </ion-list><!--Completed-->
+
+
+
+  <ion-list *ngSwitchCase="'input'" class="bg invite date">
+    
+      <ion-item (click)="basicinfoPage();">
+          <img src="assets/image/basic.png"> Basic Info
+          <ion-icon ios="ios-arrow-forward" md="ios-arrow-forward" item-end></ion-icon>
+      </ion-item>
+      <ion-item (click)="teammanagementPage();">
+        <img src="assets/image/management.png">Team Management
+          <ion-icon ios="ios-arrow-forward" md="ios-arrow-forward" item-end></ion-icon>
+      </ion-item>
+      <ion-item (click)="guestonePage();">
+        <img src="assets/image/guest0.png">Guest
+          <ion-icon ios="ios-arrow-forward" md="ios-arrow-forward" item-end></ion-icon>
+      </ion-item>
+      <ion-item (click)="commonitemPage();">
+        <img src="assets/image/common.png">Common Item
+          <ion-icon ios="ios-arrow-forward" md="ios-arrow-forward" item-end></ion-icon>
+      </ion-item>
+      <ion-item (click)="eventPage();">
+        <img src="assets/image/event.png">Event
+          <ion-icon ios="ios-arrow-forward" md="ios-arrow-forward" item-end></ion-icon>
+      </ion-item>
+
+  </ion-list><!--Shortlisted-->
+
+</div>
+     </ion-content>

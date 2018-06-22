@@ -1,0 +1,39 @@
+<ion-header>
+  <ion-navbar hideBackButton="true">
+    <ion-title>One time Verification code</ion-title>
+  </ion-navbar>
+</ion-header>
+
+
+<ion-content padding>
+    <div style="height:10vh;float:left;width:100%;"></div>
+
+    <div class="logo">
+        <img src="assets/image/logo.png">
+    </div>
+
+    <div style="height:5vh;float:left;width:100%;"></div>
+    <div class="signin_field">
+        <form #heroForm="ngForm"  novalidate>
+
+            <ion-list>
+                <ion-item class="code">
+                <ion-input type="number" placeholder="Enter Code" [(ngModel)]="data.code" name="code" #code="ngModel"  required></ion-input>
+                </ion-item>
+           </ion-list>
+          <div *ngIf="code.errors && (code.dirty || code.touched)" class="alert alert-danger">
+                <div [hidden]="!code.errors.required" class="alert alert-danger">
+                Verification code is required
+                </div>
+         </div>
+
+            <button ion-button type="submit" class="styled submit_btn" [disabled]="!heroForm.valid" (tap)="onSubmit(heroForm)">Submit</button>
+            
+        </form>
+        
+    </div>
+    <div class="otp_counter">
+        <p>Didn't get the OTP? <span>{{tick}} seconds</span></p>
+     </div>
+     <button class="resend_otp" [hidden] ="showresend != true" (tap)="resend()" >Resend OTP</button>
+</ion-content>

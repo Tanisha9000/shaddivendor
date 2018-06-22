@@ -1,0 +1,314 @@
+page-tabs {
+
+     
+    .seg{
+        background: #fff;
+        float: left;
+        width: 100%;
+    }
+    
+    .seg .segment .segment-button{
+        border: 0px;
+        border-bottom: 3px solid #ccc;
+        color: #8e9595;
+        font-size: 11px;
+        height: 4.2rem;
+        line-height: 4rem;
+        text-transform: capitalize;
+        font-family: Lora;
+        padding: 0 3px;
+    }
+    
+    .seg .segment .segment-button.segment-activated {
+        border-color: #e5053a !important;
+        opacity: 1;
+        background: transparent;
+        color: #e5053a !important;
+        
+    }
+    
+    .seg .segment .segment-button:hover:not(.segment-activated) {
+        background-color: rgba(229, 5, 58, 0.1);
+    
+    }
+    
+    .actin button {
+      height: 22px;
+      border-radius: 5px;
+      margin: 0 0 5px 0;
+      padding: 0 9px;
+      color: #e5053a;
+    border-color: #e5053a;
+    }
+    
+    .actin button:hover {
+    color: #fff;
+    background: #feb483 !important; /* Old browsers */
+    background: -moz-linear-gradient(left, #feb483 1%, #ff9980 42%, #fe8884 69%, #ff8b8c 100%) !important;; /* FF3.6-15 */
+    background: -webkit-linear-gradient(left, #feb483 1%,#ff9980 42%,#fe8884 69%,#ff8b8c 100%) !important;; /* Chrome10-25,Safari5.1-6 */
+    background: linear-gradient(to right, #feb483 1%,#ff9980 42%,#fe8884 69%,#ff8b8c 100%) !important;; /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#feb483', endColorstr='#ff8b8c',GradientType=1 ) !important;; /* IE6-9 */
+    border-color: #ff9980;
+    }
+    
+    .actin button span {
+      font-size: 11px;
+    }
+    .actin {
+      float: left;
+      width: 98%;
+      margin: auto 8px;
+    }
+    
+    .accepts.actin button {
+        color: #fff;
+        border-color: #fff;
+    }
+    
+    .accepts.actin {
+        position: absolute;
+        bottom: 5px;
+        right: 7px;
+        width: auto;
+    }
+    
+    .accepts.actin button:hover{border-color: transparent;}
+    
+    .nme h4{
+        font-family: Lora-Regular;
+    }
+    
+    .nme.item ion-avatar img {
+        width: 50px;
+        height: 50px;
+        border: 1px solid #e5053a;
+    }
+    
+     .nme.item ion-avatar {
+    position: absolute;
+    top: 8px;
+    right: 0;
+    }
+    
+    .spec, .real p{
+        font-size: 13px;
+        line-height: 1.3;
+        color: #8a8a8a;
+    }
+    
+    
+    .px{
+    
+        width: 100%;
+        height: 200px;
+        overflow: hidden;
+        position: relative;
+    }
+    
+    .px img {
+        position: absolute;
+        top: 0;
+        right: 0;
+        left: 0;
+        bottom: 0;
+        margin: auto;
+        height: 100%;
+        width: 100%;
+    }
+    
+    
+    .real h3 {
+        color: #e5053a;
+    }
+    .box h3,.box h4{
+        margin: 8px 0;
+    }
+    .stars li {
+        color: #9c9c9b;
+    }
+    
+    .real h3 span {
+        color: #696767;
+    }
+    
+    .real a {
+        float: right;
+        width: auto;
+        color: #e5053a;
+        font-family: Lora-Regular;
+        font-size: 13px;
+        margin: 0px 0 8px 0;
+    }
+    
+    .px .button .icon {
+      padding: 0px 3px;
+      font-size: 21px;
+      color: #fff;
+    }
+    
+    ion-fab-list[side="left"] {
+        margin: 0 40px;
+    }
+    .fab[mini] {
+        margin: 10;
+        width: 30px;
+        height: 30px;
+        line-height: 10px;
+      }
+    
+    .fb{background: transparent;}
+    .fb:focus{background: transparent;}
+    
+    .fab-in-list {
+        color: #fff;
+        background: #feb483 !important; /* Old browsers */
+    background: -moz-linear-gradient(left, #feb483 1%, #ff9980 42%, #fe8884 69%, #ff8b8c 100%) !important;; /* FF3.6-15 */
+    background: -webkit-linear-gradient(left, #feb483 1%,#ff9980 42%,#fe8884 69%,#ff8b8c 100%) !important;; /* Chrome10-25,Safari5.1-6 */
+    background: linear-gradient(to right, #feb483 1%,#ff9980 42%,#fe8884 69%,#ff8b8c 100%) !important;; /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#feb483', endColorstr='#ff8b8c',GradientType=1 ) !important;; /* IE6-9 */
+    }
+    
+    
+    .pic {
+      position: relative;
+      height: 50px;
+      overflow: hidden;
+      width: 100%;
+    }
+    .pic img {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      top: 0;
+      right: 0;
+      left: 0;
+      bottom: 0;
+      margin: auto;
+      border-radius: 5px;
+    }
+    
+    .main ion-col{padding: 2px;}
+    
+    .calender {
+        float: left;
+        width: 100%;
+        padding: 8px;
+    }
+    
+    
+    .job p sup {
+        background: red;
+        border-radius: 50%;
+        padding: 0px 5px;
+        top: -1px;
+        left: 3px;
+    }
+    .job p {
+        margin: 0;
+        width: 100%;
+        float: left;
+        text-align: center;
+        font-family: Lora-Regular;
+        padding: 0px;
+        font-size: 10px;
+        font-weight: 700;
+    }
+    .job {
+      float: left;
+      width: 100%;
+    }
+    
+    .bg{
+        float: left;
+        width: 100%;
+    }
+    
+    .inv {
+        height: auto;
+        text-transform: capitalize;
+        padding: 0;
+        box-shadow: none;
+        margin: 5px 0;
+        color: #fff;
+    background: #feb483 !important; /* Old browsers */
+    background: -moz-linear-gradient(left, #feb483 1%, #ff9980 42%, #fe8884 69%, #ff8b8c 100%) !important;; /* FF3.6-15 */
+    background: -webkit-linear-gradient(left, #feb483 1%,#ff9980 42%,#fe8884 69%,#ff8b8c 100%) !important;; /* Chrome10-25,Safari5.1-6 */
+    background: linear-gradient(to right, #feb483 1%,#ff9980 42%,#fe8884 69%,#ff8b8c 100%) !important;; /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#feb483', endColorstr='#ff8b8c',GradientType=1 ) !important;; /* IE6-9 */
+    border-color: #ff9980;
+    border-radius: 4px;
+    float: left;
+    width: 100%;
+    }
+    
+    .inv.button .button-inner{
+    font-size: 12px;
+    padding: 6px 8px;
+    font-family: Roboto;
+    font-weight: normal;
+    }
+    
+    .snd {
+        float: left;
+        width: 100%;
+        padding: 12px 12px 0;
+        color: #868686;
+    }
+    
+    .invite ion-label{
+         font-family:Lora-Regular;
+        font-size: 15px;
+    }
+    
+    .invite .item .item-inner {
+        padding-right: 8px;
+        border-bottom: 0px !important;
+        padding-left: 8px;
+    }
+    
+    .invite .item {
+        padding-left: 0px;
+        padding-right: 0px;
+    }
+    
+    .list-ios.invite > .item-block:last-child, .list-ios.invite > .item-wrapper:last-child .item-block {
+        border-bottom: 0px;
+    }
+    
+    .overlay {
+        height: 100%;
+        width: 100%;
+        background: rgba(0, 0, 0, 0.50);
+        position: absolute;
+        left: 0;
+        right: 0;
+        top: 0;
+        bottom: 0;
+        margin: auto;
+        z-index: 0;
+    }
+    .demo {
+        color: #e5053a;
+        font-size: 11px;
+        font-family:Lora-Regular;
+    }
+    
+    .actss{
+        position: absolute;
+        right: 11px;
+        top: 5px;
+    }
+    
+    .like{
+        position: absolute;
+        bottom: 10px;
+        left: 12px;
+        color: #fff;
+        font-size: 23px;
+    }
+    
+    .calender img{
+        width: 100%;
+    }
+
+}

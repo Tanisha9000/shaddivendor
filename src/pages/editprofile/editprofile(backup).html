@@ -1,0 +1,386 @@
+<ion-header>
+
+    <ion-navbar>
+        <ion-buttons start>
+            <button ion-button menuToggle>
+                <ion-icon name="menu"></ion-icon>
+            </button>
+        </ion-buttons>
+        <ion-title>Edit Profile</ion-title>
+    </ion-navbar>
+
+</ion-header>
+
+
+<ion-content>
+    <form #heroForm="ngForm" novalidate>
+        <!--<ion-label>{{respmessage}}</ion-label>-->
+
+        <ion-item class="upload_pic">
+            <!--<input>-->
+            <!--<div for="file" class="fle">-->
+            <!--<ion-icon name="image" class="image_upld"></ion-icon>-->
+            <!--<span class="upload_text">Upload</span>-->
+            <div class="profile_img">
+                <img [src]= "vendorimage" (click)= "remove_photo()">
+                <!---->
+            </div>
+            <!--</div>-->
+            <button ion-button clear color="primary" class="" uplad ion-button block (click)="presentActionSheet(4)">Change Profile Photo</button>
+        </ion-item>
+        <div class="signin_field">
+            <ion-list>
+                <!--<ion-label>{{changemessage}}</ion-label>-->
+                <ion-item [hidden]="vbit == 0">
+                    <ion-select [(ngModel)]="data.category" name='category' #category='ngModel' placeholder="Vendor Type" (ionChange)="changetype(data.category)" required >
+                        <ion-option *ngFor="let type of vendortype" value="{{type.title}}-{{type._id}}">{{type.title}}</ion-option>
+                    </ion-select>
+                </ion-item>
+                <button ion-button clear color="primary" class="" uplad ion-button block (click)="changevendor()">Change Vendor type</button>
+                <ion-item>
+                    <ion-input type="text" placeholder="Company name" [(ngModel)]="extra.cname" name="cname"></ion-input>
+                </ion-item>
+                <ion-item>
+                    <ion-input type="text" placeholder="About us(Required Field)" [(ngModel)]="extra.aboutus" name="aboutus" #aboutus='ngModel' required></ion-input>
+                </ion-item>
+
+                <ion-item>
+                    <ion-input type="text" placeholder="Email" [(ngModel)]="extra.mail" name="mail"></ion-input>
+                </ion-item>
+
+                <ion-item>
+                    <ion-input type="number" placeholder="Phone Number" [(ngModel)]="extra.phone" name="phone"></ion-input>
+                </ion-item>
+
+                <!--<ion-item class="vnd">
+                    <ion-select [(ngModel)]="nameb" name="nameb" placeholder="How did you find about us?">
+                      <ion-option value="nes">Friends</ion-option>
+                      <ion-option value="n64">Friends of Friends</ion-option>
+                      <ion-option value="ps">Social Media</ion-option>
+                    </ion-select>
+                  </ion-item>-->
+
+            </ion-list>
+        </div>
+
+        <!--process start-->
+
+        <ion-list class="base">
+            <ion-item-group>
+                <ion-item-divider color="light">Basic Info</ion-item-divider>
+
+                <ion-item>
+                    <ion-input type="text" placeholder="Establishment Year" [(ngModel)]="extra.year" name="year"></ion-input>
+                </ion-item>
+
+                <ion-item>
+                    <ion-datetime displayFormat="HH:mm A" placeholder="Starting Hours" [(ngModel)]="extra.starthour" name="starthour"></ion-datetime>
+                </ion-item>
+                <ion-item>
+                    <ion-datetime displayFormat="HH:mm A" placeholder="Ending Hours" [(ngModel)]="extra.endhour" name="endhour"></ion-datetime>
+                </ion-item>
+
+                <ion-item>
+                    <ion-icon name="logo-facebook" item-start></ion-icon>
+                    <ion-input type="text" placeholder="https://www.facebook.com/abc.com" [(ngModel)]="extra.facebuk" name="facebuk"></ion-input>
+                </ion-item>
+
+                <ion-item>
+                    <ion-icon name="logo-twitter" item-start></ion-icon>
+                    <ion-input type="text" placeholder="https://www.twitter.com/abc.com" [(ngModel)]="extra.twiter" name="twiter"></ion-input>
+                </ion-item>
+
+                <ion-item>
+                    <ion-icon name="logo-instagram" item-start></ion-icon>
+                    <ion-input type="text" placeholder="https://www.instagram.com/abc.com" [(ngModel)]="extra.insta" name="insta"></ion-input>
+                </ion-item>
+
+                <ion-item class="award">
+                    <ion-input type="text" placeholder="Awards & Recognition" [(ngModel)]="extra.award" name="award"></ion-input>
+                </ion-item>
+
+            </ion-item-group>
+        </ion-list>
+
+        <ion-list class="base">
+            <ion-item-group>
+                <ion-item-divider color="light">Invite Friends <span class="disc">(more connected you are higher chance of getting customer)</span></ion-item-divider>
+                <ion-grid>
+                    <ion-row class="invite">
+                        <ion-col col-6 text-center><a class="link" (click)="fbsss()"><img src="assets/image/linka.png"></a></ion-col>
+                        <ion-col col-6 text-center><a class="link" (click)="emails()"><img src="assets/image/linkb.png"></a></ion-col>
+                        <ion-col col-6 text-center><a class="link" (click)="emails()"><img src="assets/image/linkc.png"></a></ion-col>
+                        <ion-col col-6 text-center><ion-icon name="logo-whatsapp" style="color:#34af23;" (click)="whatsappShare()"></ion-icon></ion-col>
+                    </ion-row>
+                </ion-grid>
+            </ion-item-group>
+        </ion-list>
+
+        <ion-list class="base inpt">
+            <ion-item-group>
+                <ion-item-divider color="light">Service & Cost Details</ion-item-divider>
+                <h3>{{name}}</h3>
+
+                <!--     <div style="width:100%;float:left;height:5vh;"></div>-->
+                <div class="food_outer_div">
+                    <ion-item>
+                        <ion-label><strong>Minimum Price</strong></ion-label>
+                        <ion-input type="text" placeholder="Enter minimum price" [(ngModel)]="extra.price" name="price" required></ion-input>
+                    </ion-item>
+                    <!--<span class="per">Price Per Hour</span>-->
+                    <ion-item *ngFor="let item of finalservices; let j =index">
+                        <ion-label>{{item.name}}</ion-label>
+                        <ion-input type="hidden" style="display: none;" [(ngModel)]="finalservices[j].name" name="name"></ion-input>
+                        <ion-input type="text" placeholder="Enter price" [(ngModel)]="finalservices[j].pricing" name="pricing{{j}}"></ion-input>
+                    </ion-item>
+                    <div *ngIf = "service1.length > 0">
+                        <ion-item *ngFor="let item1 of service1">
+                            <ion-label>{{item1.name}}</ion-label> 
+                            <ion-label class="text-right">{{item1.pricing}}</ion-label>
+                        </ion-item>
+                    </div>
+                </div>
+                <button ion-button [hidden]="service.length ==0" color="dark" outline small class="add" (click)="addservice();">Add More</button>
+                <div *ngIf= "bit == 1">
+                    <ion-grid style="padding: 0px;">
+                        <ion-row class="amount">
+                            <ion-col>
+                                <ion-item>
+                                    <ion-input type="text" placeholder="Enter Title" [(ngModel)]="dat.name" name="name" ></ion-input>
+                                </ion-item>
+                            </ion-col>
+                            <ion-col>
+                                <ion-item>
+                                    <ion-input class="text-right" type="number" placeholder="Enter Amount" [(ngModel)]="dat.amount" name="amount" ></ion-input>
+                                </ion-item>
+                            </ion-col>
+                        </ion-row>
+                    </ion-grid>
+                    <button class="styled width_70" ion-button color="blue" (click)="addmore();">Add</button>
+                </div>
+
+                <div class="on">
+
+                    <ion-item-divider color="light">Add-ons:</ion-item-divider>
+                    <div *ngFor="let add of finaladdons;let i = index">
+                        <ion-item>
+                            <ion-label>{{add.title}}</ion-label>
+                            <ion-checkbox color="dark" [(ngModel)]="finaladdons[i].check" name="check{{i}}"></ion-checkbox>
+                        </ion-item>
+                        <div [hidden]="finaladdons[i].check != true">
+                            <ion-input type="number" placeholder="Enter Amount" [(ngModel)]="finaladdons[i].price" name="finaladdons{{i}}"></ion-input>
+                        </div>
+                    </div>
+
+                    <div [hidden] = "moreaddons == '' ">
+                        <div *ngFor="let it of moreaddons;let p = index">
+                            <ion-item>
+                                <ion-label>{{it.title}}</ion-label>
+                                <ion-checkbox color="dark" [(ngModel)]="moreaddons[p].check1" name="check1{{p}}"></ion-checkbox>
+                            </ion-item>
+                            <div [hidden]="moreaddons[p].check1 != true">
+                                <ion-input type="number" placeholder="Enter Amount" [(ngModel)]="moreaddons[p].price" name="moreaddons{{p}}">{{it.price}}</ion-input>
+                            </div>
+                        </div>   
+                    </div>
+
+                    <ion-item *ngIf= "x == 1" >
+                        <ion-label>More</ion-label>
+                        <ion-checkbox color="dark" [(ngModel)]="chk1.check2" name="check2"></ion-checkbox>
+                    </ion-item>
+
+                    <div [hidden]= "chk1.check2 != true">
+                        <ion-grid style="padding: 0px;">
+                            <ion-row class="amount">
+                                <ion-col>
+                                    <ion-item>
+                                        <ion-input type="text" placeholder="Enter Title" [(ngModel)]="data.title" name="title" ></ion-input>
+                                    </ion-item>
+                                </ion-col>
+                                <ion-col>
+                                    <ion-item>
+                                        <ion-input type="number" placeholder="Enter Amount" [(ngModel)]="data.amount" name="amount" ></ion-input>
+                                    </ion-item>
+                                </ion-col>
+                            </ion-row>
+                        </ion-grid>
+                        <button class="styled width_70" ion-button color="blue" (click)="add();">Add</button>
+                    </div>
+
+                    <div [hidden]="subvendor == '' ">
+                        <ion-item-divider color="light">Sub-vendors:</ion-item-divider>   
+                        <ion-item *ngFor="let display of subvendor; let q = index">
+                            <ion-label>{{display.title}}</ion-label>
+                            <ion-checkbox color="dark" [(ngModel)]="subvendor[q].checkkk" name="chk{{q}}"></ion-checkbox>
+                        </ion-item>
+                    </div>   
+
+                    <ion-item-divider color="light">Discount:</ion-item-divider>
+                    <ion-item class="dis">
+                        <ion-select [(ngModel)]="disc.dis" name="disc" placeholder="Select discount">
+                            <ion-option value="nes">2 Day</ion-option>
+                            <ion-option value="mv" selected="true">More</ion-option>
+                        </ion-select>
+                    </ion-item>
+
+                    <ion-grid style="padding: 0px;">
+                        <ion-row class="amount">
+                            <ion-col>
+                                <ion-item>
+                                    <ion-input type="text" placeholder="Enter Title" [(ngModel)]="disc.titlee" name="titlee"></ion-input>
+                                </ion-item>
+                            </ion-col>
+                            <ion-col>
+                                <ion-item>
+                                    <ion-input type="number" placeholder="Enter Amount" [(ngModel)]="disc.amountt" name="amountt"></ion-input>
+                                </ion-item>
+                            </ion-col>
+                        </ion-row>
+                    </ion-grid>
+                    <div>
+                        <ion-item [hidden]="disc.dis != 'mv' ">
+                            <ion-input type="text" placeholder="Enter days" [(ngModel)]="disc.dayy" name="dayy"></ion-input>
+                        </ion-item>
+                    </div>
+                    <button class="styled width_70" ion-button color="blue" (click)="adddisc();">Add</button>
+
+                    <div *ngFor ="let dd of discount" class="show_data">
+                        <ion-label>{{dd.title}}</ion-label>
+                        <ion-label>{{dd.price}}</ion-label>
+                        <ion-label [hidden]='dd.day == "" '>{{dd.day}}</ion-label>
+                    </div>
+                </div><!--on_end-->
+
+            </ion-item-group>
+        </ion-list>
+
+
+        <ion-list class="base inpt">
+            <ion-item-group>
+
+
+                <div style="width:100%;float:left;height:2vh;"></div>
+
+                <div class="on">
+
+                    <ion-item-divider color="light">Highlights</ion-item-divider>
+                    <ion-label class="label ad add01" style="margin: 0px;">Add:</ion-label>
+
+                    <div *ngFor="let item of finalhighlights; let k = index">
+                        <ion-item>
+                            <ion-label>{{item.title}}</ion-label>
+                            <ion-checkbox color="dark" [(ngModel)]="finalhighlights[k].chec" name="chec{{k}}"></ion-checkbox>
+                        </ion-item>
+                        <div [hidden]= "finalhighlights[k].chec != true">
+                            <ion-input type="text" placeholder="Enter Amount" [(ngModel)]="finalhighlights[k].price" name="finalhighlights{{k}}"></ion-input>
+                        </div>
+                    </div>
+                    <div *ngFor="let itemt of highlight1; let t = index">
+                        <ion-item>
+                            <ion-label>{{itemt.title}}</ion-label>
+                            <ion-checkbox color="dark" [(ngModel)]="highlight1[t].checkk" name="checkk{{t}}"></ion-checkbox>
+                        </ion-item>
+                        <div [hidden]= "highlight1[t].checkk != true">
+                            <ion-input type="number" placeholder="Enter Amount" [(ngModel)]="highlight1[t].price" name="highlight1{{t}}"></ion-input>
+                        </div>
+                    </div>
+
+                    <ion-item *ngIf= "y == 1">
+                        <ion-label>More</ion-label>
+                        <ion-checkbox color="dark" [(ngModel)]="chk1.check3" name="check3"></ion-checkbox>
+                    </ion-item>
+
+                    <ion-grid style="padding: 0px;">
+                        <div [hidden]= "chk1.check3 != true">
+                            <ion-row class="amount">
+                                <ion-col>
+                                    <ion-item>
+                                        <ion-input type="text" placeholder="Enter Title" [(ngModel)]="data1.title1" name="title1"></ion-input>
+                                    </ion-item>
+                                </ion-col>
+                                <ion-col>
+                                    <ion-item>
+                                        <ion-input type="number" placeholder="Enter Amount" [(ngModel)]="data1.amtt" name="amtt"></ion-input>
+                                    </ion-item>
+                                </ion-col>
+                            </ion-row>
+                            <button class="styled width_70" ion-button color="blue" (click)="addhigh();">Add</button>
+                        </div>
+
+
+                    </ion-grid>
+                    <div style="padding: 0;" class="gridupload" [hidden]="img.length==0">  
+                        <ion-label class="label ad">Gallery:</ion-label> 
+                        <div>
+                            <ion-item class="upld" *ngFor="let im of img; let w = index">
+                                      <!--             -->
+                                      <!----> 
+                                      <span class="close_icon" (click)="crossimage(w,im)"></span>
+                                <img [src]="im.image">
+                                <!--"im.image"-->
+
+                            </ion-item>
+                        </div>
+
+                        <ion-item class="upld" [hidden]= "img.length == 5">
+                            <!---->
+                            <!--<input type="file" id="file-input">-->
+                            <button ion-button clear color="primary" class="change" uplad ion-button block (click)="presentActionSheet(5)">
+                                    <ion-icon ios="ios-add" md="md-add"></ion-icon>
+                            </button>
+                        </ion-item>
+
+                    </div>
+                    <button ion-button block outline color="blue" class="pay">Link With Paytm</button>
+
+                </div><!--on_end-->
+
+            </ion-item-group>
+        </ion-list>
+
+
+        <ion-list class="base">
+            <ion-item-group>
+                <ion-item-divider color="light">Location</ion-item-divider>
+
+                <ion-toolbar>
+                    <ion-searchbar [(ngModel)]="autocomplete.query" name="query" #query='ngModel' (ionInput)="updateSearch()" required></ion-searchbar>
+                </ion-toolbar>
+                <ion-list style="margin: 0px;">
+                    <ion-item *ngFor="let place of autocompleteItems" (click)="selectPlace(place)">
+                        {{ place.description }}
+                </ion-item>
+            </ion-list>
+            <div *ngIf="query.errors && (query.dirty || query.touched)" class="alert alert-danger">
+                <div [hidden]="!query.errors.required" class="alert alert-danger">
+                    This field is required
+                </div>
+            </div>
+            <div class="map" #map id="map"></div>
+
+        </ion-item-group>
+
+    </ion-list>
+
+
+    <ion-list class="base">
+        <ion-item-group>
+            <ion-item-divider color="light">Deals</ion-item-divider>
+            <ion-item class="area">
+                <textarea type="text" placeholder="Product Detail" class="txt_area" [(ngModel)]="extra.pdetail" name="pdetail"></textarea>
+            </ion-item>
+
+            <ion-item>
+                <ion-input type="text" placeholder="Effective Date" [(ngModel)]="extra.edate" name="edate"></ion-input>
+            </ion-item>
+
+            <ion-item>
+                <ion-input type="text" placeholder="Discount Amount" [(ngModel)]="extra.damount" name="damount"></ion-input>
+            </ion-item>
+        </ion-item-group>
+    </ion-list>
+
+    <button ion-button class="publish" type='submit' [disabled]="!heroForm.valid" (click)="publish(heroForm);">Save</button>
+
+</form>
+</ion-content>

@@ -1,0 +1,104 @@
+<!--
+  Generated template for the BudgettrackerPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>Budget Tracker</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+    <div class="tacker">
+    <ul>
+      <li><span class="left">Total Budget</span><span class="right">INR 5,00,000</span></li>
+      <li><span class="left">Budget Spent</span><span class="right">40%</span></li>
+    </ul>
+
+    <div class="graph">
+      <!--<h4>Graph Design Coming soon!!</h4>-->
+      <ion-card>
+      <ion-card-header>
+        Pie Chart
+      </ion-card-header>
+      <ion-card-content>
+        <canvas #pieCanvas></canvas>
+      </ion-card-content>
+    </ion-card>
+    </div>
+    <button ion-button type="submit">Detail</button>
+  </div>
+
+  <div class="table_checklist">
+      <div class="bbb">
+                       <select name="txtCountry" id="photo1">
+                         <option>Filter 1</option>
+                         <option value="1">All</option>
+                         <option value="2">Event 1</option>
+                         <option value="3">Event 2</option>
+                         <option value="4">Event 3</option>
+                         <option value="5">Common Item</option>
+                       </select>
+                       <select name="txtCountry" id="photo2">
+                         <option>Filter 2</option>
+                         <option value="1">All</option>
+                         <option value="2">Venue</option>
+                         <option value="3">Food</option>
+                         <option value="4">Photography</option>
+                         <option value="5">Rituals</option>
+                         <option value="6">Logistics</option>
+                         <option value="7">Entertainment</option>
+                         <option value="8">Make Up</option>
+                         <option value="11">Mehandi</option>
+                         <option value="12">Cake</option>
+                         <option value="13">Decorator</option>
+                         <option value="14">Renovation And Spring Cleaning</option>
+                         <option value="15">Pre-Wedding Shopping</option>
+                         <option value="16">Clothing</option>
+                         <option value="17">Jewellery</option>
+                         <option value="18">Gift</option>
+                       </select>
+                     </div>
+                     <div class="tble_scroll">
+                       <table class="table">
+                         <thead>
+                           <tr>
+                             <th scope="col">Level 1</th>
+                             <th>Level 2</th>
+                             <th>Budget</th>
+                             <th>Spent</th>
+                             <th>Committed Spending</th>
+                           </tr>
+                         </thead>
+                         <tbody>
+                           <tr>
+                             <td class="abc abc1" contenteditable="true">Event 2</td>
+                             <td class="abc abc1" contenteditable="true">Photography</td>
+                             <td class="abc abc1" contenteditable="true">2.5</td>
+                             <td class="abc abc1" contenteditable="true">1</td>
+                             <td class="abc abc1" contenteditable="true">2Lac</td>
+                           </tr>
+                           <tr>
+                             <td class="abc abc1" contenteditable="true">Event 3</td>
+                             <td class="abc abc1" contenteditable="true">Entertainment</td>
+                             <td class="abc abc1" contenteditable="true">5.2</td>
+                             <td class="abc abc1" contenteditable="true">2</td>
+                             <td class="abc abc1" contenteditable="true">2Lac</td>
+                           </tr>
+                         </tbody>
+                       </table>
+                     </div>
+                     <button ion-button type="submit">Edit</button>                    
+                     <!-- <button id="budget1" class="btn btn-info styled float_right">confirm</button> -->
+                
+               </div>
+
+
+               <div style="height:5vh;float:left;width:100%;"></div>
+
+</ion-content>

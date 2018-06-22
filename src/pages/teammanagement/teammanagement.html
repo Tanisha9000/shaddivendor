@@ -1,0 +1,74 @@
+<ion-header>
+
+  <ion-navbar>
+      <ion-title>team management</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+<ion-content padding>
+
+  <div class="management">
+      <button ion-button class="black" type="submit" (click)="postedit()">hire freelancer</button>
+      <button ion-button class="styled" type="submit" (click)="addNewInputField()">add</button>
+      <span><button ion-button class="full_black" type="submit" (click)="manage_team()">manage team</button></span>
+      <form>
+
+          <ion-list class="base inpt">
+              <ion-item-group>
+
+                  <div class="on">
+
+                      <ion-grid>
+                          <ion-row class="amount">
+                                   <ion-col col-12>
+                                  <ion-item>
+                                      <ion-input type="text" name="name" placeholder="Name"></ion-input>
+                                  </ion-item>
+                              </ion-col>
+
+                              <ion-col col-12>
+                                  <ion-item>
+                                      <ion-input type="email" name="email" placeholder="Email"></ion-input>
+                                  </ion-item>
+                              </ion-col>
+
+                              <ion-col col-12>
+                                  <ion-item>
+                                      <ion-input type="tel" name="phone"  placeholder="Phone"></ion-input>
+                                  </ion-item>
+                              </ion-col>
+                              <span float-right ion-button icon-left clear>
+                                    <ion-icon name="close"></ion-icon>
+                                  Remove
+                              </span>
+
+                          </ion-row>
+
+                      </ion-grid>
+
+                      <div style="height:4vh;float:left;width:100%;"></div>
+
+                      <button ion-button class="publish" >Submit</button>
+
+                      <h5>or</h5>
+
+                      <ion-label class="label ad" style="margin: 0px;width:100%;float:left;">
+                          <ion-item class="upld">
+                              <input type="file" (change)="fileUpload($event)" id="file-input">
+                              <div for="file" class="fle">
+                                  <ion-icon name="image" class="image_upld"><span>upload from excel</span></ion-icon>
+                              </div>
+                          </ion-item>
+                      </ion-label>
+
+                      <div style="height:4vh;float:left;width:100%;"></div>
+
+                  </div><!--on_end-->
+
+              </ion-item-group>
+          </ion-list>
+      </form>
+  </div>
+
+</ion-content>
